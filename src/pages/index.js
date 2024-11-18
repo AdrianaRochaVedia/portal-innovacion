@@ -80,6 +80,4 @@ export {
   BlogSidebar,
   BlogDetails,
   Contact,
-
-  Malla,
 };
