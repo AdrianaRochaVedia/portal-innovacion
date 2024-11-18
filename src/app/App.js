@@ -46,8 +46,6 @@ import {
   Teacher,
   TeacherDetails,
   Testimonial,
-
-  Malla,
 } from '../pages';
 import MainPage from '../main/home';
 
@@ -115,8 +113,6 @@ function App() {
         <Route path="/blog-details" element={<BlogDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error />} />
-
-        <Route path="/malla" element={<Malla/>} />
       </Routes>
     </div>
   );

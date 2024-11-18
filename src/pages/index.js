@@ -38,8 +38,6 @@ import BlogSidebar from './blog/blog-sidebar';
 import BlogDetails from './blog/blog-details';
 import Contact from './contact';
 
-import Malla from './mallaPage';
-
 export {
   Home,
   HomeOnePage,
@@ -80,6 +78,4 @@ export {
   BlogSidebar,
   BlogDetails,
   Contact,
-
-  Malla,
 };
