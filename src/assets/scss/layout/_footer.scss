@@ -53,7 +53,7 @@
     padding-top: 10px;
     text-transform: capitalize;
     color: var(--it-common-white);
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     @media #{$xl,$lg,$md,$xs} {
       font-size: 20px;
     }
@@ -172,7 +172,7 @@
     }
     &-info {
       position: relative;
-      padding: 60px 0;
+      padding: 20px 0;
       @media #{$xs} {
         padding: 15px 0;
       }
@@ -209,7 +209,7 @@
   }
   &.it-footer-top-info {
     &::after {
-      right: -55px;
+      right: 10px;
     }
   }
 }
