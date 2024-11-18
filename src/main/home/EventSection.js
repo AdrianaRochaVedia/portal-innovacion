@@ -28,10 +28,10 @@ const Event = () => {
               <SectionTitle
                 itemClass="it-event-2-title-box text-center"
                 subTitleClass="it-section-subtitle-5 purple-2"
-                subTitle="NUESTRA CARRERA"
+                subTitle="Our Events"
                 titleClass="it-section-title-3"
-                title="EVENTOS Y ACTIVIDADES"
-                titleImage=""
+                title="yearly events and program"
+                titleImage={titleImg}
               />
             </div>
           </div>
@@ -46,7 +46,7 @@ const Event = () => {
               eventImage={eventImg1}
               eventDate="08"
               eventMonth="October"
-              title="lorem ipsum djaksdjadsjk asdl aksndlan ldkad asnlkdalksdnlkansld"
+              title="print, and publishing industries for previewing"
             />
           </div>
           <div
@@ -58,7 +58,7 @@ const Event = () => {
               eventImage={eventImg2}
               eventDate="21"
               eventMonth="February"
-              title="lorem ipsum djaksdjadsjk asdl aksndlan ldkad asnlkdalksdnlkansld"
+              title="print, and publishing industries for previewing"
             />
           </div>
           <div
@@ -70,7 +70,7 @@ const Event = () => {
               eventImage={eventImg3}
               eventDate="25"
               eventMonth="April"
-              title="lorem ipsum djaksdjadsjk asdl aksndlan ldkad asnlkdalksdnlkansld"
+              title="print, and publishing industries for previewing"
             />
           </div>
         </div>

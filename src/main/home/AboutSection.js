@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SectionTitle from '../../components/SectionTitle';
 
 import shapeImg1 from '../../assets/img/about/about-3-shap-1.png';
