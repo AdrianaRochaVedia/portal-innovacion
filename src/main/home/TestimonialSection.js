@@ -5,7 +5,7 @@ import SingleTestimonialTwo from '../../components/Testimonial/SingleTestimonial
 
 import testimonialBG from '../../assets/img/testimonial/bg-2.png';
 import testimonialBG2 from '../../assets/img/testimonial/bg-4.png';
-import testimonialImg from '../../assets/img/testimonial/thumb-3.png';
+import testimonialImg from '../../assets/img/testimonial/biblioteca.jpg';
 import shapeImg from '../../assets/img/testimonial/shape-3-1.png';
 import quoteImg from '../../assets/img/testimonial/quot.png';
 import avatarImg1 from '../../assets/img/avatar/avatar-3-1.png';
@@ -61,31 +61,44 @@ const Testimonial = () => {
                     <SwiperSlide className="swiper-slide">
                       <SingleTestimonialTwo
                         authorAvatar={avatarImg1}
-                        authorName="Jorge Carter"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                          ut aliquipLorem ipsum dolor sit amet, consectetur adipiscing elit."
-                        designation="Software Developer"
+                        authorName="Fabián Sánchez"
+                        description="Estudiar esta increíble carrera me ha motivado a superarme, me ha enseñado que la mayor fuente de 
+                        creatividad es la necesidad y que siempre hay soluciones. Ha despertado una pasión de transformar los negocios 
+                        para un bien mayor. Me ha dado herramientas de liderazgo llevándome a trabajar en rubros tan diferentes con toda 
+                        la preparación necesaria para hacer cosas extraordinarias."
+                        designation="Estudiante"
                       />
                     </SwiperSlide>
                     <SwiperSlide className="swiper-slide">
                       <SingleTestimonialTwo
                         authorAvatar={avatarImg2}
-                        authorName="Gloria Burnett"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                          ut aliquipLorem ipsum dolor sit amet, consectetur adipiscing elit."
-                        designation="Software Developer"
+                        authorName="Laura Arellano"
+                        description="La mejor manera de describir mi experiencia en la carrera de Ingeniería en Innovación Empresarial (IIE) es que ha sido estimulante y valiosa. El ambiente académico 
+                        exige lo mejor de mí, ayudándome a desarrollar todo mi potencial, me siento acompañada en cada paso. Superado mis expectativas, brindándome no solo formación profesional, sino 
+                        también relaciones gratificantes con compañeros y docentes que han sido un impulso en mi crecimiento personal y profesional."
+                        designation="Estudiante"
                       />
                     </SwiperSlide>
                     <SwiperSlide className="swiper-slide">
                       <SingleTestimonialTwo
                         authorAvatar={avatarImg3}
-                        authorName="Laurie Duncanr"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                          ut aliquipLorem ipsum dolor sit amet, consectetur adipiscing elit."
+                        authorName="Dharel Gómez"
+                        description="Estar en la UCB ha sido una experiencia transformadora. A través de mi carrera en Ingeniería en Innovación Empresarial, he comenzado a explorar un camino universitario 
+                        lleno de posibilidades y desafíos, que me impulsan a alcanzar mi máximo potencial. Este entorno me ayudó a desarrollar ingenio y a mantener siempre la mirada hacia nuevas metas. 
+                        Es así, como mi carrera despertó en mí un gusto por lo inusual e innovador, haciendo la diferencia en un mundo inusual.
+"
                         designation="Software Developer"
+                      />
+                    </SwiperSlide>
+
+                    <SwiperSlide className="swiper-slide">
+                      <SingleTestimonialTwo
+                        authorAvatar={avatarImg1}
+                        authorName="Valentino Luna"
+                        description="La carrera de ingeniería en innovación empresarial me enseño muchas cosas, a descubrir habilidades de las cuales nunca hubiera tenido idea de que me gustaban, 
+                        al abarcar la parte tecnológica me gusto poder unir lo administrativo con lo tecnológico y crear una nueva visión y a no ser de mente cerrada, al final el premio son las 
+                        personas que conoces durante esta etapa."
+                        designation="Estudiante"
                       />
                     </SwiperSlide>
                   </Swiper>

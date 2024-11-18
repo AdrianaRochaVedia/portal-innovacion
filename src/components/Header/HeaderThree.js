@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import MenuItems from './MenuItems';
 import MenuItemsOnePage from './MenuItemsOnePage';
-import Logo from '../../assets/img/logo/logo-white-3.png';
+import Logo from '../../assets/img/logo/logo-innovacion-3.png';
 import OffCanvasInsta from '../OffCanvas';
 
 const HeaderThree = (props) => {
@@ -209,7 +209,7 @@ const HeaderThree = (props) => {
                 <span>Location</span>
                 <a
                   href="htits://www.google.com/maps/@37.4801311,22.8928877,3z"
-                  target="_blank"
+                  target="_blank" rel="noreferrer"
                 >
                   Riverside 255, San Francisco.
                 </a>

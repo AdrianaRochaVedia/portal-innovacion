@@ -37,7 +37,7 @@ const FooterTwo = (props) => {
                     <span>Address:</span>
                     <a
                       target="_blank"
-                      href="https://www.google.com/maps/@25.1314121,87.0325089,8.83z?entry=ttu"
+                      href="https://www.google.com/maps/@25.1314121,87.0325089,8.83z?entry=ttu" rel="noreferrer"
                     >
                       1925 Boggess Street
                     </a>

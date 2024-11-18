@@ -116,7 +116,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error />} />
 
-        <Route path="/malla" element={<MallaPage />} />
+        <Route path="/malla" element={<Malla/>} />
       </Routes>
     </div>
   );
