@@ -41,7 +41,7 @@ const Work = () => {
             <SingleWork
               itemClass="it-work-item active"
               iconImage={iconImg2}
-              title="EXPERT TEACHERS"
+              title="EXPERT "
             />
           </div>
           <div

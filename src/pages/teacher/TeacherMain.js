@@ -3,8 +3,8 @@ import Breadcrumb from '../../components/Breadcrumb';
 import SectionTitle from '../../components/SectionTitle';
 import SingleTeamThree from '../../components/Team/SingleTeamThree';
 
-import teamImg1 from '../../assets/img/team/team-4-1.jpg';
-import teamImg2 from '../../assets/img/team/team-4-2.jpg';
+import teamImg1 from '../../assets/img/team/directora.png';
+import teamImg2 from '../../assets/img/team/tiempo-completo.png';
 import teamImg3 from '../../assets/img/team/team-4-3.jpg';
 import teamImg4 from '../../assets/img/team/team-4-4.jpg';
 import teamImg5 from '../../assets/img/team/team-4-5.jpg';
@@ -15,7 +15,7 @@ import teamImg8 from '../../assets/img/team/team-4-8.jpg';
 const TeacherMain = () => {
   return (
     <main>
-      <Breadcrumb title="Teacher" />
+      <Breadcrumb title="DOCENTES" />
 
       <div className="ed-team-area p-relative inner-style fix z-index pt-110 pb-90">
         <div className="container">
@@ -25,9 +25,9 @@ const TeacherMain = () => {
                 <SectionTitle
                   itemClass="it-team-title-box text-center"
                   subTitleClass="ed-section-subtitle"
-                  subTitle="Teacher"
+                  subTitle="DOCENTES"
                   titleClass="ed-section-title"
-                  title="Meet Our Instructor"
+                  title="Conoce a nuestros docentes"
                 />
               </div>
             </div>
@@ -36,57 +36,57 @@ const TeacherMain = () => {
             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
               <SingleTeamThree
                 teamImage={teamImg1}
-                authorName="Micheal Hammond"
-                designation="Teacher"
+                authorName="Mgr. Jessica Lanza"
+                designation="Directora de Carrera"
               />
             </div>
             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
               <SingleTeamThree
                 teamImage={teamImg2}
-                authorName="Cheryl Curry"
-                designation="Teacher"
+                authorName="Prof. Marco Javier Villavicencio"
+                designation="Docente tiempo completo"
               />
             </div>
             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
               <SingleTeamThree
                 teamImage={teamImg3}
                 authorName="Willie Diaz"
-                designation="Teacher"
+                designation="Docente"
               />
             </div>
             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
               <SingleTeamThree
                 teamImage={teamImg4}
                 authorName="Jimmy Sifuentes"
-                designation="Teacher"
+                designation="Docente"
               />
             </div>
             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
               <SingleTeamThree
                 teamImage={teamImg5}
                 authorName="Justin Clark"
-                designation="Teacher"
+                designation="Docente"
               />
             </div>
             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
               <SingleTeamThree
                 teamImage={teamImg6}
                 authorName="Walter Skeete"
-                designation="Teacher"
+                designation="Docente"
               />
             </div>
             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
               <SingleTeamThree
                 teamImage={teamImg7}
                 authorName="Willie Diaz"
-                designation="Teacher"
+                designation="Docente"
               />
             </div>
             <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
               <SingleTeamThree
                 teamImage={teamImg8}
                 authorName="Ann Dooley"
-                designation="Teacher"
+                designation="Docente"
               />
             </div>
           </div>
