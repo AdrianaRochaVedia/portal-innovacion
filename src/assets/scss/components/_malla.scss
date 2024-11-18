@@ -1,0 +1,74 @@
+.table-container {
+    overflow-x: auto;
+    margin: 1rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.curriculum-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+
+    th, td {
+        padding: 0.4rem;
+    }
+
+    .mallaSemestresNum{
+        background-color: #0077b6;
+        color: #fff;
+    }
+
+    .header {
+        background-color: #001b2e;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    .materia-row {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 0.2rem;
+
+        .materia-cell {
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 33%;
+            transition: background-color 0.3s;
+            font-size: 0.6rem;
+            line-height: 0.7rem;
+    
+            &:hover {
+                background-color: #d4ebf8;
+            }
+    
+            &.prerequisitoHighlight {
+                background-color: rgba(255, 0, 0, 0.521);
+            }
+            
+            &.abreHighlight {
+                background-color: rgba(0, 255, 0, 0.445);
+            }
+
+            .mallaNombreMateria {
+                font-weight: bold;
+            }
+        }
+    }
+    
+}
+ 
+
+@media (max-width: 768px) {
+    .curriculum-table th, 
+    .curriculum-table td {
+        font-size: 0.8rem;
+    }
+
+    .materia-cell {
+        font-size: 0.9rem;
+    }
+}
