@@ -48,6 +48,7 @@ import {
   Testimonial,
 
   MallaPage,
+  AlumniMain,
 } from '../pages';
 import MainPage from '../main/home';
 
@@ -116,7 +117,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error />} />
 
-        <Route path="/malla" element={<Malla/>} />
+        <Route path="/malla" element={<MallaPage/>} />
+        <Route path="/alumni" element={<AlumniMain />} />
       </Routes>
     </div>
   );

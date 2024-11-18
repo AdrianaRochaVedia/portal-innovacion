@@ -39,6 +39,7 @@ import BlogDetails from './blog/blog-details';
 import Contact from './contact';
 
 import MallaPage from './mallaPage';
+import AlumniMain from './Alumni';
 
 export {
   Home,
@@ -82,4 +83,5 @@ export {
   Contact,
 
   MallaPage,
+  AlumniMain,
 };

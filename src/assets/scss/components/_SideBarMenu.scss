@@ -1,0 +1,87 @@
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    background-color: rgba(70, 61, 61, 0.541);
+    width: 30px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+  
+    &.open {
+      width: 200px;
+    }
+  
+    .menu-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin-top: 30px;
+  
+      .menu-item {
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        height: 100%;
+        margin-bottom: 10px;
+  
+        a {
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          transition: color 0.3s;
+          height: 100%;
+  
+          .dot-line {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 10px;
+            height: 100%;
+  
+            .dot {
+              width: 10px;
+              height: 10px;
+              background-color: #dad7d7; // Color por defecto
+              border-radius: 50%;
+              transition: background-color 0.3s;
+              margin-top: 5px;
+            }
+  
+            .dot.active {
+              background-color: #fff; // Cambia el color del punto al seleccionar
+            }
+  
+            .line {
+              width: 2px;
+              background-color: #dad7d7;
+              flex-grow: 1;
+              height: 30px;
+              margin-top: 10px;
+            }
+          }
+  
+          .menu-text {
+            align-self: flex-start;
+            font-size: 14px;
+            white-space: nowrap;
+            font-weight: normal;
+            color: #dad7d7;
+            transition: color 0.3s, font-weight 0.3s;
+          }
+        }
+  
+        &.active {
+          .menu-text {
+            color: #fff; // Cambia el texto al seleccionarlo
+            font-weight: bold; // Negrita
+          }
+        }
+      }
+    }
+  }
