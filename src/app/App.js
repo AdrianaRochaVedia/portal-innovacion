@@ -46,8 +46,6 @@ import {
   Teacher,
   TeacherDetails,
   Testimonial,
-
-  Malla,
 } from '../pages';
 import MainPage from '../main/home';
 
