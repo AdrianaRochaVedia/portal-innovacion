@@ -23,7 +23,7 @@ const Video = () => {
       <ModalVideo
         channel="youtube"
         isOpen={isOpen}
-        videoId="PO_fBTkoznc"
+        videoId="OoGag_ok91A"
         onClose={() => openModal()}
       />
       <div className="it-video-shape-2 d-none d-lg-block">
@@ -41,25 +41,25 @@ const Video = () => {
             <div className="it-video-content">
               <span className="it-section-subtitle-5 sky">
                 <img src={subTitleSVG} alt="" />
-                are you ready for this offer
+                ¿ESTÁS LISTO PARA REVOLUCIONAR EL MUNDO EMPRESARIAL?
               </span>
-              <h3 className="it-video-title">40% offer for very first 100</h3>
+              <h3 className="it-video-title">Conoce más sobre nuestra carrera en este video y prepárate para 
+              convertir tus sueños en acciones concretas que impulsen el éxito empresarial.</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor <br />
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                veniam, quis <br />
-                nostrud exercitation ullamco laboris nisi.
+                Descubre cómo Ingeniería en Innovación Empresarial te prepara para 
+                liderar el cambio,  <br />
+                transformar ideas en grandes proyectos y convertirte en el profesional que 
+                las empresas de hoy necesitan. <br />
               </p>
               <div className="it-video-button">
                 <Link
                   className="ed-btn-square theme mr-25"
                   to="/student-registration"
                 >
-                  <span>admission Now</span>
+                  <span>Nuestros aliados</span>
                 </Link>
-                <Link className="ed-btn-square purple-3" to="/course-details">
-                  <span>Our Courses</span>
+                <Link className="ed-btn-square purple-3" to="/malla">
+                  <span>Nuestra malla</span>
                 </Link>
               </div>
             </div>

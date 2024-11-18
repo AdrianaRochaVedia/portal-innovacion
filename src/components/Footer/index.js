@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import bgImg from '../../assets/img/footer/bg-1-1.jpg';
-import Logo from '../../assets/img/logo/logo-white.png';
+import Logo from '../../assets/img/logo/logo-innovacion-3.png';
 import footerImg1 from '../../assets/img/footer/thumb-1-1.png';
 import footerImg2 from '../../assets/img/footer/thumb-1-2.png';
 import footerImg3 from '../../assets/img/footer/thumb-1-3.png';

@@ -4,8 +4,8 @@ import MenuItems from './MenuItems';
 import MenuItemsOnePage from './MenuItemsOnePage';
 import OffCanvasInsta from '../OffCanvas';
 
-import LogoWhite from '../../assets/img/logo/logo-white-2.png';
-import Logo from '../../assets/img/logo/logo-black-3.png';
+import LogoWhite from '../../assets/img/logo/logo-innovacion-3.png';
+import Logo from '../../assets/img/logo/logo-innovacion-3.png';
 
 const HeaderFour = (props) => {
   const { headerClass, headerLogo, onePage, parentMenu } = props;
@@ -136,7 +136,7 @@ const HeaderFour = (props) => {
                       <a
                         className="hover-anim"
                         target="_blank"
-                        href="https://www.google.com/maps/@24.0161372,45.4773,7.67z?entry=ttup"
+                        href="https://www.google.com/maps/@24.0161372,45.4773,7.67z?entry=ttup" rel="noreferrer"
                       >
                         <span>
                           <i className="fal fa-map-marker-alt"></i>
@@ -387,7 +387,7 @@ const HeaderFour = (props) => {
                 <span>Location</span>
                 <a
                   href="htits://www.google.com/maps/@37.4801311,22.8928877,3z"
-                  target="_blank"
+                  target="_blank" rel="noreferrer"
                 >
                   Riverside 255, San Francisco.
                 </a>

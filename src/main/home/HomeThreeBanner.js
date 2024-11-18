@@ -76,11 +76,11 @@ const Banner = () => {
                           </div>
                           <div className="ed-slider-title text-white">
                             <div>
-                              <span>INGENIERIA EN</span>
+                              <span>INGENIERÍA EN</span>
                             </div>
                             <div>
                               <span>
-                                INNOVACION 
+                                INNOVACIÓN 
                                 <i> EMPRESARIAL</i>
                               </span>
                             </div>
@@ -147,11 +147,11 @@ const Banner = () => {
                           </div>
                           <div className="ed-slider-title text-white">
                             <div>
-                              <span>INGENIERIA EN</span>
+                              <span>INGENIERÍA EN</span>
                             </div>
                             <div>
                               <span>
-                                INNOVACION 
+                                INNOVACIÓN 
                                 <i> EMPRESARIAL</i>
                               </span>
                             </div>

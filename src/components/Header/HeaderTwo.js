@@ -8,7 +8,7 @@ import OffCanvasInsta from '../OffCanvas';
 import svgImg1 from '../../assets/img/header/4.svg';
 import svgImg2 from '../../assets/img/header/5.svg';
 import Logo from '../../assets/img/logo/logo-black-2.png';
-import LogoWhite from '../../assets/img/logo/logo-white-2.png';
+import LogoWhite from '../../assets/img/logo/logo-innovacion-3.png';
 
 const HeaderTwo = (props) => {
   const { headerClass, headerLogo, onePage, parentMenu } = props;
@@ -142,7 +142,7 @@ const HeaderTwo = (props) => {
                       </i>
                       <a
                         target="_blank"
-                        href="https://www.google.com/maps/@24.0161372,45.4773,7.67z?entry=ttu"
+                        href="https://www.google.com/maps/@24.0161372,45.4773,7.67z?entry=ttu" rel="noreferrer"
                       >
                         Hudson, Wisconsin(WI), 54016
                       </a>
@@ -346,7 +346,7 @@ const HeaderTwo = (props) => {
                 <span>Location</span>
                 <a
                   href="htits://www.google.com/maps/@37.4801311,22.8928877,3z"
-                  target="_blank"
+                  target="_blank" rel="noreferrer"
                 >
                   Riverside 255, San Francisco.
                 </a>
