@@ -18,13 +18,13 @@ const HomeThreeMain = () => {
       <Banner />
       <Category />
       <About />
-      <FunFact />
-      <Course />
-      <Video />
-      <Work />
-      <Career />
+      {/* <FunFact /> */}
+      {/* <Course /> */}
+      {/* <Video /> */}
+      {/* <Work /> */}
+      {/* <Career /> */}
       <Testimonial />
-      <Contact />
+      {/* <Contact /> */}
       <Event />
       <Blog />
     </main>
