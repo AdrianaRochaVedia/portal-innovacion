@@ -49,6 +49,7 @@ import {
 
   MallaPage,
   AlumniMain,
+  CentroMain,
 } from '../pages';
 import MainPage from '../main/home';
 
@@ -119,6 +120,7 @@ function App() {
 
         <Route path="/malla" element={<MallaPage/>} />
         <Route path="/alumni" element={<AlumniMain />} />
+        <Route path="/centro" element={<CentroMain />} />
       </Routes>
     </div>
   );

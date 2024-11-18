@@ -40,6 +40,7 @@ import Contact from './contact';
 
 import MallaPage from './mallaPage';
 import AlumniMain from './Alumni';
+import CentroMain from './centro/CentroMain';
 
 export {
   Home,
@@ -60,6 +61,7 @@ export {
   EventDetails,
   Teacher,
   TeacherDetails,
+  CentroMain,
   InstructorRegistration,
   Service,
   ServiceTwo,
