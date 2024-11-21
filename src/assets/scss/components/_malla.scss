@@ -13,7 +13,7 @@
     text-align: center;
 
     th, td {
-        padding: 0.4rem;
+        padding: 0.3rem;
     }
 
     .mallaSemestresNum{
@@ -30,17 +30,17 @@
     .materia-row {
         display: flex;
         justify-content: flex-start;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.1rem;
 
         .materia-cell {
-            padding: 0.5rem;
+            padding: 0.3rem;
             border-radius: 5px;
             cursor: pointer;
-            width: 33%;
+            max-width: 35%;
             transition: background-color 0.3s;
             font-size: 0.6rem;
-            line-height: 0.6rem;
-    
+            line-height: 0.7rem;
+
             &:hover {
                 background-color: #d4ebf8;
             }
@@ -57,18 +57,21 @@
                 font-weight: bold;
             }
         }
-    }
-    
+    }    
+}
+
+#materia-L-1, #materia-L-2{
+    max-width: 100%;
 }
  
 
 @media (max-width: 768px) {
     .curriculum-table th, 
     .curriculum-table td {
-        font-size: 0.8rem;
+        font-size: 0.4rem;
     }
 
     .materia-cell {
-        font-size: 0.9rem;
+        font-size: 0.5rem;
     }
 }
