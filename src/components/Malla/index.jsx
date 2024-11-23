@@ -68,7 +68,7 @@ const materias = [
 
 ];
 
-const Malla = () => {
+const Malla = () => { // Agregar el const Malla = ({ materias, titulares }) para recibir como props
     const [selectedMateria, setSelectedMateria] = useState(null);
 
     const groupedBySemestre = materias.reduce((acc, materia) => {

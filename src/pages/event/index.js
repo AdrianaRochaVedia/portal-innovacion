@@ -9,9 +9,7 @@ const Event = () => {
   return (
     <>
       <HeaderFive />
-
       <EventMain />
-
       <FooterTwo
         footerClass="it-footer-area it-footer-bg it-footer-style-5 ed-footer-style-5 inner-style black-bg pb-70"
         footerLogo={Logo}

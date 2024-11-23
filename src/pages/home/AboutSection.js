@@ -1,96 +1,93 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SectionTitleSpecial from '../../components/SectionTitle/SectionTitleSpecial';
-import RightArrow from '../../components/SVG';
+import SectionTitle from '../../components/SectionTitle';
 
-import shapeImg1 from '../../assets/img/about/shape-1-4.png';
-import shapeImg2 from '../../assets/img/about/ed-shape-1-1.png';
-import aboutImg1 from '../../assets/img/about/ed-about-1-1.jpg';
-import aboutImg2 from '../../assets/img/about/ed-about-1-2.jpg';
-import aboutImg3 from '../../assets/img/about/ed-about-1-3.jpg';
+import shapeImg1 from '../../assets/img/about/about-3-shap-1.png';
+import shapeImg2 from '../../assets/img/about/ed-shape-3-1.png';
+import aboutImg1 from '../../assets/img/about/thumb-4-1.jpg';
+import aboutImg2 from '../../assets/img/about/thumb-4-2.jpg';
+import titleImg from '../../assets/img/category/title.svg';
 
 const About = () => {
+  const items = [
+    {
+      icon: 'flaticon-video-1',
+      title: 'Beneficios de estudiar esta carrera en la U.C.B.',
+      description: [
+        'Podrás desempeñarte en varios ámbitos gerenciales, proyectos de desarrollo, inteligencia de negocios, tecnología y sistemas de información empresarial y más.',
+        'Tendrás la oportunidad de generar emprendimientos propios y soluciones empresariales innovadoras ante problemas y necesidades de la sociedad de nuestro país.'
+      ]
+    },
+    {
+      icon: 'flaticon-puzzle',
+      title: '¿Dónde podrás trabajar?',
+      description: [
+        'En instituciones del sector financiero: Banca, Seguros, SAFIS.',
+        'En empresas industriales de todos los rubros, en las áreas de operaciones, tecnología y gestión.',
+        'Desarrollando su propio emprendimiento, a través de planes de negocio.',
+        'Consultoría a todo tipo de empresas que requieren incluir a la innovación en su gestión empresarial.'
+      ]
+    },
+  ];
   return (
     <div
       id="it-about"
-      className="it-about-area ed-about-style-2 p-relative pt-185 pb-185"
+      className="it-about-3-area it-about-4-style p-relative grey-bg pt-120 pb-120"
     >
-      <div className="it-about-shape-4 d-none d-md-block">
+      <div className="ed-about-3-shape-2">
         <img src={shapeImg1} alt="" />
       </div>
       <div className="container">
         <div className="row align-items-center">
-          <div
-            className="col-xl-6 col-lg-6 wow animate__fadeInLeft"
-            data-wow-duration=".9s"
-            data-wow-delay=".5s"
-          >
-            <div className="ed-about-thumb-box p-relative">
-              <div className="ed-about-thumb-1">
-                <img src={aboutImg1} alt="" />
-              </div>
-              <div className="ed-about-thumb-2">
-                <img src={aboutImg2} alt="" />
-              </div>
-              <div className="ed-about-thumb-3">
-                <img src={aboutImg3} alt="" />
-              </div>
-              <div className="ed-about-shape-1 d-none d-md-block">
+          <div className="col-xl-6 col-lg-6">
+            <div className="ed-about-3-thumb-wrap p-relative">
+              <div className="ed-about-3-shape-1 d-none d-md-block">
                 <img src={shapeImg2} alt="" />
               </div>
-              <div className="ed-about-experience d-none d-md-block">
-                <span>
-                  <b>8+</b> <br />
-                  Years Of <br />
-                  Experiences
-                </span>
+              <div className="ed-about-3-thumb">
+                <img src={aboutImg1} alt="" />
+              </div>
+              <div className="ed-about-3-thumb-sm">
+                <img src={aboutImg2} alt="" />
               </div>
             </div>
           </div>
-          <div
-            className="col-xl-6 col-lg-6 wow animate__fadeInRight"
-            data-wow-duration=".9s"
-            data-wow-delay=".7s"
-          >
-            <div className="it-about-right-box">
-              <SectionTitleSpecial
-                itemClass="it-about-title-box mb-20 section-title-fixed-width"
-                subTitle="Our about us"
-                preTitle="Learn & Grow your"
-                highlightText="skills"
-                postTitle="From anywhere"
-              />
+          <div className="col-xl-6 col-lg-6">
+            <SectionTitle
+              itemClass="it-about-3-title-box"
+              subTitleClass="it-section-subtitle-5 purple-2"
+              subTitle="ACERCA DE NUESTRA CARRERA"
+              titleClass="it-section-title-3 pb-30"
+              title="IDENTIFICA SOLUCIONES EMPRESARIALES Y ENCUENTRA OPORTUNIDADES DE NEGOCIO"
+              titleImage=""
+              description=" "
+            />
 
-              <div className="it-about-text pb-10">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris..
-                </p>
+            <div className="it-about-3-mv-box">
+              <div className="row">
+                {items.map((item, index) => (
+                  <div key={index} className="col-xl-12">
+                    <div className="it-about-4-list-wrap d-flex align-items-start">
+                      <div className="it-about-4-list-icon">
+                        <span>
+                          <i className={item.icon}></i>
+                        </span>
+                      </div>
+                      <div className="it-about-3-mv-item">
+                        <span className="it-about-3-mv-title">
+                          {item.title}
+                        </span>
+                        <div>
+                          {item.description.map((item, index) =>
+                            <p>• {item}</p>
+                          ) 
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div className="it-about-content-wrapper d-flex align-items-center justify-content-between pb-15">
-                <div className="it-about-content">
-                  <h5>Flexible classNamees</h5>
-                  <p>
-                    Suspendisse ultrice gravida dictum fusce placerat ultricies
-                    integer quis auctor elit sed vulputate mi sit.
-                  </p>
-                </div>
-                <div className="it-about-content">
-                  <h5>Flexible classNamees</h5>
-                  <p>
-                    Suspendisse ultrice gravida dictum fusce placerat ultricies
-                    integer quis auctor elit sed vulputate mi sit.
-                  </p>
-                </div>
-              </div>
-              <Link className="ed-btn-theme" to="/about-us">
-                Load More
-                <i>
-                  <RightArrow />
-                </i>
-              </Link>
             </div>
           </div>
         </div>
