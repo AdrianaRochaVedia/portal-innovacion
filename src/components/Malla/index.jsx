@@ -53,7 +53,7 @@ const materias = [
 
     { id: 34, sigla: "SIS-141", nombre: "Introducción a los Sistemas de Información", prerequisitos: [], abre: ["SIS-143"], semestre: 2, titular: "TECNOLOGÍA Y SISTEMAS DE INFORMACIÓN", costo: "UVE 5" },
     { id: 35, sigla: "SIS-111", nombre: "Introducción a la Programación", prerequisitos: [], abre: ["SIS-112"], semestre: 2, titular: "TECNOLOGÍA Y SISTEMAS DE INFORMACIÓN", costo: "UVE 6" },
-    { id: 36, sigla: "SIS-143", nombre: "Sistemas de Información", prerequisitos: ["SIS-141"], abre: ["IIE-300"], semestre: 3, titular: "TECNOLOGÍA Y SISTEMAS DE INFORMACIÓN", costo: "UVE 7" },
+    { id: 36, sigla: "SIS-143", nombre: "Sistemas de Información", prerequisitos: ["SIS-141"], abre: ["ICO-131"], semestre: 3, titular: "TECNOLOGÍA Y SISTEMAS DE INFORMACIÓN", costo: "UVE 7" },
     { id: 37, sigla: "SIS-112", nombre: "Programación I", prerequisitos: ["SIS-111"], abre: [], semestre: 3, titular: "TECNOLOGÍA Y SISTEMAS DE INFORMACIÓN", costo: "UVE 6" },
     { id: 38, sigla: "ICO-131", nombre: "Tecnologías y Sistemas de Información", prerequisitos: ["SIS-143"], abre: ["IIE-300","ICO-233","IIE-201","IMT-313"], semestre: 4, titular: "TECNOLOGÍA Y SISTEMAS DE INFORMACIÓN", costo: "UVE 5" },
     { id: 39, sigla: "IIE-201", nombre: "Informática Aplicada a la Gestión Empresarial", prerequisitos: ["ICO-131"],abre: [], semestre: 5, titular: "TECNOLOGÍA Y SISTEMAS DE INFORMACIÓN", costo: "UVE 6" },

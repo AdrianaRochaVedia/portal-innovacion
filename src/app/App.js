@@ -30,6 +30,8 @@ import {
   CentroMain,
   News,
   NewsDetails,
+  ScePage,
+  OportunidadPage,
 } from '../pages';
 import MainPage from '../pages/home';
 
@@ -79,6 +81,8 @@ function App() {
         <Route path="/centro" element={<CentroMain />} />
         <Route path="/news" element={<News/>}/>
         <Route path="/news-details" element={<NewsDetails/>}/>
+        <Route path="/sce" element={<ScePage/>}/>
+        <Route path="/oportunidades" element={<OportunidadPage/>}/>
       </Routes>
     </div>
   );

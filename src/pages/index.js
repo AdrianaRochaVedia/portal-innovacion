@@ -22,6 +22,8 @@ import AlumniMain from './Alumni';
 import CentroMain from './centro/CentroMain';
 import News from './News';
 import NewsDetails from './News/NewsDetails';
+import ScePage from './sce';
+import OportunidadPage from './oportunidades';
 
 export {
   Home,
@@ -47,4 +49,6 @@ export {
   AlumniMain,
   NewsDetails,
   News,
+  ScePage,
+  OportunidadPage,
 };
