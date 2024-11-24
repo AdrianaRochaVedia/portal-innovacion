@@ -10,17 +10,19 @@ import FunFact from './FunFactSection';
 import Banner from './HomeThreeBanner';
 import Testimonial from './TestimonialSection';
 import Video from './VideoSection';
+import Work from './WorkSection';
 
 const HomeThreeMain = () => {
   return (
     <main>
       <Banner />
-      <Career />
       <Category />
       <About />
       {/* <FunFact /> */}
       <Course />
       <Video />
+      <Work />
+      <Career />
       <Testimonial />
       {/* <Contact /> */}
       <Event />
