@@ -13,7 +13,7 @@ const Sidebar = () => {
       id: 1,
       postImage: postImg1,
       publishedDate: 'June 2023',
-      postTitle: 'Interdum velit laoreet id donec ultrices tincidunt arcu.',
+      postTitle: 'Semana empresarial.',
     },
     {
       id: 2,
