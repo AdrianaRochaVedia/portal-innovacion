@@ -17,8 +17,7 @@ const SingleCareerTwo = (props) => {
     >
       <div className="it-career-content">
         <span className="it-section-subtitle-5 sky">
-          <img src={subTitleImg ? subTitleImg : svgImg} alt="" />
-          {title ? title : 'popular courses'}
+          <img src={subTitleImg ? subTitleImg : ""} alt="" />
         </span>
         <p>
           get the best courses & <br />
