@@ -84,55 +84,6 @@ const HeaderThree = (props) => {
                           </svg>
                         </button>
                       </div>
-                      <div className="ed-header-3-shop ml-25 d-none d-lg-block">
-                        <Link to="/cart">
-                          <span>
-                            <svg
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <path
-                                d="M7.5 7.67V6.7C7.5 4.45 9.31 2.24 11.56 2.03C14.24 1.77 16.5 3.88 16.5 6.51V7.89"
-                                stroke="currentcolor"
-                                strokeWidth="1.5"
-                                strokeMiterlimit="10"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                              <path
-                                d="M9.00007 22H15.0001C19.0201 22 19.7401 20.39 19.9501 18.43L20.7001 12.43C20.9701 9.99 20.2701 8 16.0001 8H8.00007C3.73007 8 3.03007 9.99 3.30007 12.43L4.05007 18.43C4.26007 20.39 4.98007 22 9.00007 22Z"
-                                stroke="currentcolor"
-                                strokeWidth="1.5"
-                                strokeMiterlimit="10"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                              <path
-                                d="M15.4955 12H15.5045"
-                                stroke="currentcolor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                              <path
-                                d="M8.49451 12H8.50349"
-                                stroke="currentcolor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              />
-                            </svg>
-                          </span>
-                        </Link>
-                      </div>
-                      <div className="ed-header-3-button d-none d-lg-block">
-                        <Link className="ed-btn-square" to="/contact">
-                          get a free quote
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -158,12 +109,6 @@ const HeaderThree = (props) => {
               <img src={Logo} alt="" />
             </Link>
           </div>
-          <div className="itoffcanvas__text">
-            <p>
-              Suspendisse interdum consectetur libero id. Fermentum leo vel orci
-              porta non. Euismod viverra nibh cras pulvinar suspen.
-            </p>
-          </div>
           <div className="it-menu-mobile d-xl-none">
             {!onePage ? (
               <MenuItems mobileMenu="show" />
@@ -176,7 +121,7 @@ const HeaderThree = (props) => {
             )}
           </div>
           <div className="itoffcanvas__info">
-            <h3 className="offcanva-title">Get In Touch</h3>
+            <h3 className="offcanva-title">Mantente en contacto</h3>
             <div className="it-info-wrapper mb-20 d-flex align-items-center">
               <div className="itoffcanvas__info-icon">
                 <a href="#">
@@ -184,8 +129,8 @@ const HeaderThree = (props) => {
                 </a>
               </div>
               <div className="itoffcanvas__info-address">
-                <span>Email</span>
-                <a href="maito:hello@yourmail.com">hello@yourmail.com</a>
+                <span>Correo electrónico</span>
+                <a href="maito:innovacion@ucb.edu.bo">innovacion@ucb.edu.bo</a>
               </div>
             </div>
             <div className="it-info-wrapper mb-20 d-flex align-items-center">
@@ -195,8 +140,8 @@ const HeaderThree = (props) => {
                 </a>
               </div>
               <div className="itoffcanvas__info-address">
-                <span>Phone</span>
-                <a href="tel:(00)45611227890">(00) 456 1122 7890</a>
+                <span>Teléfono</span>
+                <a href="tel:(+591)2782222">(+591) 2782222</a>
               </div>
             </div>
             <div className="it-info-wrapper mb-20 d-flex align-items-center">
@@ -206,12 +151,12 @@ const HeaderThree = (props) => {
                 </a>
               </div>
               <div className="itoffcanvas__info-address">
-                <span>Location</span>
+                <span>Dirección</span>
                 <a
                   href="htits://www.google.com/maps/@37.4801311,22.8928877,3z"
                   target="_blank" rel="noreferrer"
                 >
-                  Riverside 255, San Francisco.
+                  Av. 14 de Septiembre N° 4807, Obrajes
                 </a>
               </div>
             </div>

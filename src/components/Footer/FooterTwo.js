@@ -26,12 +26,12 @@ const FooterTwo = (props) => {
                     </span>
                   </div>
                   <div className="it-footer-top-text">
-                    <span>Address:</span>
+                    <span>Dirección:</span>
                     <a
                       target="_blank"
                       href="https://g.co/kgs/u81c7N6" rel="noreferrer"
                     >
-                      Universidad Católica Boliviana "San Pablo"
+                      Av. 14 de Septiembre N° 4807, Obrajes
                     </a>
                   </div>
                 </div>
@@ -44,7 +44,7 @@ const FooterTwo = (props) => {
                     </span>
                   </div>
                   <div className="it-footer-top-text">
-                    <span>Phone:</span>
+                    <span>Teléfono:</span>
                     <a href="tel:00875784568">2782222</a>
                   </div>
                 </div>
@@ -57,8 +57,8 @@ const FooterTwo = (props) => {
                     </span>
                   </div>
                   <div className="it-footer-top-text">
-                    <span>Email:</span>
-                    <a href="mailto:info@gmail.com">sreintsch@ucb.edu.bo</a>
+                    <span>Correo electrónico:</span>
+                    <a href="mailto:info@gmail.com">innovacion@ucb.edu.bo</a>
                   </div>
                 </div>
               </div>
@@ -78,13 +78,6 @@ const FooterTwo = (props) => {
                     <Link to="/">
                       <img src={Logo} alt="" />
                     </Link>
-                  </div>
-                  <div className="it-footer-text pb-5">
-                    <p>
-                      Interdum velit laoreet id donec ultrices <br />
-                      tincidunt arcu. Tincidunt tortor aliqua <br />
-                      mfacilisi cras fermentum odio eu.
-                    </p>
                   </div>
                   <div className="it-footer-social">
                     <a href="#">
@@ -145,8 +138,7 @@ const FooterTwo = (props) => {
                 }
               >
                 <p>
-                  Copyright &copy; 2024 <a href="">UCB </a> || All Rights
-                  Reserved
+                  Copyright &copy; 2024 <a href="">UCB </a> || Todos los derechos reservados
                 </p>
               </div>
             </div>
