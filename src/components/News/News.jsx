@@ -13,8 +13,7 @@ const News = (props) => {
     title,
     btnClass,
     btnText,
-    idNoticia,
-    likes,
+    id,
   } = props;
 
   const sliderOption = {
@@ -67,21 +66,21 @@ const News = (props) => {
           </span>
         </div>
         <h4 className="postbox__details-title">
-          <Link to="/blog-details">
-            {title
-              ? title
-              : 'Curabitur at fermentum purus. Interdum et malesuada fames ac ante ipsum'}
-          </Link>
+        <Link to={`/news-details/${id}`}>
+          {title
+            ? title
+            : 'Curabitur at fermentum purus. Interdum et malesuada fames ac ante ipsum'}
+        </Link>
         </h4>
-        <a
+        <Link
           className={btnClass ? btnClass : 'ed-btn-theme'}
-          href={idNoticia ? idNoticia : '/news-detail'}
+          to={`/news-details/${id}`}
         >
           {btnText ? btnText : 'read more'}
           <i>
             <RightArrow />
           </i>
-        </a>
+        </Link>
       </div>
     </div>
   );

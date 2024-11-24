@@ -30,9 +30,9 @@ const SingleTeamThree = (props) => {
         </div>
         <div className="ed-team-author-box">
           <h4 className="ed-team-title">
-            <Link to="/teacher-details">
+            <span>
               {authorName ? authorName : 'Micheal Hammond'}
-            </Link>
+            </span>
           </h4>
           <span>{designation ? designation : 'Teacher'}</span>
         </div>
