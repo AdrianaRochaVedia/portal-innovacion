@@ -16,8 +16,9 @@ const Career = () => {
           >
             <SingleCareerTwo
               itemClass="it-career-item theme-bg p-relative fix"
-              careerImage={careerImg1}
-              btnClass="ed-btn-square hover-2 sm"
+              careerImage=" "
+              title="MISIÓN"
+              subTitle="Formar profesionales competentes que sobresalen por proporcionar soluciones eficaces a procesos de gestión, innovación y tecnología demostrando serio compromiso con la excelencia y sólidos valores, y contribuyendo al desarrollo y competitividad de organizaciones nacionales e internacionales."
             />
           </div>
           <div
@@ -26,9 +27,10 @@ const Career = () => {
             data-wow-delay=".7s"
           >
             <SingleCareerTwo
-              itemClass="it-career-item black-bg p-relative fix"
-              careerImage={careerImg2}
-              btnClass="ed-btn-square hover-2 sm purple-3"
+              itemClass="it-career-item theme-bg p-relative fix"
+              careerImage=" "
+              title="VISIÓN"
+              subTitle="Formar profesionales competentes que sobresalen por proporcionar soluciones eficaces a procesos de gestión, innovación y tecnología demostrando serio compromiso con la excelencia y sólidos valores, y contribuyendo al desarrollo y competitividad de organizaciones nacionales e internacionales."
             />
           </div>
         </div>

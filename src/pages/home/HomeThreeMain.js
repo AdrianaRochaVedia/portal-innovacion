@@ -17,7 +17,6 @@ const HomeMain = () => {
       <Category />
       <About />
       {/* <FunFact /> */}
-      <Course />
       <Video />
       <Testimonial />
       {/* <Contact /> */}
