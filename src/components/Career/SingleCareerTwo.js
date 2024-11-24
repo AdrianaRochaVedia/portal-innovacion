@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import svgImg from '../../assets/img/video/svg.svg';
 import Image from '../../assets/img/career/thumb-1.png';
 import shapeImg from '../../assets/img/career/shape-1.png';
 
 const SingleCareerTwo = (props) => {
-  const { itemClass, subTitleImg, title, careerImage, btnClass, btnText } =
+  const { subTitle, itemClass, subTitleImg, title, careerImage, btnClass, btnText } =
     props;
 
   return (
@@ -19,16 +18,8 @@ const SingleCareerTwo = (props) => {
         <span className="it-section-subtitle-5 sky">
           <img src={subTitleImg ? subTitleImg : ""} alt="" />
         </span>
-        <p>
-          get the best courses & <br />
-          Upgrade your skills
-        </p>
-        <Link
-          className={btnClass ? btnClass : 'ed-btn-square hover-2 sm'}
-          to="/student-registration"
-        >
-          {btnText ? btnText : 'Join with us'}
-        </Link>
+        <h1>{title}</h1>
+        <p>{subTitle}</p>
       </div>
       <div className="it-career-thumb">
         <img src={careerImage ? careerImage : Image} alt="" />

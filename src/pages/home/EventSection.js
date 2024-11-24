@@ -28,9 +28,9 @@ const Event = () => {
               <SectionTitle
                 itemClass="it-event-2-title-box text-center"
                 subTitleClass="it-section-subtitle-5 purple-2"
-                subTitle="Our Events"
+                subTitle="NUESTRA CARRERA"
                 titleClass="it-section-title-3"
-                title="yearly events and program"
+                title="EVENTOS Y ACTIVIDADES"
                 titleImage={titleImg}
               />
             </div>

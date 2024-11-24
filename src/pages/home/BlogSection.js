@@ -19,17 +19,17 @@ const Blog = () => {
               <div className="it-blog-title-box">
                 <span className="it-section-subtitle-5 purple-2">
                   <img src={titleImg} alt="" />
-                  Popular courses
+                  COMUNIDAD EDUCATIVA
                 </span>
                 <h4 className="ed-section-title">
-                  Our latest news <br /> & upcoming blog posts
+                  NOTICIAS Y POST
                 </h4>
               </div>
             </div>
             <div className="col-xl-4 col-lg-4 col-md-4">
               <div className="it-blog-button text-start text-md-end">
                 <Link className="ed-btn-square" to="/blog-1">
-                  <span>view all recent post</span>
+                  <span>VER MAS {">>"}</span>
                 </Link>
               </div>
             </div>
