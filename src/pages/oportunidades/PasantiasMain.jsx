@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 import Listado from '../../components/oportunidades/Listado';
+
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { getEmpresas } from './../../redux/empresas/thunk';
 
 const companiesData = [
     {
@@ -120,6 +124,14 @@ const companiesData = [
 ];
 
 const PasantiasMain = () => {
+
+  const dispatch = useDispatch()
+  const empresasState = useSelector((state) => state.empresas);
+  useEffect(() => {
+    dispatch(getEmpresas())
+  }, [dispatch])
+
+  
   return (
     <main>
       <Breadcrumb title="PRACTICAS PREPROFESIONALES" />

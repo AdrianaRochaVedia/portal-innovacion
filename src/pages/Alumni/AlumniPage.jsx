@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 import Alumni from '../../components/AlumniCard';
+import { useDispatch } from 'react-redux';
+import { getGraduados } from '../../redux/alumni/thunk';
+import { useSelector } from 'react-redux';
 
 
 const alumniData = [
@@ -55,6 +58,13 @@ const alumniData = [
 ];
 
 const AlumniMain = () => {
+  const dispatch = useDispatch()
+  const graduadoState = useSelector((state) => state.graduados);
+
+  useEffect(() => {
+    dispatch(getGraduados())
+  }, [dispatch])
+
   const [searchTerm, setSearchTerm] = useState("");
   const [filterYear, setFilterYear] = useState("");
 
@@ -81,7 +91,7 @@ const AlumniMain = () => {
 
         <h1 className="titular-alumni">Conoce a nuestros graduados</h1>
 
-        <div className="filters container mb-4">
+        {/* <div className="filters container mb-4">
           <div className="row">
             <div className="Busqueda-Alumni col-md-6 mb-3">
               <input
@@ -107,19 +117,19 @@ const AlumniMain = () => {
               </select>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="it-testimonial-area ed-testimonial-style-2 pt-50 pb-50 fix p-relative">
           <div className="container">
             <div className="row justify-content-center">
-              {filteredAlumni.map((alumnus, index) => (
+              {graduadoState.graduados.map((alumnus, index) => (
                 <div key={index} className="contenedor-datos col-xl-4 col-lg-6 mb-30">
                   <Alumni
                     description={alumnus.description}
-                    authorAvatar={alumnus.authorAvatar}
-                    authorName={alumnus.authorName}
-                    designation={alumnus.designation}
-                    graduationYear={alumnus.graduationYear}
+                    authorAvatar={alumnus.imagen}
+                    authorName={alumnus.usuario.name}
+                    designation={alumnus.gestion}
+                    graduationYear={"Graduado "+alumnus.gestion}
                     excelencia={alumnus.excelencia}
                   />
                 </div>

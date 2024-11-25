@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import Image from '../../assets/img/team/team-4-1.jpg';
 
 const SingleTeamThree = (props) => {
-  const { itemClass, teamImage, authorName, designation, socialLinks} = props;
+  const {teamImage, authorName, designation, socialLinks} = props;
 
   return (
-    <div className={itemClass ? itemClass : 'ed-team-item'}>
+    <div className={'ed-team-item'}>
       <div className="ed-team-thumb fix">
         <img src={teamImage ? teamImage : Image} alt="" />
       </div>

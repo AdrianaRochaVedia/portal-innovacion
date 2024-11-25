@@ -1,20 +1,20 @@
 import Swal from 'sweetalert2'
 import { mainApi } from '../../axios'
-import { setDocentes, startLoadingDocente } from './docenteSlice'
+import { setSociedad, startLoadingSociedad } from './sociedadSlice'
 
-export const getDocentes = () => {
+export const getSociedad = () => {
   return async(dispatch) => {
-    dispatch(startLoadingDocente())
-    await mainApi.get('/api/docente')
+    dispatch(startLoadingSociedad())
+    await mainApi.get('/api/sociedad')
       .then(resp => {
         console.log(resp.data)
-        dispatch(setDocentes(resp.data))
+        dispatch(setSociedad(resp.data.sociedades[0]))
       })
       .catch(err => {
         Swal.fire({
           icon: "error",
           title: "Ooops...",
-          text: "Docentes no encontrados"
+          text: "Sociedades no encontradas"
         })
       })
   }
