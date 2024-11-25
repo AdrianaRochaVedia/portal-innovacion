@@ -8,7 +8,8 @@ export const getCentro = () => {
     await mainApi.get('/api/centro')
       .then(resp => {
         console.log(resp.data)
-        dispatch(setCentro(resp.data.centros[0]))
+        dispatch(setCentro(resp.data.centros[0] 
+        ))
       })
       .catch(err => {
         Swal.fire({

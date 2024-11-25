@@ -4,6 +4,7 @@ import { setSociedad, startLoadingSociedad } from './sociedadSlice'
 
 export const getSociedad = () => {
   return async(dispatch) => {
+    console.log("Sociedad")
     dispatch(startLoadingSociedad())
     await mainApi.get('/api/sociedad')
       .then(resp => {
