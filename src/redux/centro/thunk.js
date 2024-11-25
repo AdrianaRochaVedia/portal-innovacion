@@ -7,7 +7,7 @@ export const getCentro = () => {
     dispatch(startLoadingCentro)
     await mainApi.get('/api/centro')
       .then(resp => {
-        console.log(resp.data)
+        console.log(resp.data.centros[0])
         dispatch(setCentro(resp.data.centros[0]))
       })
       .catch(err => {

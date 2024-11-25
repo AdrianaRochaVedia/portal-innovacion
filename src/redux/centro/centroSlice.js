@@ -1,7 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  centros: {},
+  centros: {
+    members: []
+  },
   isLoading: false
 }
 
@@ -13,7 +15,7 @@ export const centroSlice = createSlice({
       state.isLoading = true
     },
     setCentro: (state, action) => {
-      state.empresas = action.payload
+      state.centros = action.payload
       state.isLoading = false
     },
   }

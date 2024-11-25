@@ -50,17 +50,18 @@ const CentroMain = () => {
                 paragraph={centroState.centros.objetive}
                 image={logoCentro}
               />
-              {/* <div className="row">
-                {teamMembers.map((member, index) => (
+              <div className="row">
+                {centroState.centros.members.map((member, index) => (
                   <div key={index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
                     <SingleTeamThree
-                      teamImage={member.image}
-                      authorName={member.name}
-                      designation={member.designation}
+                      teamImage={member.photo ?? ""}
+                      authorName={member.user.name ?? ""}
+                      designation={member.role ?? ""}
+                      socialLinks={member.socialLinks}
                     />
                   </div>
                 ))}
-              </div> */}
+              </div>
             </div>
           )
         }
