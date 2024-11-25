@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./SideBarMenu.scss";
 
 const SideBarMenu = ({ sections }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,6 +6,11 @@ const SideBarMenu = ({ sections }) => {
 
   const handleClick = (section) => {
     setActiveSection(section);
+    // Desplazar a la sección correspondiente
+    const target = document.getElementById(section.toLowerCase().replace(/\s+/g, "-"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" }); // Navegación fluida
+    }
   };
 
   return (
@@ -19,28 +23,20 @@ const SideBarMenu = ({ sections }) => {
         {sections.map((section, index) => (
           <li
             key={index}
-            className={`menu-item ${
-              activeSection === section ? "active" : ""
-            }`}
+            className={`menu-item ${activeSection === section ? "active" : ""}`}
           >
             <a
-              href={`#${section.toLowerCase().replace(/\s+/g, "-")}`}
               onClick={() => handleClick(section)}
             >
               <div className="dot-line">
-                {/* Aplica la clase activa directamente a .dot */}
                 <span
-                  className={`dot ${
-                    activeSection === section ? "active" : ""
-                  }`}
+                  className={`dot ${activeSection === section ? "active" : ""}`}
                 />
                 {index < sections.length - 1 && <span className="line" />}
               </div>
               {isOpen && (
                 <span
-                  className={`menu-text ${
-                    activeSection === section ? "active" : ""
-                  }`}
+                  className={`menu-text ${activeSection === section ? "active" : ""}`}
                 >
                   {section}
                 </span>
@@ -51,6 +47,4 @@ const SideBarMenu = ({ sections }) => {
       </ul>
     </div>
   );
-};
-
-export default SideBarMenu;
+}; export default SideBarMenu;
