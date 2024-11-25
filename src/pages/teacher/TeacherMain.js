@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 import SectionTitle from '../../components/SectionTitle';
 import SingleTeamThree from '../../components/Team/SingleTeamThree';
@@ -11,8 +11,13 @@ import teamImg5 from '../../assets/img/team/team-4-5.jpg';
 import teamImg6 from '../../assets/img/team/team-4-6.jpg';
 import teamImg7 from '../../assets/img/team/team-4-7.jpg';
 import teamImg8 from '../../assets/img/team/team-4-8.jpg';
+import { useDispatch } from 'react-redux';
+import { getDocentes } from '../../redux/docentes/thunk';
+import { useSelector } from 'react-redux';
 
 const TeacherMain = () => {
+  const dispatch = useDispatch()
+  const docenteState = useSelector((state) => state.docentes);
   const teachers = [
     { image: teamImg1, name: "Mgr. Jessica Lanza", designation: "Directora de Carrera" },
     { image: teamImg2, name: "Prof. Marco Javier Villavicencio", designation: "Docente tiempo completo" },
@@ -23,6 +28,10 @@ const TeacherMain = () => {
     { image: teamImg7, name: "Willie Diaz", designation: "Docente" },
     { image: teamImg8, name: "Ann Dooley", designation: "Docente" },
   ];
+
+  useEffect(() => {
+    dispatch(getDocentes())
+  }, [dispatch])
 
   return (
     <main>
@@ -45,15 +54,20 @@ const TeacherMain = () => {
           </div>
           
           <div className="row">
-            {teachers.map((teacher, index) => (
-              <div key={index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
-                <SingleTeamThree
-                  teamImage={teacher.image}
-                  authorName={teacher.name}
-                  designation={teacher.designation}
-                />
-              </div>
-            ))}
+            {
+              (docenteState.docentes.length > 0)
+              ? (docenteState.docentes.map((teacher, index) => (
+                  <div key={index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
+                    <SingleTeamThree
+                      teamImage={teamImg1}
+                      authorName={teacher.name}
+                      designation={teacher.designation}
+                    />
+                  </div>
+                )))
+              : 
+                (<p>No hay docentes</p>)
+            }
           </div>
         </div>
       </div>
