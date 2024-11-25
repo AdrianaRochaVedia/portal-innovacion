@@ -1,14 +1,12 @@
 import React from 'react';
 
-import Image from '../../assets/img/team/team-4-1.jpg';
-
 const SingleTeamThree = (props) => {
   const {teamImage, authorName, designation, socialLinks} = props;
 
   return (
     <div className={'ed-team-item'}>
       <div className="ed-team-thumb fix">
-        <img src={teamImage ? teamImage : Image} alt="" />
+        <img src={teamImage ? teamImage : ""} alt="" />
       </div>
       <div className="ed-team-content p-relative">
         <div className="ed-team-social-box">
