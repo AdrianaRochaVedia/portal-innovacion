@@ -34,6 +34,7 @@ import {
   OportunidadPage,
 } from '../pages';
 import MainPage from '../pages/home';
+import Docente from '../pages/docente';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -69,6 +70,7 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/registro-docente" element={<Docente />} />
         <Route path="/blog-1" element={<Blog />} />
         <Route path="/blog-2" element={<BlogTwo />} />
         <Route path="/blog-sidebar" element={<BlogSidebar />} />

@@ -14,10 +14,12 @@ import teamImg8 from '../../assets/img/team/team-4-8.jpg';
 import { useDispatch } from 'react-redux';
 import { getDocentes } from '../../redux/docentes/thunk';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const TeacherMain = () => {
   const dispatch = useDispatch()
   const docenteState = useSelector((state) => state.docentes);
+  const userState = useSelector((state) => state.users);
   const teachers = [
     { image: teamImg1, name: "Mgr. Jessica Lanza", designation: "Directora de Carrera" },
     { image: teamImg2, name: "Prof. Marco Javier Villavicencio", designation: "Docente tiempo completo" },
@@ -49,6 +51,17 @@ const TeacherMain = () => {
                   titleClass="ed-section-title"
                   title="Conoce a nuestros docentes"
                 />
+                {
+                  (userState.rol && (userState.rol === "administrativo" || userState.rol === "Administrador" || userState.rol === "administrativo"))
+                  ? 
+                  (<button className='right_bt'>
+                    <Link className="ed-btn-square" to="/registro-docente">
+                      Registrar
+                    </Link>
+                  </button>)
+                  :
+                  (<></>)
+                }
               </div>
             </div>
           </div>
