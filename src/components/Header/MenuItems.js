@@ -92,6 +92,11 @@ const MenuItems = (props) => {
           <span>Noticias</span>
         </Link>
       </li>
+      <li>
+        <Link to="/blog-1">
+          <span>Blog</span>
+        </Link>
+      </li>
     </ul>
   );
 };
