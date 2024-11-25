@@ -9,7 +9,8 @@ export const crearNoticias = async (title, description, start, token) => {
         start
       }, {
         headers: {
-          'x-token': `Bearer ${token}`  // Usar el token en las cabeceras
+          'Content-type': 'application/json',
+          'x-token': token  // Usar el token en las cabeceras
         }
       });
       return response;  // Devuelve la respuesta de la API

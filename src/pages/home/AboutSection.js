@@ -79,7 +79,7 @@ const About = () => {
                         </span>
                         <div>
                           {item.description.map((item, index) =>
-                            <p>• {item}</p>
+                            <p key={index}>• {item}</p>
                           ) 
                           }
                         </div>
