@@ -7,6 +7,7 @@ export const getDocentes = (token) => {
     dispatch(startLoadingDocente())
     await mainApi.get('/api/docente')
       .then(resp => {
+        console.log(resp.data)
         dispatch(setDocentes(resp.data))
       })
       .catch(err => {

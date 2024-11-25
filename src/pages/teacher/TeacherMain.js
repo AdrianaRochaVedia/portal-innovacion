@@ -60,8 +60,9 @@ const TeacherMain = () => {
                   <div key={index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
                     <SingleTeamThree
                       teamImage={teamImg1}
-                      authorName={teacher.name}
+                      authorName={teacher.usuario.name}
                       designation={teacher.designation}
+                      socialLinks={teacher.socialLinks}
                     />
                   </div>
                 )))
