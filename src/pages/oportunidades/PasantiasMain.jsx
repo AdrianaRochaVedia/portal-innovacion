@@ -136,7 +136,7 @@ const PasantiasMain = () => {
     <main>
       <Breadcrumb title="PRACTICAS PREPROFESIONALES" />
 
-      <Listado companies={companiesData} />
+      <Listado companies={empresasState.empresas} />
 
     </main>
   );
