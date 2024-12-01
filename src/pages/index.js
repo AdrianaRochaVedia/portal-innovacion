@@ -39,6 +39,13 @@ import BlogDetails from './blog/blog-details';
 import Contact from './contact';
 
 import MallaPage from './mallaPage';
+import AlumniMain from './Alumni';
+import CentroMain from './centro/CentroMain';
+import News from './News';
+import NewsDetails from './News/NewsDetails';
+import ScePage from './sce';
+import OportunidadPage from './oportunidades';
+import AdminPage from './AdminPage';
 
 export {
   Home,
@@ -82,4 +89,10 @@ export {
   Contact,
 
   MallaPage,
+  AlumniMain,
+  NewsDetails,
+  News,
+  ScePage,
+  OportunidadPage,
+  AdminPage,
 };
