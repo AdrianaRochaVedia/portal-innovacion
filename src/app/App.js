@@ -32,6 +32,7 @@ import {
   NewsDetails,
   ScePage,
   OportunidadPage,
+  Sandbox,
 } from '../pages';
 import MainPage from '../pages/home';
 import Docente from '../pages/docente';
@@ -85,6 +86,7 @@ function App() {
         <Route path="/news-details/:id" element={<NewsDetails />} />
         <Route path="/sce" element={<ScePage/>}/>
         <Route path="/oportunidades" element={<OportunidadPage/>}/>
+        <Route path="/sandbox" element={<Sandbox/>}/>
       </Routes>
     </div>
   );

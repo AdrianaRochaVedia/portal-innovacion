@@ -24,6 +24,7 @@ import News from './News';
 import NewsDetails from './News/NewsDetails';
 import ScePage from './sce';
 import OportunidadPage from './oportunidades';
+import Sandbox from './sandbox';
 
 export {
   Home,
@@ -51,4 +52,5 @@ export {
   News,
   ScePage,
   OportunidadPage,
+  Sandbox,
 };
