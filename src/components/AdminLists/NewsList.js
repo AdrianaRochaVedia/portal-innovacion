@@ -25,7 +25,7 @@ const NewsFilter = (props) => (
 );
 
 export const NewsList = (props) => (
-  <List {...props} filters={<NewsFilter />} pagination={false} perPage={10}>
+  <List {...props} filters={<NewsFilter />} pagination={true} perPage={10}>
     <Datagrid rowClick="edit">
       <TextField source="_id" label="ID" />
       <TextField source="title" label="Título" />

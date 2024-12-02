@@ -1,7 +1,18 @@
 import { fetchUtils } from 'react-admin';
 
 const apiUrl = 'http://localhost:4000/api';
-const httpClient = fetchUtils.fetchJson;
+const httpClient = (url, options = {}) => {
+    const token = localStorage.getItem('authToken'); // O el método que uses para almacenar el token
+    const headers = new Headers(options.headers || {});
+    if (token) {
+        headers.set('Authorization', `Bearer ${token}`);
+    }
+    if (!(options.body instanceof FormData)) {
+        headers.set('Content-Type', 'application/json');
+    }
+
+    return fetchUtils.fetchJson(url, { ...options, headers });
+};
 
 const handleFileUpload = (data) => {
     const formData = new FormData();
@@ -19,7 +30,7 @@ const handleFileUpload = (data) => {
 
 const dataProvider = {
     getList: async (resource, params) => {
-        const { page, perPage, sort, filter } = params;
+        const {page, perPage} = params;
         const url = `${apiUrl}/${resource}?_page=${page}&_limit=${perPage}`;
 
         const { json, headers } = await httpClient(url);
