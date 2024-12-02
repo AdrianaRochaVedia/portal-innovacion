@@ -4,13 +4,6 @@ import SectionTitle from '../../components/SectionTitle';
 import SingleTeamThree from '../../components/Team/SingleTeamThree';
 
 import teamImg1 from '../../assets/img/team/directora.png';
-import teamImg2 from '../../assets/img/team/tiempo-completo.png';
-import teamImg3 from '../../assets/img/team/team-4-3.jpg';
-import teamImg4 from '../../assets/img/team/team-4-4.jpg';
-import teamImg5 from '../../assets/img/team/team-4-5.jpg';
-import teamImg6 from '../../assets/img/team/team-4-6.jpg';
-import teamImg7 from '../../assets/img/team/team-4-7.jpg';
-import teamImg8 from '../../assets/img/team/team-4-8.jpg';
 import { useDispatch } from 'react-redux';
 import { getDocentes } from '../../redux/docentes/thunk';
 import { useSelector } from 'react-redux';
@@ -20,16 +13,6 @@ const TeacherMain = () => {
   const dispatch = useDispatch()
   const docenteState = useSelector((state) => state.docentes);
   const userState = useSelector((state) => state.users);
-  const teachers = [
-    { image: teamImg1, name: "Mgr. Jessica Lanza", designation: "Directora de Carrera" },
-    { image: teamImg2, name: "Prof. Marco Javier Villavicencio", designation: "Docente tiempo completo" },
-    { image: teamImg3, name: "Willie Diaz", designation: "Docente" },
-    { image: teamImg4, name: "Jimmy Sifuentes", designation: "Docente" },
-    { image: teamImg5, name: "Justin Clark", designation: "Docente" },
-    { image: teamImg6, name: "Walter Skeete", designation: "Docente" },
-    { image: teamImg7, name: "Willie Diaz", designation: "Docente" },
-    { image: teamImg8, name: "Ann Dooley", designation: "Docente" },
-  ];
 
   useEffect(() => {
     dispatch(getDocentes())

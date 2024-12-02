@@ -50,6 +50,7 @@ const SceMain = () => {
                 paragraph={sociedadState.sociedad.objetive}
                 image={teamImg8}
               />
+              
               <div className="row">
                 {sociedadState.sociedad.members.map((member, index) => (
                   <div key={index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">

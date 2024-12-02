@@ -18,9 +18,9 @@ const Listado = ({ companies }) => {
     <div className="companies-with-internships">
       {!selectedCompany ? (
         <>
-          <h3 className="companies-with-internships__message">
+          {/* <h3 className="companies-with-internships__message">
             Busca oportunidades en cualquiera de nuestras empresas aliadas.
-          </h3>
+          </h3> */}
           <div className="companies-list">
             {companies.map((company) => (
               <EnterpriseCard
