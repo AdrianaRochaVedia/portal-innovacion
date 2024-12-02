@@ -41,7 +41,7 @@ const SingleBlog = (props) => {
           <Link to="/blog-details">
             {title
               ? title
-              : 'velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat'}
+              : 'Semana empresarial de la innovación y la tecnología'}
           </Link>
         </h4>
         <Link

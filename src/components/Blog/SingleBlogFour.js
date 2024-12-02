@@ -13,6 +13,7 @@ const SingleBlogFour = (props) => {
     title,
     btnClass,
     btnText,
+    idNoticia,
   } = props;
   return (
     <div className={itemClass ? itemClass : 'postbox__thumb-box mb-80'}>
@@ -37,7 +38,7 @@ const SingleBlogFour = (props) => {
               : 'Curabitur at fermentum purus. Interdum et malesuada fames ac ante ipsum'}
           </Link>
         </h4>
-        <a className={btnClass ? btnClass : 'ed-btn-theme'} href="#">
+        <a className={btnClass ? btnClass : 'ed-btn-theme'} href={idNoticia ? idNoticia : "/news-detail"}>
           {btnText ? btnText : 'read more'}
           <i>
             <RightArrow />

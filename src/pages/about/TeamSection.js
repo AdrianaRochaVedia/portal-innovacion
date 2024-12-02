@@ -56,7 +56,7 @@ const Team = () => {
                 icon="fa-light fa-book"
                 subtitle="Teacher"
                 titleClass="ed-section-title"
-                title="Meet Our Instructor"
+                title="Conoce a nuestros docentes"
               />
             </div>
             <div className="col-xl-6">

@@ -83,7 +83,7 @@ const TeacherDetailsMain = () => {
                       </li>
                       <li>
                         <i className="fa-light fa-location-dot"></i>
-                        <a href="https://www.google.com/maps" target="_blank">
+                        <a href="https://www.google.com/maps" target="_blank" rel="noreferrer">
                           Hudson, Wisconsin(WI), 54016
                         </a>
                       </li>
@@ -169,7 +169,7 @@ const TeacherDetailsMain = () => {
                   subTitleClass="ed-section-subtitle"
                   subTitle="Teacher"
                   titleClass="ed-section-title"
-                  title="Meet Our Instructor"
+                  title="Conoce a nuestros docentes"
                 />
               </div>
             </div>

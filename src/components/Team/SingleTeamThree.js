@@ -1,15 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-import Image from '../../assets/img/team/team-4-1.jpg';
 
 const SingleTeamThree = (props) => {
-  const { itemClass, teamImage, authorName, designation } = props;
+  const {teamImage, authorName, designation, socialLinks} = props;
 
   return (
-    <div className={itemClass ? itemClass : 'ed-team-item'}>
+    <div className={'ed-team-item'}>
       <div className="ed-team-thumb fix">
-        <img src={teamImage ? teamImage : Image} alt="" />
+        <img src={teamImage ? teamImage : ""} alt="" />
       </div>
       <div className="ed-team-content p-relative">
         <div className="ed-team-social-box">
@@ -17,24 +14,21 @@ const SingleTeamThree = (props) => {
             <i className="fa-light fa-share-nodes"></i>
           </button>
           <div className="ed-team-social-wrap">
-            <a href="#">
-              <i className="fa-brands fa-instagram"></i>
+            <a href={socialLinks[1]} target='_blank' rel="noreferrer">
+              <i className="fa-brands fa-twitter"></i>
             </a>
-            <a href="#">
+            <a href={socialLinks[0]} target='_blank' rel="noreferrer">
               <i className="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="#">
-              <i className="fa-brands fa-linkedin-in"></i>
             </a>
           </div>
         </div>
         <div className="ed-team-author-box">
           <h4 className="ed-team-title">
-            <Link to="/teacher-details">
-              {authorName ? authorName : 'Micheal Hammond'}
-            </Link>
+            <span>
+              {authorName ? authorName : ' '}
+            </span>
           </h4>
-          <span>{designation ? designation : 'Teacher'}</span>
+          <span>{designation ? designation : ' '}</span>
         </div>
       </div>
     </div>

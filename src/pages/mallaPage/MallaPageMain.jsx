@@ -5,7 +5,7 @@ const MallaPageMain = () => {
 
     return (
         <main>
-            <Breadcrumb title="Malla Curricular" subTitle="instructor" />
+            <Breadcrumb title="Malla Curricular" subTitle="Malla" />
             <Malla/>
         </main>
   );

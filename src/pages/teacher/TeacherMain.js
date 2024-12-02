@@ -1,21 +1,43 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 import SectionTitle from '../../components/SectionTitle';
 import SingleTeamThree from '../../components/Team/SingleTeamThree';
 
-import teamImg1 from '../../assets/img/team/team-4-1.jpg';
-import teamImg2 from '../../assets/img/team/team-4-2.jpg';
+import teamImg1 from '../../assets/img/team/directora.png';
+import teamImg2 from '../../assets/img/team/tiempo-completo.png';
 import teamImg3 from '../../assets/img/team/team-4-3.jpg';
 import teamImg4 from '../../assets/img/team/team-4-4.jpg';
 import teamImg5 from '../../assets/img/team/team-4-5.jpg';
 import teamImg6 from '../../assets/img/team/team-4-6.jpg';
 import teamImg7 from '../../assets/img/team/team-4-7.jpg';
 import teamImg8 from '../../assets/img/team/team-4-8.jpg';
+import { useDispatch } from 'react-redux';
+import { getDocentes } from '../../redux/docentes/thunk';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const TeacherMain = () => {
+  const dispatch = useDispatch()
+  const docenteState = useSelector((state) => state.docentes);
+  const userState = useSelector((state) => state.users);
+  const teachers = [
+    { image: teamImg1, name: "Mgr. Jessica Lanza", designation: "Directora de Carrera" },
+    { image: teamImg2, name: "Prof. Marco Javier Villavicencio", designation: "Docente tiempo completo" },
+    { image: teamImg3, name: "Willie Diaz", designation: "Docente" },
+    { image: teamImg4, name: "Jimmy Sifuentes", designation: "Docente" },
+    { image: teamImg5, name: "Justin Clark", designation: "Docente" },
+    { image: teamImg6, name: "Walter Skeete", designation: "Docente" },
+    { image: teamImg7, name: "Willie Diaz", designation: "Docente" },
+    { image: teamImg8, name: "Ann Dooley", designation: "Docente" },
+  ];
+
+  useEffect(() => {
+    dispatch(getDocentes())
+  }, [dispatch])
+
   return (
     <main>
-      <Breadcrumb title="Teacher" />
+      <Breadcrumb title="DOCENTES" />
 
       <div className="ed-team-area p-relative inner-style fix z-index pt-110 pb-90">
         <div className="container">
@@ -25,74 +47,44 @@ const TeacherMain = () => {
                 <SectionTitle
                   itemClass="it-team-title-box text-center"
                   subTitleClass="ed-section-subtitle"
-                  subTitle="Teacher"
+                  subTitle="DOCENTES"
                   titleClass="ed-section-title"
-                  title="Meet Our Instructor"
+                  title="Conoce a nuestros docentes"
                 />
+                {
+                  (userState.rol && (userState.rol === "administrativo" || userState.rol === "Administrador" || userState.rol === "administrativo"))
+                  ? 
+                  (<button className='right_bt'>
+                    <Link className="ed-btn-square" to="/registro-docente">
+                      Registrar
+                    </Link>
+                  </button>)
+                  :
+                  (<></>)
+                }
               </div>
             </div>
           </div>
+          
           <div className="row">
-            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
-              <SingleTeamThree
-                teamImage={teamImg1}
-                authorName="Micheal Hammond"
-                designation="Teacher"
-              />
-            </div>
-            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
-              <SingleTeamThree
-                teamImage={teamImg2}
-                authorName="Cheryl Curry"
-                designation="Teacher"
-              />
-            </div>
-            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
-              <SingleTeamThree
-                teamImage={teamImg3}
-                authorName="Willie Diaz"
-                designation="Teacher"
-              />
-            </div>
-            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
-              <SingleTeamThree
-                teamImage={teamImg4}
-                authorName="Jimmy Sifuentes"
-                designation="Teacher"
-              />
-            </div>
-            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
-              <SingleTeamThree
-                teamImage={teamImg5}
-                authorName="Justin Clark"
-                designation="Teacher"
-              />
-            </div>
-            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
-              <SingleTeamThree
-                teamImage={teamImg6}
-                authorName="Walter Skeete"
-                designation="Teacher"
-              />
-            </div>
-            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
-              <SingleTeamThree
-                teamImage={teamImg7}
-                authorName="Willie Diaz"
-                designation="Teacher"
-              />
-            </div>
-            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
-              <SingleTeamThree
-                teamImage={teamImg8}
-                authorName="Ann Dooley"
-                designation="Teacher"
-              />
-            </div>
+            {
+              (docenteState.docentes.length > 0)
+              ? (docenteState.docentes.map((teacher, index) => (
+                  <div key={index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
+                    <SingleTeamThree
+                      teamImage={teamImg1}
+                      authorName={teacher.usuario.name}
+                      designation={teacher.designation}
+                      socialLinks={teacher.socialLinks}
+                    />
+                  </div>
+                )))
+              : 
+                (<p>No hay docentes</p>)
+            }
           </div>
         </div>
       </div>
     </main>
   );
-};
-export default TeacherMain;
+};export default TeacherMain;

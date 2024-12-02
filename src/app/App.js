@@ -13,43 +13,28 @@ import {
   BlogDetails,
   BlogSidebar,
   BlogTwo,
-  Cart,
-  Checkout,
   Contact,
-  CourseDetails,
-  CourseOne,
-  CourseTwo,
   Error,
   Event,
   EventDetails,
   Faq,
-  HomeFive,
-  HomeFiveOnePage,
-  HomeFour,
-  HomeFourOnePage,
-  HomeOnePage,
-  HomeThree,
-  HomeThreeOnePage,
-  HomeTwo,
-  HomeTwoOnePage,
   InstructorRegistration,
-  Price,
-  Service,
-  ServiceDetails,
-  ServiceThree,
-  ServiceTwo,
-  Shop,
-  ShopDetails,
   SignIn,
   SignUp,
   StudentRegistration,
   Teacher,
   TeacherDetails,
-  Testimonial,
 
   MallaPage,
+  AlumniMain,
+  CentroMain,
+  News,
+  NewsDetails,
+  ScePage,
+  OportunidadPage,
 } from '../pages';
-import MainPage from '../main/home';
+import MainPage from '../pages/home';
+import Docente from '../pages/docente';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -73,42 +58,19 @@ function App() {
       <ScrollToTop />
       <LoadTop />
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/home-one-page" element={<HomeOnePage />} />
-        <Route path="/home-2" element={<HomeTwo />} />
-        <Route path="/home-2-one-page" element={<HomeTwoOnePage />} />
-        <Route path="/home-3" element={<HomeThree />} />
-        <Route path="/home-3-one-page" element={<HomeThreeOnePage />} />
-        <Route path="/home-4" element={<HomeFour />} />
-        <Route path="/home-4-one-page" element={<HomeFourOnePage />} />
-        <Route path="/home-5" element={<HomeFive />} />
-        <Route path="/home-5-one-page" element={<HomeFiveOnePage />} />
+        <Route path="/" element={<MainPage/>} />
+
         <Route path="/about-us" element={<About />} />
-        <Route path="/course-1" element={<CourseOne />} />
-        <Route path="/course-2" element={<CourseTwo />} />
-        <Route path="/course-details" element={<CourseDetails />} />
         <Route path="/event" element={<Event />} />
         <Route path="/event-details" element={<EventDetails />} />
         <Route path="/teacher" element={<Teacher />} />
         <Route path="/teacher-details" element={<TeacherDetails />} />
-        <Route
-          path="/instructor-registration"
-          element={<InstructorRegistration />}
-        />
-        <Route path="/services-1" element={<Service />} />
-        <Route path="/services-2" element={<ServiceTwo />} />
-        <Route path="/services-3" element={<ServiceThree />} />
-        <Route path="/service-details" element={<ServiceDetails />} />
+        <Route path="/instructor-registration" element={<InstructorRegistration />}/>
         <Route path="/student-registration" element={<StudentRegistration />} />
-        <Route path="/testimonial" element={<Testimonial />} />
         <Route path="/faq" element={<Faq />} />
-        <Route path="/price" element={<Price />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/shop-details" element={<ShopDetails />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/registro-docente" element={<Docente />} />
         <Route path="/blog-1" element={<Blog />} />
         <Route path="/blog-2" element={<BlogTwo />} />
         <Route path="/blog-sidebar" element={<BlogSidebar />} />
@@ -116,7 +78,13 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Error />} />
 
-        <Route path="/malla" element={<Malla/>} />
+        <Route path="/malla" element={<MallaPage/>} />
+        <Route path="/alumni" element={<AlumniMain />} />
+        <Route path="/centro" element={<CentroMain />} />
+        <Route path="/news" element={<News/>}/>
+        <Route path="/news-details/:id" element={<NewsDetails />} />
+        <Route path="/sce" element={<ScePage/>}/>
+        <Route path="/oportunidades" element={<OportunidadPage/>}/>
       </Routes>
     </div>
   );

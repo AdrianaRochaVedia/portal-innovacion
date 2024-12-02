@@ -12,7 +12,7 @@ import blogImg6 from '../../assets/img/blog/blog-1-13.jpg';
 const BlogMain = () => {
   return (
     <main>
-      <Breadcrumb title="Blog Style 1" subTitle="blog" />
+      <Breadcrumb title="Blog Estudiantil" subTitle="blog" />
 
       <div className="it-blog-area pt-120 pb-90">
         <div className="container">

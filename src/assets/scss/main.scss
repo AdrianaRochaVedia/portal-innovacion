@@ -1,20 +1,7 @@
-/**
-*
-* -----------------------------------------------------------------------------
-*
-* Template : Edunity - University, Online Courses, School & Education React Template
-* Author : ordainit
-* Author URI : https://ordainit.com/
-*
-* ------------------------------------------------
-
-**/
-
 @import 'layout/header';
 @import 'layout/slider';
 @import 'layout/hero';
 @import 'layout/category';
-@import 'layout/course';
 @import 'layout/cta';
 @import 'layout/about';
 @import 'layout/video';
@@ -23,7 +10,6 @@
 @import 'layout/funfact';
 @import 'layout/contact';
 @import 'layout/event';
-@import 'layout/testimonial';
 @import 'layout/team';
 @import 'layout/faq';
 @import 'layout/career';
@@ -35,10 +21,10 @@
 @import 'layout/error';
 @import 'layout/mobilemenu';
 @import 'layout/footer';
-@import 'layout/cart';
 @import 'layout/checkout';
 @import 'layout/brand';
-@import 'layout/shop';
+@import 'layout/testimonial';
+
 
 @import 'flaticon_mycollection';
 @import 'flaticon_xoft';
@@ -59,10 +45,15 @@
 @import 'components/search';
 @import 'components/tab';
 @import 'components/tab';
-@import 'components/modal';
+
 
 @import 'components/_malla';
 @import 'components/_Tarjeta';
 @import 'components/section-title';
+@import 'components/_AlumniCard';
+@import 'components/_KnowUs';
+@import 'components/_oportunidades';
+@import 'components/_SideBarMenu';
+
 @import 'custom-animation';
 @import 'node_modules/react-modal-video/scss/modal-video.scss';
