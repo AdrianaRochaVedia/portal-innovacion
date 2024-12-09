@@ -57,7 +57,7 @@ const EmpresasAliadasForm = () => {
     }
 
     const linkIsValid = await validateLink(link);
-    if (!linkIsValid) {
+    if (linkIsValid) {
       Swal.fire('Error', 'El enlace proporcionado no es válido.', 'error');
       return;
     }
