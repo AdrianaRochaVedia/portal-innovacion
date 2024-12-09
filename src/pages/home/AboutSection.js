@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import SectionTitle from '../../components/SectionTitle';
 
 import shapeImg1 from '../../assets/img/about/about-3-shap-1.png';
 import shapeImg2 from '../../assets/img/about/ed-shape-3-1.png';
 import aboutImg1 from '../../assets/img/about/thumb-4-1.jpg';
 import aboutImg2 from '../../assets/img/about/thumb-4-2.jpg';
-import titleImg from '../../assets/img/category/title.svg';
 
 const About = () => {
   const items = [

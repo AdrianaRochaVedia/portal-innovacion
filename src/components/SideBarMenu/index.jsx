@@ -26,6 +26,7 @@ const SideBarMenu = ({ sections }) => {
             className={`menu-item ${activeSection === section ? "active" : ""}`}
           >
             <a
+              href={`#${section.toLowerCase().replace(/\s+/g, "-")}`}
               onClick={() => handleClick(section)}
             >
               <div className="dot-line">

@@ -50,7 +50,7 @@ const SingleEvent = (props) => {
               Time: {eventTime ? eventTime : '11:00am 03;00pm'}
             </span>
             <span>
-              <a href="#">
+              <a href='https://www.google.com/maps'>
                 <i className="fa-light fa-location-dot"></i>
               </a>
               Location: {eventLocation ? eventLocation : 'USA'}

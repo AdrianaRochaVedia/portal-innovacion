@@ -1,9 +1,6 @@
 import React from 'react';
 import SingleCareerTwo from '../../components/Career/SingleCareerTwo';
 
-import careerImg1 from '../../assets/img/career/thumb-1.png';
-import careerImg2 from '../../assets/img/career/thumb-3.png';
-
 const Career = () => {
   return (
     <div className="it-career-area ed-career-style-2 p-relative pb-100 pt-120">

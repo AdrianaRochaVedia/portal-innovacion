@@ -109,20 +109,20 @@ const NewsDetailsMain = () => {
                         <div className="postbox__details-tag">
                           <span>Categorias:</span>
                           {selectedNews.tags.map((tag, index) => (
-                            <a key={index} href="#">{tag}</a>
+                            <a key={index} href={`/news-details/${newsId}`}>{tag}</a>
                           ))}
                         </div>
                       </div>
                       <div className="col-xl-5 col-lg-5 col-md-5">
                         <div className="postbox__details-share text-lg-end">
                           <span>Share:</span>
-                          <a href="#">
+                          <a href="https://facebook.com">
                             <i className="fab fa-facebook-f"></i>
                           </a>
-                          <a href="#">
+                          <a href="https://instagram.com">
                             <i className="fa-brands fa-instagram"></i>
                           </a>
-                          <a href="#">
+                          <a href="https://twitter.com">
                             <i className="fab fa-twitter"></i>
                           </a>
                         </div>

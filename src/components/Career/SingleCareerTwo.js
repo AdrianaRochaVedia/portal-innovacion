@@ -1,11 +1,10 @@
 import React from 'react';
 
-import svgImg from '../../assets/img/video/svg.svg';
 import Image from '../../assets/img/career/thumb-1.png';
 import shapeImg from '../../assets/img/career/shape-1.png';
 
 const SingleCareerTwo = (props) => {
-  const { subTitle, itemClass, subTitleImg, title, careerImage, btnClass, btnText } =
+  const { subTitle, itemClass, subTitleImg, title, careerImage} =
     props;
 
   return (

@@ -56,6 +56,7 @@ const ContactMain = () => {
                             <span>Our Address</span>
                             <a
                               target="_blank"
+                              rel="noopener noreferrer"
                               href="https://www.google.com/maps/@24.0161372,45.4773,7.67z?entry=ttup"
                             >
                               1564 Goosetown Drive <br />
@@ -73,7 +74,7 @@ const ContactMain = () => {
                           </div>
                           <div className="it-contact__text">
                             <span>Hours of Operation</span>
-                            <a href="#">Mon - Fri: 9.00am to 5.00pm</a>
+                            <a href="https://example.com">Mon - Fri: 9.00am to 5.00pm</a> {/* href */}
                             <span>[2nd sat Holiday]</span>
                           </div>
                         </div>
@@ -98,22 +99,22 @@ const ContactMain = () => {
                   </div>
                   <div className="it-contact__bottom-box d-flex align-items-center justify-content-between">
                     <div className="it-contact__scrool smooth">
-                      <a href="#">
+                      <a href="https://ucb.com">
                         <i className="fa-solid fa-arrow-down"></i>Customer Care
                       </a>
                     </div>
                     <div className="it-footer-social">
-                      <a href="#">
-                        <i className="fa-brands fa-facebook-f"></i>
+                      <a href="https://facebook.com">
+                        <i className="fab fa-facebook-f"></i>
                       </a>
-                      <a href="#">
+                      <a href="https://instagram.com">
                         <i className="fa-brands fa-instagram"></i>
                       </a>
-                      <a href="#">
-                        <i className="fa-brands fa-pinterest-p"></i>
+                      <a href="https://twitter.com">
+                        <i className="fab fa-twitter"></i>
                       </a>
-                      <a href="#">
-                        <i className="fa-brands fa-twitter"></i>
+                      <a href="https://pinterest.com">
+                        <i className="fa-brands fa-pinterest-p"></i>
                       </a>
                     </div>
                   </div>

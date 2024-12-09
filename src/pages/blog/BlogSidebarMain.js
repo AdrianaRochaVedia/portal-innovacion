@@ -91,7 +91,7 @@ const BlogSidebarMain = () => {
                         et tur is vel turpis
                       </a>
                     </h4>
-                    <a className="ed-btn-theme" href="#">
+                    <a className="ed-btn-theme" href="/news">
                       read more
                       <i>
                         <svg

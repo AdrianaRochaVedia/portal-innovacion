@@ -3,13 +3,11 @@ import { Link } from 'react-router-dom';
 import SectionTitle from '../../components/SectionTitle';
 import SingleCategoryTwo from '../../components/Category/SingleCategoryTwo';
 
-import shapeImg from '../../assets/img/category/shape-1-1.png';
 import titleImg from '../../assets/img/category/title.svg';
 import iconImg1 from '../../assets/img/category/category-4-1.png';
 import iconImg2 from '../../assets/img/category/category-4-2.png';
 import iconImg3 from '../../assets/img/category/category-4-3.png';
 import iconImg4 from '../../assets/img/category/category-4-4.png';
-import iconImg5 from '../../assets/img/category/category-4-5.png';
 
 const Category = () => {
   return (

@@ -155,7 +155,7 @@ const HeaderThree = (props) => {
             <h3 className="offcanva-title">Mantente en contacto</h3>
             <div className="it-info-wrapper mb-20 d-flex align-items-center">
               <div className="itoffcanvas__info-icon">
-                <a href="#">
+                <a href="maito:innovacion@ucb.edu.bo">
                   <i className="fal fa-envelope"></i>
                 </a>
               </div>
@@ -166,7 +166,7 @@ const HeaderThree = (props) => {
             </div>
             <div className="it-info-wrapper mb-20 d-flex align-items-center">
               <div className="itoffcanvas__info-icon">
-                <a href="#">
+                <a href="tel:(+591)2782222">
                   <i className="fal fa-phone-alt"></i>
                 </a>
               </div>
@@ -177,7 +177,7 @@ const HeaderThree = (props) => {
             </div>
             <div className="it-info-wrapper mb-20 d-flex align-items-center">
               <div className="itoffcanvas__info-icon">
-                <a href="#">
+                <a href="htits://www.google.com/maps/@37.4801311,22.8928877,3z">
                   <i className="fas fa-map-marker-alt"></i>
                 </a>
               </div>

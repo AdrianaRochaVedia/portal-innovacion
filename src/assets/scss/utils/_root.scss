@@ -1,11 +1,11 @@
-@use 'colors' as *;
-@use 'typography' as *;
+@use 'colors';
+@use 'typography';
 
 :root {
     /**
-    @font family declaration
+    @font-family declaration
     */
-    @each $ff, $shades in $font-family {
+    @each $ff, $shades in typography.$font-family {
         @each $shade, $value in $shades {
             --it-#{$ff}-#{$shade}: #{$value};
         }
@@ -14,10 +14,9 @@
     /**
     @color declaration
     */
-    @each $color, $shades in $colors {
+    @each $color, $shades in colors.$colors {
         @each $shade, $value in $shades {
             --it-#{$color}-#{$shade}: #{$value};
         }
     }
-
 }
