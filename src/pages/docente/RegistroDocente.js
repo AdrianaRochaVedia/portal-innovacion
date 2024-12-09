@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react'; //useEffect, useDispatch
 import Breadcrumb from '../../components/Breadcrumb';
 import RightArrow from '../../components/SVG';
 
@@ -6,8 +6,8 @@ import signInImg from '../../assets/img/contact/signin.jpg';
 import { useForm } from '../../hooks/useForm';
 import validator from 'validator';
 import Swal from 'sweetalert2';
-import { useDispatch } from 'react-redux';
-import { loginUser } from '../../redux/user/thunk';
+// import { useDispatch } from 'react-redux';
+// import { loginUser } from '../../redux/user/thunk';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { mainApi } from '../../axios';
@@ -15,7 +15,7 @@ import { mainApi } from '../../axios';
 const RegistroDocente = () => {
   const navigate = useNavigate();
   const usersState = useSelector((state) => state.users);
-  const [formValues, handleInputChange, reset] = useForm({name: "", email: "", password: ""})
+  const [formValues, handleInputChange] = useForm({name: "", email: "", password: ""}) // reset como parametro
   const { name, email, password } = formValues
 
   const handleSubmit = async (e) => {

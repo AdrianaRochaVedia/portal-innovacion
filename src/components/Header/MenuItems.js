@@ -3,34 +3,10 @@ import { Link } from 'react-router-dom';
 
 const MenuItems = (props) => {
   const { mobileMenu } = props;
-  const [home, setHome] = useState(false);
-  const [course, setCourse] = useState(false);
-  const [page, setPage] = useState(false);
-  const [blog, setBlog] = useState(false);
-
-  const openMobileMenu = (menu) => {
-    if (menu === 'home') {
-      setHome(!home);
-      setCourse(false);
-      setPage(false);
-      setBlog(false);
-    } else if (menu === 'course') {
-      setHome(false);
-      setCourse(!course);
-      setPage(false);
-      setBlog(false);
-    } else if (menu === 'page') {
-      setHome(false);
-      setCourse(false);
-      setPage(!page);
-      setBlog(false);
-    } else if (menu === 'blog') {
-      setHome(false);
-      setCourse(false);
-      setPage(false);
-      setBlog(!blog);
-    }
-  };
+  const [home] = useState(false);
+  const [course] = useState(false);
+  const [page] = useState(false);
+  const [blog] = useState(false);
 
   const handleClick = (e) => {
     if (mobileMenu) {

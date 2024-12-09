@@ -3,12 +3,6 @@ import Breadcrumb from '../../components/Breadcrumb';
 import SingleTeamThree from '../../components/Team/SingleTeamThree';
 import KnowUs from '../../components/Sce/KnowUs';
 
-import teamImg1 from '../../assets/img/centro/1.jpeg';
-import teamImg2 from '../../assets/img/centro/IMG-20240615-WA0014.jpg';
-import teamImg3 from '../../assets/img/centro/IMG_20240614_231529.jpg';
-import teamImg5 from '../../assets/img/team/team-4-5.jpg';
-import teamImg6 from '../../assets/img/team/team-4-6.jpg';
-import teamImg7 from '../../assets/img/team/team-4-7.jpg';
 import logoCentro from '../../assets/img/centro/logo-centro.jpeg';
 import HeaderFive from '../../components/Header/HeaderFive';
 import { useDispatch } from 'react-redux';

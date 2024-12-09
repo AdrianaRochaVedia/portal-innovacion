@@ -13,56 +13,56 @@ const OffCanvasInsta = () => {
       <div className="row gx-10">
         <div className="col-xl-3 mb-10">
           <div className="it-offcanvas-insta-item">
-            <a href="#">
+            <a href="https://example.com">
               <img className="w-100" src={instaImg1} alt="" />
             </a>
           </div>
         </div>
         <div className="col-xl-3 mb-10">
           <div className="it-offcanvas-insta-item">
-            <a href="#">
+            <a href="https://example.com">
               <img className="w-100" src={instaImg2} alt="" />
             </a>
           </div>
         </div>
         <div className="col-xl-3 mb-10">
           <div className="it-offcanvas-insta-item">
-            <a href="#">
+            <a href="https://example.com">
               <img className="w-100" src={instaImg3} alt="" />
             </a>
           </div>
         </div>
         <div className="col-xl-3 mb-10">
           <div className="it-offcanvas-insta-item">
-            <a href="#">
+            <a href="https://example.com">
               <img className="w-100" src={instaImg4} alt="" />
             </a>
           </div>
         </div>
         <div className="col-xl-3 mb-10">
           <div className="it-offcanvas-insta-item">
-            <a href="#">
+            <a href="https://example.com">
               <img className="w-100" src={instaImg3} alt="" />
             </a>
           </div>
         </div>
         <div className="col-xl-3 mb-10">
           <div className="it-offcanvas-insta-item">
-            <a href="#">
+            <a href="https://example.com">
               <img className="w-100" src={instaImg5} alt="" />
             </a>
           </div>
         </div>
         <div className="col-xl-3 mb-10">
           <div className="it-offcanvas-insta-item">
-            <a href="#">
+            <a href="https://example.com">
               <img className="w-100" src={instaImg6} alt="" />
             </a>
           </div>
         </div>
         <div className="col-xl-3 mb-10">
           <div className="it-offcanvas-insta-item">
-            <a href="#">
+            <a href="https://example.com">
               <img className="w-100" src={instaImg1} alt="" />
             </a>
           </div>

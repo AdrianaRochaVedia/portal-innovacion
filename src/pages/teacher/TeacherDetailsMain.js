@@ -62,16 +62,16 @@ const TeacherDetailsMain = () => {
                     <img src={teamMainImg} alt="" />
                   </div>
                   <div className="it-teacher-details-left-social text-center">
-                    <a href="#">
+                    <a href="https://www.facebook.com">
                       <i className="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://www.twitter.com">
                       <i className="fab fa-twitter"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://www.skype.com">
                       <i className="fab fa-skype"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://www.linkedin.com">
                       <i className="fab fa-linkedin-in"></i>
                     </a>
                   </div>

@@ -90,21 +90,21 @@ const BlogDetailsMain = () => {
                       <div className="col-xl-7 col-lg-7 col-md-7">
                         <div className="postbox__details-tag">
                           <span>Posted in:</span>
-                          <a href="#">Development</a>
-                          <a href="#">Digital</a>
-                          <a href="#">Tech</a>
+                          <a href="/news">Development</a>
+                          <a href="/news">Digital</a>
+                          <a href="/news">Tech</a>
                         </div>
                       </div>
                       <div className="col-xl-5 col-lg-5 col-md-5">
                         <div className="postbox__details-share text-lg-end">
                           <span>Share:</span>
-                          <a href="#">
+                          <a href="https://facebook.com">
                             <i className="fab fa-facebook-f"></i>
                           </a>
-                          <a href="#">
+                          <a href="https://instagram.com">
                             <i className="fa-brands fa-instagram"></i>
                           </a>
-                          <a href="#">
+                          <a href="https://twitter.com">
                             <i className="fab fa-twitter"></i>
                           </a>
                         </div>
@@ -126,7 +126,7 @@ const BlogDetailsMain = () => {
                               <span className="post-meta">
                                 September 6, 2022 at 1:28 pm{' '}
                               </span>
-                              <a href="#">Reply</a>
+                              <a href="https://example.com">Reply</a>
                             </div>
                             <div className="postbox__comment-name">
                               <h5>Jonathon Lopez</h5>

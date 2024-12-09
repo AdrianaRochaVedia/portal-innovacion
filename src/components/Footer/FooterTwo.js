@@ -5,7 +5,7 @@ import footerBG from '../../assets/img/footer/bg-1-1.jpg';
 import Logo from '../../assets/img/logo/logo-innovacion-3.png';
 
 const FooterTwo = (props) => {
-  const { footerClass, footerLogo, btnClass, copyrightTextClass } = props;
+  const {btnClass, copyrightTextClass } = props;
 
   return (
     <footer>
@@ -45,7 +45,7 @@ const FooterTwo = (props) => {
                   </div>
                   <div className="it-footer-top-text">
                     <span>Teléfono:</span>
-                    <a href="tel:00875784568">2782222</a>
+                    <a href="tel:2782222">2782222</a>
                   </div>
                 </div>
               </div>
@@ -58,7 +58,7 @@ const FooterTwo = (props) => {
                   </div>
                   <div className="it-footer-top-text">
                     <span>Correo electrónico:</span>
-                    <a href="mailto:info@gmail.com">innovacion@ucb.edu.bo</a>
+                    <a href="mailto:innovacion@ucb.edu.bo">innovacion@ucb.edu.bo</a>
                   </div>
                 </div>
               </div>
@@ -76,20 +76,20 @@ const FooterTwo = (props) => {
                 <div className="it-footer-widget footer-col-5">
                   <div className="it-footer-logo pb-25">
                     <Link to="/">
-                      <img src={Logo} alt="" />
+                      <img src={Logo} alt="Logo" />
                     </Link>
                   </div>
                   <div className="it-footer-social">
-                    <a href="#">
+                    <a href="https://www.facebook.com">
                       <i className="fa-brands fa-facebook-f"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://www.instagram.com">
                       <i className="fa-brands fa-instagram"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://www.pinterest.com">
                       <i className="fa-brands fa-pinterest-p"></i>
                     </a>
-                    <a href="#">
+                    <a href="https://www.twitter.com">
                       <i className="fa-brands fa-twitter"></i>
                     </a>
                   </div>
@@ -138,7 +138,7 @@ const FooterTwo = (props) => {
                 }
               >
                 <p>
-                  Copyright &copy; 2024 <a href="">UCB </a> || Todos los derechos reservados
+                  Copyright &copy; 2024 <a href="https://www.ucb.edu.bo">UCB</a> || Todos los derechos reservados
                 </p>
               </div>
             </div>

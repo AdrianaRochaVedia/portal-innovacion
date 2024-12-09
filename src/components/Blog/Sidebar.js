@@ -136,14 +136,16 @@ const Sidebar = () => {
         <h4 className="it-sv-details-sidebar-title mb-30">popular tag:</h4>
         <div className="sidebar__widget-content">
           <div className="tagcloud">
-            <a href="#"> Balance</a>
-            <a href="#">coaching</a>
-            <a href="#">Motivation</a>
-            <a href="#">courses</a>
-            <a href="#">Life guide</a>
-            <a href="#">strategy</a>
-            <a href="#">Education</a>
-            <a href="#">coach</a>
+            <Link to="/blog-details">design</Link>
+            <Link to="/blog-details">web</Link>
+            <Link to="/blog-details">graphic</Link>
+            <Link to="/blog-details">development</Link>
+            <Link to="/blog-details">business</Link>
+            <Link to="/blog-details">seo</Link>
+            <Link to="/blog-details">marketing</Link>
+            <Link to="/blog-details">app</Link>
+            <Link to="/blog-details">mobile</Link>
+            <Link to="/blog-details">it</Link>
           </div>
         </div>
       </div>

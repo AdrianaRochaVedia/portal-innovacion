@@ -38,7 +38,7 @@ const TagsWidget = ({ tags, onTagClick, selectedTags }) => (
         {tags.map((tag, index) => (
           <a
             key={index}
-            href="#"
+            href="/news"
             onClick={(e) => {
               e.preventDefault();
               onTagClick(tag);

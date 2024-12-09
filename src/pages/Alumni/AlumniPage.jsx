@@ -65,16 +65,16 @@ const AlumniMain = () => {
     dispatch(getGraduados())
   }, [dispatch])
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filterYear, setFilterYear] = useState("");
+  const [searchTerm] = useState(""); //setSearchTerm
+  const [filterYear] = useState(""); //setFilterYear
 
-  const handleSearch = (event) => {
-    setSearchTerm(event.target.value.toLowerCase());
-  };
+  // const handleSearch = (event) => {
+  //   setSearchTerm(event.target.value.toLowerCase());
+  // };
 
-  const handleFilter = (event) => {
-    setFilterYear(event.target.value);
-  };
+  // const handleFilter = (event) => {
+  //   setFilterYear(event.target.value);
+  // };
 
   const filteredAlumni = alumniData.filter((alumnus) => {
     const matchesName = alumnus.authorName.toLowerCase().includes(searchTerm);
@@ -82,7 +82,7 @@ const AlumniMain = () => {
     return matchesName && matchesYear;
   });
 
-  const uniqueYears = [...new Set(alumniData.map((alumnus) => alumnus.graduationYear))];
+  // const uniqueYears = [...new Set(alumniData.map((alumnus) => alumnus.graduationYear))];
 
   return (
     <>
