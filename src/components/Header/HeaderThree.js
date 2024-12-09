@@ -18,6 +18,10 @@ const HeaderThree = (props) => {
 
   const handleLogout = () => {
     dispatch(logout())
+    localStorage.removeItem("user-ptin")
+    localStorage.removeItem("token-ptin")
+    localStorage.removeItem("rol-ptin")
+    localStorage.removeItem("uid-ptin")
   }
 
   useEffect(() => {
