@@ -12,6 +12,10 @@ export const loginUser = (email, password) => {
     })
     .then(resp => {
       dispatch(setUser(resp.data))
+      localStorage.setItem("user-ptin", resp.data.name)
+      localStorage.setItem("token-ptin", resp.data.token)
+      localStorage.setItem("rol-ptin", resp.data.rol)
+      localStorage.setItem("uid-ptin", resp.data.uid)
     })
     .catch(err => {
       Swal.fire({
