@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import { createEmpresa } from '../../../redux/empresas/thunk';
+import { useNavigate } from 'react-router';
 
 const EmpresasAliadasForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nombres: '',
     email: '',
@@ -42,11 +45,12 @@ const EmpresasAliadasForm = () => {
   };
 
   const handleSubmit = async (event) => {
+    console.log("Envio de formulario")
     event.preventDefault();
 
-    const { nombres, email, descripcion, link, imagen } = formData;
+    const { nombres, email, descripcion, link, estado } = formData;
 
-    if (!nombres || !email || !descripcion || !link || !imagen) {
+    if (!nombres || !email || !descripcion || !link) {
       Swal.fire('Error', 'Todos los campos son obligatorios.', 'error');
       return;
     }
@@ -62,8 +66,17 @@ const EmpresasAliadasForm = () => {
       return;
     }
 
-    Swal.fire('Éxito', 'Empresa aliada registrada exitosamente.', 'success');
-    //enviar el formulario al servidor
+    const empresa = {
+      name: nombres,
+      email,
+      description: descripcion,
+      link,
+      state: estado
+    }
+    
+    createEmpresa(empresa)
+    navigate("/oportunidades")
+    // dispatch(createEmpresa(empresa))
   };
 
   return (
