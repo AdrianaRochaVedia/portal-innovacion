@@ -7,6 +7,9 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getEmpresas } from './../../redux/empresas/thunk';
 import SectionTitle from '../../components/SectionTitle';
+import ButtonWithArrow from '../../components/Forms/ButtonWithArrow';
+import Modal from '../../components/Forms/Modal';
+import EmpresasAliadasFormComponent from '../../components/Forms/Formularios/EmpresasAliadasForm';
 
 const companiesData = [
     {
@@ -127,12 +130,18 @@ const companiesData = [
 
 const PasantiasMain = () => {
 
+  const [isEmpresasModalOpen, setEmpresasModalOpen] = useState(false);
   const dispatch = useDispatch()
   const empresasState = useSelector((state) => state.empresas);
   const userState = useSelector((state) => state.users);
   useEffect(() => {
     dispatch(getEmpresas())
   }, [dispatch])
+
+  const toggleEmpresasModal = () => {
+    console.log("toggleEmpresasModal")
+    setEmpresasModalOpen(!isEmpresasModalOpen);
+  }
 
   
   return (
@@ -148,16 +157,19 @@ const PasantiasMain = () => {
       {
           (userState.rol && (userState.rol === "administrativo" || userState.rol === "Administrador" || userState.rol === "administrativo"))
           ? 
-          (<button className='right_bt'>
-          <Link className="ed-btn-square" to="/src/pages/docente/RegistroDocente.js">
-           Registrar
-          </Link>
-          </button>)
+          (
+            <div className="container">
+                <ButtonWithArrow text="Nueva Empresa Aliada" onClick={toggleEmpresasModal} />
+                <Modal isOpen={isEmpresasModalOpen} onClose={toggleEmpresasModal}>
+                    <EmpresasAliadasFormComponent />
+                </Modal>
+            </div>
+          )
           :
           (<></>)
       }
       <Listado companies={empresasState.empresas} />
-      
+            
     </main>
   );
 }; export default PasantiasMain;
