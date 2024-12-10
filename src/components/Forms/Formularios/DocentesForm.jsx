@@ -26,13 +26,6 @@ const DocentesForm = ({ onSuccess }) => {
     });
   };
 
-  const handleLinkChange = (index, value) => {
-    const updatedLinks = [...formData.socialLinks];
-    updatedLinks[index] = value;
-    setFormData({ ...formData, socialLinks: updatedLinks });
-  };
-
-
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -40,13 +33,19 @@ const DocentesForm = ({ onSuccess }) => {
     }
   };
 
+  const handleLinkChange = (index, value) => {
+    const updatedLinks = [...formData.socialLinks];
+    updatedLinks[index] = value;
+    setFormData({ ...formData, socialLinks: updatedLinks });
+  };
+
   const addLinkField = () => {
-    setFormData({ ...formData, links: [...formData.links, ''] });
+    setFormData({ ...formData, socialLinks: [...formData.socialLinks, ''] });
   };
 
   const removeLinkField = (index) => {
-    const updatedLinks = formData.links.filter((_, i) => i !== index);
-    setFormData({ ...formData, links: updatedLinks });
+    const updatedLinks = formData.socialLinks.filter((_, i) => i !== index);
+    setFormData({ ...formData, socialLinks: updatedLinks });
   };
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -228,20 +227,22 @@ const DocentesForm = ({ onSuccess }) => {
             </div>
           )}
       </label>
-      <label>
+      <label className="select-container">
         Rol
         <select
           name="designation"
           value={formData.designation}
           onChange={handleInputChange}
           required
+          className="select"
         >
           <option value="">Seleccionar</option>
           <option value="Docente">Docente</option>
           <option value="Docente de tiempo Completo">Docente de tiempo completo</option>
         </select>
       </label>
-      <label className="checkbox-label">
+      <div className="checkbox-group">
+        <label className="checkbox-row">
           <input
             type="checkbox"
             name="state"
@@ -249,8 +250,9 @@ const DocentesForm = ({ onSuccess }) => {
             onChange={handleInputChange}
             className="checkbox-input"
           />
-        <span className="checkbox-label-text">Estado</span>
-      </label>
+          <span className="checkbox-label">Estado</span>
+        </label>
+      </div>
       <button type="submit">Registrar Docente</button>
     </form>
   );

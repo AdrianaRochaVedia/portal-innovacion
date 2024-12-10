@@ -7,6 +7,7 @@ import OffCanvasInsta from '../OffCanvas';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/user/userSlice';
+import ThemeToggle from './ThemeToggle';
 
 const HeaderThree = (props) => {
   const usersState = useSelector((state) => state.users);
@@ -98,6 +99,7 @@ const HeaderThree = (props) => {
                           </svg>
                         </button>
                       </div>
+                      <ThemeToggle />
                       {
                         (usersState.uid) 
                         ? (
