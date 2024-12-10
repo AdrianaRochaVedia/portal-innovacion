@@ -5,7 +5,7 @@ import Listado from '../../components/oportunidades/Listado';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { getEmpresas } from './../../redux/empresas/thunk';
 import SectionTitle from '../../components/SectionTitle';
 import ButtonWithArrow from '../../components/Forms/ButtonWithArrow';
@@ -26,7 +26,7 @@ const PasantiasMain = () => {
     console.log("toggleEmpresasModal")
     setEmpresasModalOpen(!isEmpresasModalOpen);
   }
-
+  const closeEmpresasModal = () => setEmpresasModalOpen(false);
   
   return (
     <main>
@@ -45,7 +45,7 @@ const PasantiasMain = () => {
             <div className="container">
                 <ButtonWithArrow text="Nueva Empresa Aliada" onClick={toggleEmpresasModal} />
                 <Modal isOpen={isEmpresasModalOpen} onClose={toggleEmpresasModal}>
-                    <EmpresasAliadasFormComponent />
+                    <EmpresasAliadasFormComponent onSuccess={closeEmpresasModal}/>
                 </Modal>
             </div>
           )

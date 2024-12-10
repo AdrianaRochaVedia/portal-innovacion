@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 
-const UsuariosForm = () => {
+const UsuariosForm = ({ onSuccess }) => {
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
@@ -12,7 +12,6 @@ const UsuariosForm = () => {
     isSociedad: false,
     isDocente: false,
     isGraduado: false,
-    links: [''],
   });
 
   const handleInputChange = (e) => {
@@ -23,34 +22,7 @@ const UsuariosForm = () => {
     });
   };
 
-  const handleLinkChange = (index, value) => {
-    const updatedLinks = [...formData.links];
-    updatedLinks[index] = value;
-    setFormData({ ...formData, links: updatedLinks });
-  };
-
-  const addLinkField = () => {
-    setFormData({ ...formData, links: [...formData.links, ''] });
-  };
-
-  const removeLinkField = (index) => {
-    const updatedLinks = formData.links.filter((_, i) => i !== index);
-    setFormData({ ...formData, links: updatedLinks });
-  };
-
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-  const validateLinks = async (links) => {
-    for (const link of links) {
-      try {
-        const response = await fetch(link, { method: 'HEAD' });
-        if (!response.ok) return false;
-      } catch {
-        return false;
-      }
-    }
-    return true;
-  };
 
   const validateRoleLogic = () => {
     const { rol, isDocente, isCentro, isSociedad } = formData;
@@ -69,21 +41,15 @@ const UsuariosForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { nombre, email, password, rol, links } = formData;
+    const { nombre, email, password, rol} = formData;
 
-    if (!nombre || !email || !password || !rol || !links.length || !links[0]) {
+    if (!nombre || !email || !password || !rol) {
       Swal.fire('Error', 'Todos los campos son obligatorios.', 'error');
       return;
     }
 
     if (!validateEmail(email)) {
       Swal.fire('Error', 'El email no es válido.', 'error');
-      return;
-    }
-
-    const linksValid = await validateLinks(links);
-    if (!linksValid) {
-      Swal.fire('Error', 'Uno o más enlaces no son válidos.', 'error');
       return;
     }
 
@@ -94,6 +60,7 @@ const UsuariosForm = () => {
     }
 
     Swal.fire('Éxito', 'Usuario registrado correctamente.', 'success');
+    onSuccess();
     // enviar los datos al servidor. devolver todo a los datos normales
   };
 
@@ -132,13 +99,14 @@ const UsuariosForm = () => {
         />
       </label>
 
-      <label>
+      <label className="select-container">
         Rol
         <select
           name="rol"
           value={formData.rol}
           onChange={handleInputChange}
           required
+          className="select"
         >
           <option value="">Seleccionar</option>
           <option value="estudiante">Estudiante</option>
@@ -147,15 +115,14 @@ const UsuariosForm = () => {
         </select>
       </label>
 
-        <div className="checkbox-group">
+      <div className="checkbox-group">
             {[
-                { name: "isDeleted", label: "Está Borrado" },
                 { name: "isCentro", label: "Es Parte del Centro" },
                 { name: "isSociedad", label: "Es Parte de la Sociedad Científica" },
                 { name: "isDocente", label: "Es Docente" },
                 { name: "isGraduado", label: "Está Graduado" },
             ].map(({ name, label }) => (
-                <label key={name} className="checkbox-label">
+                <label key={name} className="checkbox-row">
                     <input
                         type="checkbox"
                         name={name}
@@ -163,34 +130,9 @@ const UsuariosForm = () => {
                         onChange={handleInputChange}
                         className="checkbox-input"
                     />
-                    <span className="checkbox-label-text">{label}</span>
+                    <span className="checkbox-label">{label}</span>
                 </label>
             ))}
-        </div>
-
-      <div className="links-section">
-        <label>Links</label>
-        {formData.links.map((link, index) => (
-          <div key={index} className="link-input-group">
-            <input
-              type="url"
-              value={link}
-              onChange={(e) => handleLinkChange(index, e.target.value)}
-              placeholder="Introduce un enlace"
-              required
-            />
-            <button
-              type="button"
-              onClick={() => removeLinkField(index)}
-              className="btn-remove-link"
-            >
-              Quitar
-            </button>
-          </div>
-        ))}
-        <button type="button" onClick={addLinkField} className="btn-add-link">
-          Añadir Link
-        </button>
       </div>
 
       <button type="submit">Registrar Usuario</button>
