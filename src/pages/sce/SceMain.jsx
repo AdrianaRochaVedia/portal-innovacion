@@ -3,18 +3,37 @@ import Breadcrumb from '../../components/Breadcrumb';
 import SingleTeamThree from '../../components/Team/SingleTeamThree';
 import KnowUs from '../../components/Sce/KnowUs';
 
+import { useState } from 'react';
 import teamImg8 from '../../assets/img/team/team-4-8.jpg';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { getSociedad } from '../../redux/sociedad/thunk';
 
+import ButtonWithArrow from '../../components/Forms/ButtonWithArrow';
+import Modal from '../../components/Forms/Modal';
+import SociedadForm from '../../components/Forms/Formularios/SociedadForm';
+import SociedadUsuarios from '../../components/Forms/Formularios/SociedadUsuariosForm';
+
 const SceMain = () => {
+  const [isSociedadModalOpen, setIsSociedadModalOpen] = useState(false);
+  const [isSociedadUsuariosModalOpen, setIsSociedadUsuariosModalOpen] = useState(false);
   const sociedadState = useSelector((state) => state.sociedad);
+  const userState = useSelector((state) => state.users);
   const dispatch = useDispatch()
+  
 
   useEffect(() => {
     dispatch(getSociedad())
   }, [dispatch])
+
+  const toggleSociedadModal = () => {
+    setIsSociedadModalOpen(!isSociedadModalOpen);
+  };
+  const toggleSociedadUsuariosModal = () => {
+    setIsSociedadUsuariosModalOpen(!isSociedadUsuariosModalOpen);
+  };
+  const closeSociedadUsuariosModal = () => setIsSociedadUsuariosModalOpen(false);
+  const closeSociedadModal = () => setIsSociedadModalOpen(false);
 
   return (
     <main>
@@ -26,12 +45,46 @@ const SceMain = () => {
           ? 
           (
             <div className="container">
+            {
+                  (userState.rol && (userState.rol === "administrativo" || userState.rol === "Administrador" || userState.rol === "administrativo"))
+                  ? 
+                  (
+                    <div className="container">
+                    <ButtonWithArrow text="Nueva Sociedad" onClick={toggleSociedadModal} />
+                    <Modal isOpen={isSociedadModalOpen} onClose={toggleSociedadModal}>
+                        <SociedadForm onSuccess={closeSociedadModal}/>
+                    </Modal>
+                    
+                    </div>
+                  )
+                  :
+                  (<></>)
+                }
+                <div style={{ marginBottom: '30px' }}></div>
               <KnowUs
                 title="Conoce a nuestra Sociedad Científica Estudiantil"
+                
                 subtitle={sociedadState.sociedad.name}
                 paragraph={sociedadState.sociedad.objetive}
                 image={teamImg8}
               />
+              
+              {
+                (userState.rol && (userState.rol === "administrativo" || userState.rol === "Administrador" || userState.rol === "administrativo"))
+                ? 
+                (
+                  <div className="container">
+                  <ButtonWithArrow text="Nuevo Miembro" onClick={toggleSociedadUsuariosModal} />
+                  <Modal isOpen={isSociedadUsuariosModalOpen} onClose={toggleSociedadUsuariosModal}>
+                      <SociedadUsuarios onSuccess={closeSociedadUsuariosModal}/>
+                  </Modal>
+                  
+                  </div>
+                )
+                :
+                (<></>)
+              }
+              <div style={{ marginBottom: '30px' }}></div>
               
               <div className="row">
                 {sociedadState.sociedad.members.map((member, index) => (

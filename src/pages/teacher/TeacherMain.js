@@ -3,13 +3,21 @@ import Breadcrumb from '../../components/Breadcrumb';
 import SectionTitle from '../../components/SectionTitle';
 import SingleTeamThree from '../../components/Team/SingleTeamThree';
 
+import { useState } from 'react';
 import teamImg1 from '../../assets/img/team/directora.png';
 import { useDispatch } from 'react-redux';
 import { getDocentes } from '../../redux/docentes/thunk';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import ButtonWithArrow from '../../components/Forms/ButtonWithArrow';
+import Modal from '../../components/Forms/Modal';
+import DocentesForm from '../../components/Forms/Formularios/DocentesForm';
+
 const TeacherMain = () => {
+
+  const [isDocentesModalOpen, setIsDocentesModalOpen] = useState(false);
+
   const dispatch = useDispatch()
   const docenteState = useSelector((state) => state.docentes);
   const userState = useSelector((state) => state.users);
@@ -17,6 +25,13 @@ const TeacherMain = () => {
   useEffect(() => {
     dispatch(getDocentes())
   }, [dispatch])
+
+  const toggleDocentesModal = () => {
+    setIsDocentesModalOpen(!isDocentesModalOpen);
+  };
+
+  const closeDocentesModal = () => setIsDocentesModalOpen(false);
+
 
   return (
     <main>
@@ -37,11 +52,14 @@ const TeacherMain = () => {
                 {
                   (userState.rol && (userState.rol === "administrativo" || userState.rol === "Administrador" || userState.rol === "administrativo"))
                   ? 
-                  (<button className='right_bt'>
-                    <Link className="ed-btn-square" to="/registro-docente">
-                      Registrar
-                    </Link>
-                  </button>)
+                  (
+                    <div className="container">
+                    <ButtonWithArrow text="Nuevo Docente" onClick={toggleDocentesModal} />
+                    <Modal isOpen={isDocentesModalOpen} onClose={toggleDocentesModal}>
+                        <DocentesForm onSuccess={closeDocentesModal}/>
+                     </Modal> 
+                    </div>
+                  )
                   :
                   (<></>)
                 }

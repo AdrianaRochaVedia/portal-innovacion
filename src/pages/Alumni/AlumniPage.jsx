@@ -5,6 +5,9 @@ import { useDispatch } from 'react-redux';
 import { getGraduados } from '../../redux/alumni/thunk';
 import { useSelector } from 'react-redux';
 
+import ButtonWithArrow from '../../components/Forms/ButtonWithArrow';
+import Modal from '../../components/Forms/Modal';
+import AlumniForm from '../../components/Forms/Formularios/AlumniForm';
 
 const alumniData = [
   {
@@ -60,6 +63,7 @@ const alumniData = [
 const AlumniMain = () => {
   const dispatch = useDispatch()
   const graduadoState = useSelector((state) => state.graduados);
+  const userState = useSelector((state) => state.users);
 
   useEffect(() => {
     dispatch(getGraduados())
@@ -67,6 +71,15 @@ const AlumniMain = () => {
 
   const [searchTerm] = useState(""); //setSearchTerm
   const [filterYear] = useState(""); //setFilterYear
+  const [isAlumniModalOpen, setIsAlumniModalOpen] = useState(false);
+
+  const toggleAlumniModal = () => {
+    setIsAlumniModalOpen(!isAlumniModalOpen);
+  };
+
+  const closeAlumniModal = () => {
+    setIsAlumniModalOpen(false);
+  };
 
   // const handleSearch = (event) => {
   //   setSearchTerm(event.target.value.toLowerCase());
@@ -90,35 +103,20 @@ const AlumniMain = () => {
         <Breadcrumb title="Alumni" />
 
         <h1 className="titular-alumni">Conoce a nuestros graduados</h1>
-
-        {/* <div className="filters container mb-4">
-          <div className="row">
-            <div className="Busqueda-Alumni col-md-6 mb-3">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Buscar por nombre"
-                value={searchTerm}
-                onChange={handleSearch}
-              />
+        {
+            (userState.rol && (userState.rol === "administrativo" || userState.rol === "Administrador" || userState.rol === "administrativo"))
+            ? 
+            (
+            <div className="container">
+              <ButtonWithArrow text="Nuevo Alumno Graduado" onClick={toggleAlumniModal} />
+              <Modal isOpen={isAlumniModalOpen} onClose={toggleAlumniModal}>
+              <AlumniForm onSuccess={closeAlumniModal}/>
+              </Modal>
             </div>
-            <div className="selector-alumni col-md-6 mb-3">
-              <select
-                className="form-select"
-                value={filterYear}
-                onChange={handleFilter}
-              >
-                <option value="">Sin Filtros</option>
-                {uniqueYears.map((year, index) => (
-                  <option key={index} value={year}>
-                    {year}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-        </div> */}
-
+            )
+            :
+            (<></>)
+        }
         <div className="it-testimonial-area ed-testimonial-style-2 pt-50 pb-50 fix p-relative">
           <div className="container">
             <div className="row justify-content-center">
