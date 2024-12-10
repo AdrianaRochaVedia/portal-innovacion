@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 import {RecentPosts} from '../../components/News/SideBar';
 import { useParams } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
 import blogImg1 from '../../assets/img/blog/blog-sidebar-1.jpg';
 import blogImg2 from '../../assets/img/blog/blog-sidebar-2.jpg';
 import blogImg3 from '../../assets/img/blog/blog-sidebar-3.jpg';
+import { getNews } from '../../redux/noticias/thunk';
 
 const NewsDetailsMain = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const newsId = parseInt(id, 10); 
 
@@ -63,6 +66,10 @@ const NewsDetailsMain = () => {
     paragraph: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet accumsan arcu. Nullam sit amet nisi nec nunc tincidunt ultricies. Nullam sit amet",
     },   
   ];
+
+  useEffect(() => {
+    dispatch(getNews())
+  }, [dispatch])
 
   const selectedNews = allNewsData.find((news) => news.id === newsId);
 
