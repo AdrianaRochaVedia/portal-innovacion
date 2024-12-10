@@ -272,7 +272,7 @@ const AlumniForm = ({ onSuccess }) => {
         </div>
       )}
 
-      <button type="submit">Registrar Centro</button>
+      <button type="submit">Registrar Graduado</button>
     </form>
   );
 }; export default AlumniForm;

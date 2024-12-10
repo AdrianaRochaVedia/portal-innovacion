@@ -241,7 +241,7 @@ const SociedadUsuariosForm = ({ onSuccess }) => {
           <option value="Miembro">Miembro</option>
         </select>
       </label>
-      <button type="submit">Registrar Docente</button>
+      <button type="submit">Registrar Miembro de la Sociedad</button>
     </form>
   );
 }; export default SociedadUsuariosForm;
