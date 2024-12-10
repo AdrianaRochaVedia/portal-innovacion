@@ -5,6 +5,7 @@ import MenuItemsOnePage from './MenuItemsOnePage';
 
 import LogoWhite from '../../assets/img/logo/logo-innovacion-3.png';
 import Logo from '../../assets/img/logo/logo-innovacion-3.png';
+import ThemeToggle from './ThemeToggle';
 
 const HeaderFive = (props) => {
   const { headerClass, headerLogo, onePage, parentMenu } = props;
@@ -178,6 +179,7 @@ const HeaderFive = (props) => {
                       </button>
                     </div>
                   </div>
+                  <ThemeToggle />
                 </div>
               </div>
             </div>

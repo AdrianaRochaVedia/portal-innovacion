@@ -50,13 +50,6 @@ const AlumniForm = ({ onSuccess }) => {
     setFormData({ ...formData, socialLinks: updatedLinks });
   };
 
-  const handleImageChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setFormData({ ...formData, image: file });
-    }
-  };
-
   const addLinkField = () => {
     setFormData({ ...formData, socialLinks: [...formData.socialLinks, ''] });
   };
@@ -64,6 +57,13 @@ const AlumniForm = ({ onSuccess }) => {
   const removeLinkField = (index) => {
     const updatedLinks = formData.socialLinks.filter((_, i) => i !== index);
     setFormData({ ...formData, socialLinks: updatedLinks });
+  };
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setFormData({ ...formData, image: file });
+    }
   };
 
   const validateLinks = async (links) => {
@@ -223,7 +223,7 @@ const AlumniForm = ({ onSuccess }) => {
             onChange={handleInputChange}
             className="checkbox-input"
           />
-          <span className="checkbox-label">Estado</span>
+          <span className="checkbox-label">{formData.state ? 'Activo' : 'Inactivo'}</span>
         </label>
       </div>
 

@@ -25,13 +25,6 @@ const SociedadUsuariosForm = ({ onSuccess }) => {
     });
   };
 
-  const handleLinkChange = (index, value) => {
-    const updatedLinks = [...formData.socialLinks];
-    updatedLinks[index] = value;
-    setFormData({ ...formData, socialLinks: updatedLinks });
-  };
-
-
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -39,13 +32,19 @@ const SociedadUsuariosForm = ({ onSuccess }) => {
     }
   };
 
+  const handleLinkChange = (index, value) => {
+    const updatedLinks = [...formData.socialLinks];
+    updatedLinks[index] = value;
+    setFormData({ ...formData, socialLinks: updatedLinks });
+  };
+
   const addLinkField = () => {
-    setFormData({ ...formData, links: [...formData.links, ''] });
+    setFormData({ ...formData, socialLinks: [...formData.socialLinks, ''] });
   };
 
   const removeLinkField = (index) => {
-    const updatedLinks = formData.links.filter((_, i) => i !== index);
-    setFormData({ ...formData, links: updatedLinks });
+    const updatedLinks = formData.socialLinks.filter((_, i) => i !== index);
+    setFormData({ ...formData, socialLinks: updatedLinks });
   };
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
