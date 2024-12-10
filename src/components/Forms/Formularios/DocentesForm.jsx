@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import { createDocente } from '../../../redux/docentes/thunk';
 
 const DocentesForm = ({ onSuccess }) => {
   const [formData, setFormData] = useState({
@@ -108,6 +109,7 @@ const DocentesForm = ({ onSuccess }) => {
     Swal.fire('Éxito', 'Docente registrado correctamente.', 'success');
     // enviar los datos al servidor. devolver todo a los datos normales
     onSuccess();
+
   };
 
   return (

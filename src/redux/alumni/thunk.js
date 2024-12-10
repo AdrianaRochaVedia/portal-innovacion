@@ -19,3 +19,23 @@ export const getGraduados = () => {
       })
   }
 }
+
+export const createGraduado = async(graduado, modal) => {
+  console.log("Arrives")
+    await mainApi.post('/api/graduado',graduado, {
+      headers: {
+        'Content-type': 'application/json',
+        'x-token': localStorage.getItem("token-ptin")
+      }
+    })
+    .then(resp => {
+      Swal.fire('Éxito', 'Graduado registrado exitosamente.', 'success');
+    })
+    .catch(err => {
+      Swal.fire({
+        icon: "error",
+        title: "Ooops...",
+        text: "Error al registrar al graduado"
+      })
+    })
+}

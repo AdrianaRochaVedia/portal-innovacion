@@ -27,3 +27,23 @@ export const loginUser = (email, password) => {
   }
 }
 
+export const createUser = async(graduado, modal) => {
+  console.log("Arrives")
+    await mainApi.post('/api/auth',graduado, {
+      headers: {
+        'Content-type': 'application/json',
+        'x-token': localStorage.getItem("token-ptin")
+      }
+    })
+    .then(resp => {
+      Swal.fire('Éxito', 'Usuario registrado exitosamente.', 'success');
+    })
+    .catch(err => {
+      Swal.fire({
+        icon: "error",
+        title: "Ooops...",
+        text: "Error al registrar al usuario"
+      })
+    })
+}
+
