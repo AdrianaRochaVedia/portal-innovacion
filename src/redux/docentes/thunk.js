@@ -21,8 +21,9 @@ export const getDocentes = () => {
 }
 
 export const createDocente = async(docente, modal) => {
-  console.log("Arrives")
-    await mainApi.post('/api/docentes',docente, {
+  console.log("Arrives");
+  console.log("Datos enviados:", docente);
+    await mainApi.post('/api/docente',docente, {
       headers: {
         'Content-type': 'application/json',
         'x-token': localStorage.getItem("token-ptin")

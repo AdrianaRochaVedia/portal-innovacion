@@ -9,6 +9,7 @@ import HeaderFive from '../../components/Header/HeaderFive';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { getCentro } from '../../redux/centro/thunk';
+import { getUcentro } from '../../redux/ucentro/thunk';
 
 import ButtonWithArrow from '../../components/Forms/ButtonWithArrow';
 import Modal from '../../components/Forms/Modal';
@@ -18,6 +19,7 @@ import CentroUsuarios from '../../components/Forms/Formularios/CentroUsuariosFor
 const CentroMain = () => {
   const userState = useSelector((state) => state.users);
   const centroState = useSelector((state) => state.centro);
+  const ucentroState = useSelector((state) => state.ucentro);
   const dispatch = useDispatch();
   const [isCentroModalOpen, setIsCentroModalOpen] = useState(false);
   const [isCentroUsuariosModalOpen, setIsCentroUsuariosModalOpen] = useState(false);
@@ -40,17 +42,8 @@ const CentroMain = () => {
 
   useEffect(() => {
     dispatch(getCentro())
+    dispatch(getUcentro())
   }, [dispatch])
-
-  // const teamMembers = [
-  //   { image: teamImg1, name: "Fabian Sanchez", designation: "Presidente" },
-  //   { image: teamImg2, name: "Prof. Marco Javier Villavicencio", designation: "Docente tiempo completo" },
-  //   { image: teamImg3, name: "Willie Diaz", designation: "Docente" },
-  //   { image: teamImg5, name: "Justin Clark", designation: "Docente" },
-  //   { image: teamImg6, name: "Walter Skeete", designation: "Docente" },
-  //   { image: teamImg7, name: "Willie Diaz", designation: "Docente" },
-  //   { image: teamImg8, name: "Ann Dooley", designation: "Docente" },
-  // ];
   return (
     <main>
       <HeaderFive />
@@ -102,7 +95,7 @@ const CentroMain = () => {
               }
               <div style={{ marginBottom: '30px' }}></div> 
               <div className="row">
-                {centroState.centros.members.map((member, index) => (
+                {ucentroState.map((member, index) => (
                   <div key={index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
                     <SingleTeamThree
                       teamImage={member.photo ?? ""}
