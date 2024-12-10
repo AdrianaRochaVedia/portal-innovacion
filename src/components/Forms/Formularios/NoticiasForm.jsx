@@ -3,7 +3,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import Swal from 'sweetalert2';
 
-const NoticiasFormComponent = () => {
+const NoticiasFormComponent = ({ onSuccess }) => {
   const [title, setTitle] = useState('');
   const [editorValue, setEditorValue] = useState('');
   const [imageFiles, setImageFiles] = useState([]);
@@ -49,6 +49,7 @@ const NoticiasFormComponent = () => {
     setEditorValue('');
     setTags('');
     setImageFiles([]);
+    onSuccess();
   };
 
   return (

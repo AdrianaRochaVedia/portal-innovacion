@@ -114,42 +114,65 @@ $transition-time: 0.3s;
     }
   
     .checkbox-group {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      
-        .checkbox-label {
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          flex-wrap: wrap;
-        }
-        .checkbox-input {
-            width: 1.5rem;
-            height: 1.5rem;
-            cursor: pointer;
-        }
-        .checkbox-label-text{
-            display: block;
-        }
+      display: table;
+      width: 100%;
+      border-spacing: 0.5rem;
+  
+      .checkbox-row {
+          display: table-row;
+  
+          .checkbox-input {
+              display: table-cell;
+              width: 1.5rem;
+              height: 1.5rem;
+              cursor: pointer;
+              vertical-align: middle;
+          }
+  
+          .checkbox-label {
+              display: table-cell;
+              font-size: 1rem;
+              color: #333;
+              vertical-align: middle;
+              cursor: pointer;
+          }
+      }
     }
 
-    .select {
-        margin-top: 0.5rem;
-        padding: 0.5rem;
-        font-size: 1rem;
-        border: 0.5px solid #ccc;
-        border-radius: 0.5px;
-        background-color: #f9f9f9;
-        color: #333;
-        outline: none;
-        transition: border-color 0.3s ease;
-      
-        &:focus {
-          border-color: #007BFF;
-          background-color: #fff;
-        }
-    }
+    .select-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 1rem;
+      color: #333;
+  
+      label {
+          font-weight: bold;
+      }
+  
+      .select {
+          margin-top: 0.5rem;
+          padding: 0.8rem;
+          font-size: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 0.3rem;
+          background-color: #f9f9f9;
+          color: #333;
+          outline: none;
+          cursor: pointer;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  
+          &:focus {
+              border-color: #007BFF;
+              background-color: #fff;
+              box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+          }
+  
+          &:hover {
+              border-color: #007BFF;
+          }
+      }
+  }
   
     .links-section {
       display: flex;

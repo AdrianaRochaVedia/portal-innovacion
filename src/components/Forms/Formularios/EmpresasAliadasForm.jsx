@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import { createEmpresa } from '../../../redux/empresas/thunk';
 import { useNavigate } from 'react-router';
 
-const EmpresasAliadasForm = () => {
+const EmpresasAliadasForm = ({ onSuccess }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nombres: '',
@@ -77,6 +77,7 @@ const EmpresasAliadasForm = () => {
     createEmpresa(empresa)
     navigate("/oportunidades")
     // dispatch(createEmpresa(empresa))
+    onSuccess();
   };
 
   return (
@@ -120,41 +121,42 @@ const EmpresasAliadasForm = () => {
           required
         />
       </label>
-      <label>
+      <div className="checkbox-group">
         Estado
-        <div className="toggle-switch">
+        <label className="checkbox-row">
           <input
             type="checkbox"
             id="estado-toggle"
             checked={formData.estado}
             onChange={handleToggleChange}
+            className="checkbox-input"
           />
-          <label htmlFor="estado-toggle" className="toggle-label">
+          <label htmlFor="estado-toggle" className="checkbox-label">
             {formData.estado ? 'Activo' : 'Inactivo'}
           </label>
-        </div>
-      </label>
+        </label>
+      </div>
       <label>
-      <label className="image-upload">
-        <span className="custom-button">Subir Imágen</span>
-        <input
-          type="file"
-          name="image"
-          multiple
-          accept="image/*"
-          onChange={handleImageChange}
-        />
-        <span className="text">Puedes subir hasta 1 imágen.</span>
-      </label>
-        {formData.imagen && (
-          <div className="image-preview">
-            <img
-              src={URL.createObjectURL(formData.imagen)}
-              alt="Preview"
-              style={{ maxWidth: '100px', maxHeight: '100px' }}
-            />
-          </div>
-        )}
+        <label className="image-upload">
+          <span className="custom-button">Subir Imágen</span>
+          <input
+            type="file"
+            name="image"
+            multiple
+            accept="image/*"
+            onChange={handleImageChange}
+          />
+          <span className="text">Puedes subir hasta 1 imágen.</span>
+        </label>
+          {formData.imagen && (
+            <div className="image-preview">
+              <img
+                src={URL.createObjectURL(formData.imagen)}
+                alt="Preview"
+                style={{ maxWidth: '100px', maxHeight: '100px' }}
+              />
+            </div>
+          )}
       </label>
       <button type="submit">Registrar Empresa Aliada</button>
     </form>
