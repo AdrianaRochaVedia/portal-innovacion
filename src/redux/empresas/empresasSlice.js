@@ -16,8 +16,11 @@ export const empresasSlice = createSlice({
       state.empresas = action.payload.empresas
       state.isLoading = false
     },
+    deleteEmpresa: (state, id) => {
+      state.empresas = state.empresas.filter((emp) => emp.id !== id);
+    }
   }
 })
 
-export const { startLoadingEmpresa, setEmpresas } = empresasSlice.actions
+export const { startLoadingEmpresa, setEmpresas, deleteEmpresa } = empresasSlice.actions
 export default empresasSlice.reducer

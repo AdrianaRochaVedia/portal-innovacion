@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   noticias: [],
+  total: 0,
   isLoading: false
 }
 
@@ -14,6 +15,7 @@ export const noticiasSlice = createSlice({
     },
     setNoticia: (state, action) => {
       state.noticias = action.payload.noticias
+      state.total = action.payload.total
       state.isLoading = false
     },
   }

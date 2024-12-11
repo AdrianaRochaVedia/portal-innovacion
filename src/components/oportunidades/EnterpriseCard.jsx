@@ -3,7 +3,7 @@ import DeleteButton from "../Forms/DeleteButton"
 import EditButton from '../Forms/EditButton';
 import ExampleEditForm from '../Forms/Formularios/EmpresasAliadasForm';
 
-const EnterpriseCard = ({ logo, name, onViewMore, onViewOpportunities, companyData, onDeleteSuccess, onEditSuccess }) => {
+const EnterpriseCard = ({ logo, name, onViewMore, onViewOpportunities, companyData, id, onEditSuccess }) => {
   return (
     <div className="enterprise-card">
         <div className="action-buttons">
@@ -14,10 +14,7 @@ const EnterpriseCard = ({ logo, name, onViewMore, onViewOpportunities, companyDa
             />
             <DeleteButton
             itemData={companyData}
-            onDelete={(data) => {
-                console.log('Deleting:', data);
-                onDeleteSuccess();
-            }}
+            id={id}
             />
         </div>
       <img src={logo} alt={`${name} logo`} className="enterprise-card__logo" />

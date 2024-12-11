@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import { Link } from 'react-router-dom';
 import Breadcrumb from '../../components/Breadcrumb';
 import News from '../../components/News/News';
 import Sidebar from '../../components/News/SideBar';
@@ -8,8 +7,19 @@ import Pagination from '../../components/News/Pagination';
 import blogImg1 from '../../assets/img/blog/blog-sidebar-1.jpg';
 import blogImg2 from '../../assets/img/blog/blog-sidebar-2.jpg';
 import blogImg3 from '../../assets/img/blog/blog-sidebar-3.jpg';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { getNews } from '../../redux/noticias/thunk';
 
 const NewsMain = () => {
+  const noticiasState = useSelector((state) => state.noticias)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getNews(5, 1))
+  }, [dispatch])
+  
+
     const allNewsData = [
         {
         id: 1,
@@ -121,7 +131,7 @@ const NewsMain = () => {
             <div className="row">
               <div className="col-xl-8 col-lg-8 mb-40">
                 <div className="postbox__details-wrapper">
-                  <p>
+                  {/* <p>
                     Resultado de la búsqueda:{' '}
                     {searchQuery ? `"${searchQuery}"` : 'Todas las noticias'}
                   </p>
@@ -130,7 +140,7 @@ const NewsMain = () => {
                     {selectedTags.length > 0
                       ? selectedTags.join(', ')
                       : 'Ninguna categoría seleccionada'}
-                  </p>
+                  </p> */}
   
                   {currentNews.length > 0 ? (
                     currentNews.map((news) => <News key={news.id} {...news} />)
@@ -148,7 +158,7 @@ const NewsMain = () => {
                 )}
               </div>
   
-              <div className="col-xxl-4 col-xl-4 col-lg-4">
+              {/* <div className="col-xxl-4 col-xl-4 col-lg-4">
                 <Sidebar
                   posts={allNewsData}
                   tags={['Tag1', 'Tag2', 'Tag3', 'Tag4']}
@@ -156,7 +166,7 @@ const NewsMain = () => {
                   onTagClick={handleTagClick}
                   selectedTags={selectedTags}
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

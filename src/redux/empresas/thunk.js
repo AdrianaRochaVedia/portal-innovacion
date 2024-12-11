@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2'
 import { mainApi } from '../../axios'
-import { setEmpresas, startLoadingEmpresa } from './empresasSlice'
+import { deleteEmpresa, setEmpresas, startLoadingEmpresa } from './empresasSlice'
 
 export const getEmpresas = () => {
   return async(dispatch) => {
@@ -38,4 +38,27 @@ export const createEmpresa = async(empresa, modal) => {
         text: "Error al crear empresa"
       })
     })
+}
+
+export const borrarEmpresa = (id) => {
+  return async(dispatch) => {
+    console.log("ID:" + id)
+    await mainApi.patch(`/api/empresas/${id}`, {
+      headers: {
+        'x-token': localStorage.getItem("token-ptin")
+      }
+    })
+      .then(resp => {
+        console.log("Empresa borrada")
+        dispatch(deleteEmpresa(id))
+      })
+      .catch(err => {
+        console.log(err)
+        Swal.fire({
+          icon: "error",
+          title: "Ooops...",
+          text: "Problemas al borrar"
+        })
+      })
+  }
 }

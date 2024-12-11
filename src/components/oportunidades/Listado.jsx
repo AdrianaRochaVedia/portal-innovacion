@@ -24,11 +24,11 @@ const Listado = ({ companies }) => {
           <div className="companies-list">
             {companies.map((company) => (
               <EnterpriseCard
-                key={company.id}
+                key={company._id}
                 logo={company.logo}
                 name={company.name}
                 companyData={company}
-                onDeleteSuccess={() => console.log('Deleted')} // agregar logica fuera de esto pa eliminar
+                id={company._id} // agregar logica fuera de esto pa eliminar
                 onEditSuccess={() => console.log('Edited')} //agregar logica fuera de esto pa editar
                 onViewMore={() => window.location.href = company.detailsLink}
                 onViewOpportunities={() => handleViewOpportunities(company.id)}
