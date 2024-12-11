@@ -15,11 +15,11 @@ const HomeMain = () => {
       <Banner />
       <SideBarMenu
         sections={[
-          "Mision y Vision",
-          "Areas de Estudio y Modalidades de Graduacion",
+          "Misión y Visión",
+          "Areas de Estudio y Modalidades de Graduación",
           "Oportunidades",
-          "Conoce mas",
-          "Experiencias de Ex alumnos",
+          "Conoce más",
+          "Experiencias de Alumnos",
           "Eventos",
           "Noticias",
         ]}

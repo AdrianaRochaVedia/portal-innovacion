@@ -3,7 +3,9 @@ import Breadcrumb from '../../components/Breadcrumb';
 import News from '../../components/News/News';
 import Sidebar from '../../components/News/SideBar';
 import Pagination from '../../components/News/Pagination';
-
+import ButtonWithArrow from '../../components/Forms/ButtonWithArrow';
+import Modal from '../../components/Forms/Modal';
+import NoticiasFormComponent from '../../components/Forms/Formularios/NoticiasForm';
 import blogImg1 from '../../assets/img/blog/blog-sidebar-1.jpg';
 import blogImg2 from '../../assets/img/blog/blog-sidebar-2.jpg';
 import blogImg3 from '../../assets/img/blog/blog-sidebar-3.jpg';
@@ -12,6 +14,7 @@ import { useDispatch } from 'react-redux';
 import { getNews } from '../../redux/noticias/thunk';
 
 const NewsMain = () => {
+  const userState = useSelector((state) => state.users);
   const noticiasState = useSelector((state) => state.noticias)
   const dispatch = useDispatch()
 
@@ -79,6 +82,15 @@ const NewsMain = () => {
     // const [searchQuery, setSearchQuery] = useState('');
     // const [selectedTags, setSelectedTags] = useState([]);
     const newsPerPage = 5;
+    const [isNoticiasModalOpen, setIsNoticiasModalOpen] = useState(false);
+
+    const toggleNoticiasModal = () => {
+      setIsNoticiasModalOpen(!isNoticiasModalOpen);
+    };
+
+    const closeNoticiasModal = () => {
+      setIsNoticiasModalOpen(false);
+    };
   
     const contentRef = useRef(null);
   
@@ -131,6 +143,22 @@ const NewsMain = () => {
   
         <div ref={contentRef} className="postbox__area pt-120 pb-120">
           <div className="container">
+          {
+                  (userState.rol && (userState.rol === "administrativo" || userState.rol === "Administrador" || userState.rol === "administrativo"))
+                  ? 
+                  (
+                    <div className="container">
+                    <ButtonWithArrow text="Nueva Noticia" onClick={toggleNoticiasModal} />
+                    <Modal isOpen={isNoticiasModalOpen} onClose={toggleNoticiasModal}>
+                        <NoticiasFormComponent onSuccess={closeNoticiasModal}/>
+                    </Modal>
+                    
+                    </div>
+                  )
+                  :
+                  (<></>)
+                }
+                <div style={{ marginBottom: '30px' }}></div>
             <div className="row">
               <div className="col-xl-8 col-lg-8 mb-40">
                 <div className="postbox__details-wrapper">

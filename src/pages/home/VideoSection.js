@@ -54,7 +54,7 @@ const Video = () => {
               <div className="it-video-button">
                 <Link
                   className="ed-btn-square theme mr-25"
-                  to="/student-registration"
+                  to="/oportunidades"
                 >
                   <span>Nuestros aliados</span>
                 </Link>

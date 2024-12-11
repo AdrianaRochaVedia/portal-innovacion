@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import { actualizarEmpresa} from '../../../redux/empresas/thunk';
 import { createEmpresa } from '../../../redux/empresas/thunk';
 import { useNavigate } from 'react-router';
 
@@ -67,17 +68,31 @@ const EmpresasAliadasForm = ({ onSuccess, initialFormData }) => {
     }
 
     const empresa = {
+      _id: formData._id,
       name: name,
       email,
       description: description,
       link,
       state: state
-    }
+    };
     
-    createEmpresa(empresa)
-    navigate("/oportunidades")
-    // dispatch(createEmpresa(empresa))
+    try {
+      if (initialFormData) {
+        // Actualización
+        await actualizarEmpresa(empresa); 
+        
+        Swal.fire('Éxito', 'Empresa actualizada correctamente.', 'success');
+      } else {
+        // Creación
+        await createEmpresa(empresa);
+        
+        Swal.fire('Éxito', 'Empresa registrada correctamente.', 'success');
+    }
+    window.location.reload(true)
     onSuccess();
+  } catch (error) {
+    Swal.fire('Error', 'Ocurrió un problema al guardar los datos.', 'error');
+  }
   };
 
   return (

@@ -17,6 +17,7 @@ const DeleteButton = ({ id, itemData }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         dispatch(borrarEmpresa(id))
+        window.location.reload(true)
       }
     });
   };

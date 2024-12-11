@@ -18,8 +18,10 @@ const PasantiasMain = () => {
   const dispatch = useDispatch()
   const empresasState = useSelector((state) => state.empresas);
   const userState = useSelector((state) => state.users);
+  const [userRol, setUserRol] = useState("")
   useEffect(() => {
     dispatch(getEmpresas())
+    setUserRol(localStorage.getItem("rol-ptin"))
   }, [dispatch])
 
   const toggleEmpresasModal = () => {
@@ -39,7 +41,7 @@ const PasantiasMain = () => {
           title="Conoce nuestras empresas aliadas"
       />
       {
-          (userState.rol && (userState.rol === "administrativo" || userState.rol === "Administrador" || userState.rol === "administrativo"))
+          (userRol && (userRol === "administrativo" || userRol === "Administrador" || userRol === "administrativo"))
           ? 
           (
             <div className="container">
@@ -50,7 +52,7 @@ const PasantiasMain = () => {
             </div>
           )
           :
-          (<></>)
+          (<>No es admi</>)
       }
       <Listado companies={empresasState.empresas} />
             

@@ -44,6 +44,9 @@ const MenuItems = ({ mobileMenu }) => {
           <li>
             <Link to="/centro">Centro de Estudiantes</Link>
           </li>
+          <li>
+            <Link to="/teacher">Docentes</Link>
+          </li>
         </ul>
       </li>
 

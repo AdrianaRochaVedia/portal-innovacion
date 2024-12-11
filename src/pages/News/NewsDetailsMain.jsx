@@ -72,18 +72,17 @@ const NewsDetailsMain = () => {
   const noticia = useSelector((state) => state.noticias.noticiaId)
 
   useEffect(() => {
-    dispatch(getNewById(id))
-  }, [dispatch, id])
-
-
+    dispatch(getNewById(id));
+  }, [dispatch, id]);
+  
   if (!noticia) {
     return <p>Noticia no encontrada.</p>;
   }
-
+  
   return (
     <main>
       <Breadcrumb title="Noticia" subTitle="Noticia" />
-
+  
       <div className="postbox__area fix pt-120 pb-120">
         <div className="container">
           <div className="row">
@@ -118,9 +117,13 @@ const NewsDetailsMain = () => {
                       <div className="col-xl-7 col-lg-7 col-md-7">
                         <div className="postbox__details-tag">
                           <span>Categorias:</span>
-                          {noticia.tags.map((tag, index) => (
-                            <a key={index} href={`/news-details/${id}`}>{tag}</a>
-                          ))}
+                          {Array.isArray(noticia.tags) && noticia.tags.length > 0 ? (
+                            noticia.tags.map((tag, index) => (
+                              <a key={index} href={`/news-details/${id}`}>{tag}</a>
+                            ))
+                          ) : (
+                            <span>No hay categorías disponibles</span>
+                          )}
                         </div>
                       </div>
                       <div className="col-xl-5 col-lg-5 col-md-5">

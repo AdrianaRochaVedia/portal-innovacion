@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from './Modal';
 import { ReactComponent as EditIcon } from '../../assets/img/iconos/edit.svg';
 
-const EditButton = ({ itemData, EditFormComponent, onSuccess }) => {
+const EditButton = ({ itemData, EditFormComponent, id }) => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   const toggleModal = () => {
@@ -22,7 +22,6 @@ const EditButton = ({ itemData, EditFormComponent, onSuccess }) => {
             initialFormData={itemData}
             onSuccess={() => {
               toggleModal();
-              onSuccess();
             }}
           />
         </Modal>

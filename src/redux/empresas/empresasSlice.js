@@ -16,8 +16,8 @@ export const empresasSlice = createSlice({
       state.empresas = action.payload.empresas
       state.isLoading = false
     },
-    deleteEmpresa: (state, id) => {
-      state.empresas = state.empresas.filter((emp) => emp.id !== id);
+    deleteEmpresa: (state, action) => {
+      state.empresas = state.empresas.filter((emp) => emp.action !== action);
     }
   }
 })
