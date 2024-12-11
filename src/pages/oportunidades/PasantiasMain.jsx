@@ -40,7 +40,6 @@ const PasantiasMain = () => {
           titleClass="ed-section-title"
           title="Conoce nuestras empresas aliadas"
       />
-      <p>UserRol: {userRol}</p>
       {
           (userRol && (userRol === "administrativo" || userRol === "Administrador" || userRol === "administrativo"))
           ? 

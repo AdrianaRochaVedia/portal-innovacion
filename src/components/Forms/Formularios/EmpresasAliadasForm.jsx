@@ -88,7 +88,7 @@ const EmpresasAliadasForm = ({ onSuccess, initialFormData }) => {
         
         Swal.fire('Éxito', 'Empresa registrada correctamente.', 'success');
     }
-    navigate('/oportunidades')
+    window.location.reload(true)
     onSuccess();
   } catch (error) {
     Swal.fire('Error', 'Ocurrió un problema al guardar los datos.', 'error');
