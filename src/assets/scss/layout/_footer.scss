@@ -11,7 +11,7 @@
   }
   &-text {
     & p {
-      color: var(--it-common-white);
+      color: white;
       font-size: 17px;
       font-style: normal;
       font-weight: 400;
@@ -43,7 +43,7 @@
       }
       &:hover {
         background-color: var(--it-theme-1);
-        color: var(--it-common-white);
+        color: white;
       }
     }
   }
@@ -52,7 +52,7 @@
     font-weight: 700;
     padding-top: 10px;
     text-transform: capitalize;
-    color: var(--it-common-white);
+    color: white;
     margin-bottom: 10px;
     @media #{$xl,$lg,$md,$xs} {
       font-size: 20px;
@@ -68,7 +68,7 @@
           margin-bottom: 10px;
         }
         & a {
-          color: var(--it-common-white);
+          color: white;
           font-size: 17px;
           font-weight: 400;
           text-transform: capitalize;
@@ -113,7 +113,7 @@
         margin-right: 30px;
         border: 1px solid rgba(244, 244, 244, 0.5);
         background-color: rgba(255, 255, 255, 0.05);
-        color: var(--it-common-white);
+        color: white;
         @media #{$lg} {
           font-size: 20px;
           height: 50px;
@@ -144,7 +144,7 @@
         }
       }
       & a {
-        color: var(--it-common-white);
+        color: white;
         font-family: var(--it-ff-heading);
         font-size: 26px;
         font-weight: 700;
@@ -157,7 +157,7 @@
         transition: background-size 0.3s linear;
         &:hover {
           background-size: 0% 1px, 100% 1px;
-          color: var(--it-common-white);
+          color: white;
         }
         @media #{$xl} {
           font-size: 20px;
@@ -220,7 +220,7 @@
   }
   &-text {
     & p {
-      color: var(--it-common-white);
+      color: white;
       font-size: 17px;
       font-weight: 400;
       margin-bottom: 0;
@@ -258,7 +258,7 @@
   }
   &-right {
     & a {
-      color: var(--it-common-white);
+      color: white;
       font-size: 17px;
       font-weight: 400;
       transition: 0.3s;
@@ -310,16 +310,6 @@
     padding-left: 0;
   }
 }
-.it-footer-style-5 {
-  & .it-footer-social {
-    & a {
-      &:hover {
-        background-color: var(--it-theme-4);
-        color: var(--it-common-white);
-      }
-    }
-  }
-}
 
 .ed-footer-style-2 {
   & .it-footer-social {
@@ -327,7 +317,7 @@
       background-color: #4d5756;
       color: var(--it-theme-3);
       &:hover {
-        color: var(--it-common-white);
+        color: white;
         background-color: var(--it-theme-3);
       }
     }
@@ -343,120 +333,6 @@
             }
           }
         }
-      }
-    }
-  }
-}
-
-.ed-footer-style-3 {
-  & .it-footer-social {
-    & a {
-      background-color: #4d5756;
-      color: var(--it-common-white);
-      &:hover {
-        color: var(--it-common-black);
-      }
-    }
-  }
-  & .it-footer-list {
-    & ul {
-      & li {
-        & a {
-          &:hover {
-            color: var(--it-theme-3);
-            & i {
-              color: var(--it-theme-3);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.ed-footer-style-4 {
-  & .it-footer-list {
-    & ul {
-      & li {
-        & a {
-          &:hover {
-            color: var(--it-common-orenge);
-            & i {
-              color: var(--it-common-orenge);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.ed-footer-style-5 {
-  & .it-footer-social {
-    & a {
-      background-color: #4d5756;
-      color: var(--it-theme-5);
-      &:hover {
-        color: var(--it-common-white);
-        background-color: var(--it-theme-5);
-      }
-    }
-  }
-  & .it-footer-list {
-    & ul {
-      & li {
-        & a {
-          &:hover {
-            color: var(--it-theme-6);
-            & i {
-              color: var(--it-theme-6);
-            }
-          }
-        }
-      }
-    }
-  }
-  & .it-btn-white.sky-bg {
-    background-color: var(--it-theme-5);
-  }
-  & .it-footer-top-text {
-    & span {
-      color: var(--it-theme-5);
-    }
-  }
-  &.inner-style {
-    & .it-footer-top-text {
-      & span {
-        color: var(--it-common-purple-3);
-      }
-    }
-    & .it-footer-social {
-      & a {
-        background-color: #4d5756;
-        color: var(--it-common-orange);
-        &:hover {
-          color: var(--it-common-white);
-          background-color: var(--it-common-orange);
-        }
-      }
-    }
-    & .it-footer-list {
-      & ul {
-        & li {
-          & a {
-            &:hover {
-              color: var(--it-common-orange);
-              & i {
-                color: var(--it-common-orange);
-              }
-            }
-          }
-        }
-      }
-    }
-    & .it-footer-input-box {
-      & .it-btn-white {
-        background-color: var(--it-common-orange);
       }
     }
   }

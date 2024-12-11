@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 
-const DocentesForm = ({ onSuccess }) => {
-  const [formData, setFormData] = useState({
-    nombre: '',
+const DocentesForm = ({ onSuccess, initialFormData }) => {
+  const [formData, setFormData] = useState(initialFormData ||{
+    name: '',
     email: '',
     password: '',
     rol: '',
@@ -81,9 +81,9 @@ const DocentesForm = ({ onSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { nombre, email, password, rol, socialLinks } = formData;
+    const { name, email, password, rol, socialLinks } = formData;
 
-    if (!nombre || !email || !password || !rol || !socialLinks.length || !socialLinks[0]) {
+    if (!name || !email || !password || !rol || !socialLinks.length || !socialLinks[0]) {
       Swal.fire('Error', 'Todos los campos son obligatorios.', 'error');
       return;
     }
@@ -113,11 +113,11 @@ const DocentesForm = ({ onSuccess }) => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <label>
-        Nombre
+        name
         <input
           type="text"
-          name="nombre"
-          value={formData.nombre}
+          name="name"
+          value={formData.name}
           onChange={handleInputChange}
           required
         />

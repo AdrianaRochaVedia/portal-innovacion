@@ -27,11 +27,14 @@ const Listado = ({ companies }) => {
                 key={company.id}
                 logo={company.logo}
                 name={company.name}
+                companyData={company}
+                onDeleteSuccess={() => console.log('Deleted')} // agregar logica fuera de esto pa eliminar
+                onEditSuccess={() => console.log('Edited')} //agregar logica fuera de esto pa editar
                 onViewMore={() => window.location.href = company.detailsLink}
                 onViewOpportunities={() => handleViewOpportunities(company.id)}
               />
             ))}
-          </div>
+          </div>   
           
         </>
       ) : (

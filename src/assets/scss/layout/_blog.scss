@@ -63,11 +63,11 @@
         & span {
             & i {
                 display: inline-block;
-                color: var(--it-theme-1);
+                color: var(--it-text-body);
                 margin-right: 5px;
             }
 
-            color:#4D5756;
+            color:var(--it-text-body);
             font-size: 15px;
             font-style: normal;
             font-weight: 400;
@@ -1364,7 +1364,7 @@
             background-color: #353535;
             border: none;
             padding-right: 60px;
-            color: var(--it-common-white);
+            color: var(--it-common-);
             outline: none;
             @media #{$md} {
                 font-size: 15px;

@@ -117,11 +117,6 @@ const HeaderFive = (props) => {
       </div>
 
       <header className={headerClass ? headerClass : 'it-header-height'}>
-        <div className="ed-header-top-5-area ed-header-top-5-bg fix">
-          <div className="container container-2">
-            
-          </div>
-        </div>
 
         <div
           id="header-sticky"

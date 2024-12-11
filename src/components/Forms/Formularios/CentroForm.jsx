@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 
-const CentroForm = ({ onSuccess }) => {
-  const [formData, setFormData] = useState({
+const CentroForm = ({ onSuccess, initialFormData }) => {
+  const [formData, setFormData] = useState(initialFormData ||{
     name: '',
     objetive: '',
     image: null,

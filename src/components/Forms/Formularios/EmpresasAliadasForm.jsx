@@ -3,14 +3,14 @@ import Swal from 'sweetalert2';
 import { createEmpresa } from '../../../redux/empresas/thunk';
 import { useNavigate } from 'react-router';
 
-const EmpresasAliadasForm = ({ onSuccess }) => {
+const EmpresasAliadasForm = ({ onSuccess, initialFormData }) => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    nombres: '',
+  const [formData, setFormData] = useState(initialFormData || {
+    name: '',
     email: '',
-    descripcion: '',
+    description: '',
     link: '',
-    estado: false,
+    state: false,
     imagen: null,
   });
 
@@ -20,7 +20,7 @@ const EmpresasAliadasForm = ({ onSuccess }) => {
   };
 
   const handleToggleChange = () => {
-    setFormData({ ...formData, estado: !formData.estado });
+    setFormData({ ...formData, state: !formData.state });
   };
 
   const handleImageChange = (event) => {
@@ -48,9 +48,9 @@ const EmpresasAliadasForm = ({ onSuccess }) => {
     console.log("Envio de formulario")
     event.preventDefault();
 
-    const { nombres, email, descripcion, link, estado } = formData;
+    const { name, email, description, link, state } = formData;
 
-    if (!nombres || !email || !descripcion || !link) {
+    if (!name || !email || !description || !link) {
       Swal.fire('Error', 'Todos los campos son obligatorios.', 'error');
       return;
     }
@@ -67,11 +67,11 @@ const EmpresasAliadasForm = ({ onSuccess }) => {
     }
 
     const empresa = {
-      name: nombres,
+      name: name,
       email,
-      description: descripcion,
+      description: description,
       link,
-      state: estado
+      state: state
     }
     
     createEmpresa(empresa)
@@ -83,11 +83,11 @@ const EmpresasAliadasForm = ({ onSuccess }) => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <label>
-        Nombres
+        name
         <input
           type="text"
-          name="nombres"
-          value={formData.nombres}
+          name="name"
+          value={formData.name}
           onChange={handleInputChange}
           required
         />
@@ -105,8 +105,8 @@ const EmpresasAliadasForm = ({ onSuccess }) => {
       <label>
         Descripción
         <textarea
-          name="descripcion"
-          value={formData.descripcion}
+          name="description"
+          value={formData.description}
           onChange={handleInputChange}
           required
         />
@@ -122,17 +122,17 @@ const EmpresasAliadasForm = ({ onSuccess }) => {
         />
       </label>
       <div className="checkbox-group">
-        Estado
+        state
         <label className="checkbox-row">
           <input
             type="checkbox"
-            id="estado-toggle"
-            checked={formData.estado}
+            id="state-toggle"
+            checked={formData.state}
             onChange={handleToggleChange}
             className="checkbox-input"
           />
-          <label htmlFor="estado-toggle" className="checkbox-label">
-            {formData.estado ? 'Activo' : 'Inactivo'}
+          <label htmlFor="state-toggle" className="checkbox-label">
+            {formData.state ? 'Activo' : 'Inactivo'}
           </label>
         </label>
       </div>

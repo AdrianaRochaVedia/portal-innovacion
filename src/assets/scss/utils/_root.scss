@@ -1,4 +1,4 @@
-@use 'colors';
+@use 'colors' as *;
 @use 'typography';
 
 :root {
@@ -11,12 +11,17 @@
         }
     }
 
-    /**
-    @color declaration
-    */
-    @each $color, $shades in colors.$colors {
+    @each $category, $shades in $light-mode {
         @each $shade, $value in $shades {
-            --it-#{$color}-#{$shade}: #{$value};
+            --it-#{$category}-#{$shade}: #{$value};
         }
+    }
+}
+
+.dark-mode {
+    @each $category, $shades in $dark-mode {
+      @each $shade, $value in $shades {
+        --it-#{$category}-#{$shade}: #{$value};
+      }
     }
 }

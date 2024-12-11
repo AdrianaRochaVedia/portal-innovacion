@@ -113,7 +113,7 @@ const Category = () => {
           >
             <SingleCategoryTwo
               iconImage={iconImg2}
-              title="PROYECTO DE GRAdo"
+              title="PROYECTO DE GRADO"
               subTitle="(PLAN DE NEGOCIOS)"
             />
           </div>

@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 const NoticiasFormComponent = ({ onSuccess }) => {
   const [title, setTitle] = useState('');
-  const [editorValue, setEditorValue] = useState('');
+  const [description, setdescription] = useState('');
   const [imageFiles, setImageFiles] = useState([]);
   const [tags, setTags] = useState(''); 
 
@@ -29,7 +29,7 @@ const NoticiasFormComponent = ({ onSuccess }) => {
       Swal.fire('Error', 'Debes ingresar un título.', 'error');
       return;
     }
-    if (!editorValue.trim()) {
+    if (!description.trim()) {
       Swal.fire('Error', 'Debes escribir el contenido de la noticia.', 'error');
       return;
     }
@@ -46,7 +46,7 @@ const NoticiasFormComponent = ({ onSuccess }) => {
     Swal.fire('Éxito', 'La noticia ha sido publicada.', 'success');
     // Limpiar los estados después de la publicación
     setTitle('');
-    setEditorValue('');
+    setdescription('');
     setTags('');
     setImageFiles([]);
     onSuccess();
@@ -67,8 +67,8 @@ const NoticiasFormComponent = ({ onSuccess }) => {
       <label>
         Escribe el contenido de la noticia aquí
         <ReactQuill
-          value={editorValue}
-          onChange={setEditorValue}
+          value={description}
+          onChange={setdescription}
           placeholder="Escribe la noticia aquí"
           modules={{
             toolbar: [

@@ -1,3 +1,5 @@
+@use '../utils' as *;
+
 .table-container {
     overflow-x: auto;
     margin: 1rem;
@@ -5,6 +7,7 @@
     border-top-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
+    background-color: var(--it-common-white);
 }
 
 .curriculum-table {
@@ -17,13 +20,13 @@
     }
 
     .mallaSemestresNum{
-        background-color: #0077b6;
-        color: #fff;
+        background-color: var(--it-grey-1);
+        color: var(--it-common-black);
     }
 
     .header {
-        background-color: #001b2e;
-        color: #fff;
+        background-color: var(--it-grey-1);
+        color: var(--it-common-black);
         font-size: 1rem;
     }
 
@@ -42,7 +45,7 @@
             line-height: 0.7rem;
 
             &:hover {
-                background-color: #d4ebf8;
+                background-color: rgb(57, 97, 121, 0.5);
             }
     
             &.prerequisitoHighlight {

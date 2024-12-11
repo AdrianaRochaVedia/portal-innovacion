@@ -33,6 +33,7 @@ body {
   color: var(--it-text-body);
   line-height: 32px;
   overflow-x: hidden;
+  background: var(--it-random-background);
 }
 
 a {
@@ -177,7 +178,7 @@ input {
   padding: 0 20px;
   line-height: 58px;
   font-size: 14px;
-  color: var(--it-common-black);
+  color: grey;
   @include it-placeholder {
     color: #4d5756;
   }

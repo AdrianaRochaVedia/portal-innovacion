@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 
-const AlumniForm = ({ onSuccess }) => {
-  const [formData, setFormData] = useState({
+const AlumniForm = ({ onSuccess, initialFormData }) => {
+  const [formData, setFormData] = useState(initialFormData ||{
     name: '',
     email: '',
     password: '',
@@ -12,7 +12,7 @@ const AlumniForm = ({ onSuccess }) => {
     isSociedad: false,
     isDocente: false,
     isGraduado: false,
-    image: null,
+    imagen: null,
     socialLinks: [''],
     gestion: '',
     description: '',
@@ -59,10 +59,10 @@ const AlumniForm = ({ onSuccess }) => {
     setFormData({ ...formData, socialLinks: updatedLinks });
   };
 
-  const handleImageChange = (event) => {
+  const handleimagenChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setFormData({ ...formData, image: file });
+      setFormData({ ...formData, imagen: file });
     }
   };
 
@@ -252,20 +252,20 @@ const AlumniForm = ({ onSuccess }) => {
         </button>
       </div>
 
-      <label className="image-upload">
-        <span className="custom-button">Subir Imagen</span>
+      <label className="imagen-upload">
+        <span className="custom-button">Subir imagenn</span>
         <input
           type="file"
-          name="image"
-          accept="image/*"
-          onChange={handleImageChange}
+          name="imagen"
+          accept="imagen/*"
+          onChange={handleimagenChange}
         />
       </label>
 
-      {formData.image && (
-        <div className="image-preview">
+      {formData.imagen && (
+        <div className="imagen-preview">
           <img
-            src={URL.createObjectURL(formData.image)}
+            src={URL.createObjectURL(formData.imagen)}
             alt="Preview"
             style={{ maxWidth: '100px', maxHeight: '100px' }}
           />

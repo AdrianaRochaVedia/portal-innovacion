@@ -12,7 +12,7 @@
 	font-size: 15px;
 	letter-spacing: -0.01em;
 	text-transform: capitalize;
-	color: var(--it-common-white);
+	color: white;
 	background-color: var(--it-theme-1);
 	border-radius: 200px;
 	& i {
@@ -26,7 +26,7 @@
 		border-radius: 50%;
 		text-align: center;
 		transition: .3s;
-		color: var(--it-common-white);
+		color: white;
 		background-color: var(--it-common-purple-2);
 		@media #{$xs}{  
 			width: 48px;     
@@ -45,7 +45,7 @@
 	}
 	
 	&.theme-2 {
-		color: var(--it-common-white);
+		color: white;
 		background-color: var(--it-theme-3);
 		& i {
 			background-color: #35D7AE;
@@ -68,10 +68,10 @@
 		}
 	}
 	&:hover {
-		color: var(--it-common-white);
+		color: white;
 		background-color: var(--it-common-black-3);
 		& i {
-			color: var(--it-common-white);
+			color: white;
 			background-color: #1F3061;
 		}
 		&.theme-2{
@@ -94,7 +94,7 @@
 	font-size: 15px;
 	letter-spacing: -0.01em;
 	text-transform: capitalize;
-	color: var(--it-common-white);
+	color: white;
 	background-color: var(--it-common-black-3);
 	border-radius: 200px;
 	& i {
@@ -107,7 +107,7 @@
 		line-height: 54px;
 		border-radius: 50%;
 		text-align: center;
-		color: var(--it-common-white);
+		color: white;
 		background-color: #1F3061;
 		transition: .3s;
 		@media #{$xs}{      
@@ -126,10 +126,10 @@
 		padding-right: 60px;
 	}
 	&:hover {
-		color: var(--it-common-white);
+		color: white;
 		background-color: var(--it-theme-1);
 		& i {
-			color: var(--it-common-white);
+			color: white;
 			background-color: var(--it-common-purple-2);
 		}
 	}
@@ -167,17 +167,17 @@
 		font-size: 14px;
 	}
 	&:hover {
-		color: var(--it-common-white);
+		color: white;
 		background-color: var(--it-theme-1);
 		& i {
-			color: var(--it-common-white);
+			color: white;
 			background-color: var(--it-common-purple-2);
 		}
 		&.dark-bg {
-			color: var(--it-common-white);
+			color: white;
 			background-color: var(--it-common-black-3);
 			& i {
-				color: var(--it-common-white);
+				color: white;
 				background-color: #1F3061;
 			}
 		}
@@ -216,10 +216,10 @@
 		border-radius: 5px;
 	}
 	&.theme-bg-2 {
-		color: var(--it-common-white);
+		color: white;
 		background-color: var(--it-theme-3);
 		& i {
-			color: var(--it-common-white);
+			color: white;
 			background-color: #35D7AE;
 		}
 	}
@@ -228,10 +228,10 @@
 		padding: 0 27px;
 	}
 	&:hover {
-		color: var(--it-common-white);
+		color: white;
 		background-color: var(--it-theme-1);
 		& i {
-			color: var(--it-common-white);
+			color: white;
 			background-color: var(--it-common-purple-2);
 		}
 		&.radius {
@@ -266,10 +266,10 @@
 		transition: .3s;
 	}
 	&:hover {
-		color: var(--it-common-white);
+		color: white;
 		background-color: var(--it-theme-1);
 		& i {
-			color: var(--it-common-white);
+			color: white;
 		}
 	}
 	@media #{$lg,$md,$xs}{                 
@@ -288,7 +288,7 @@
 	border-radius: 5px;
 	z-index: 1;
 	color: var(--it-common-black);
-	background-color: var(--it-common-white);
+	background-color: white;
 	font-size: 15px;
 	@media #{$lg,$md,$xs}{                 
 		font-size: 14px;
@@ -311,11 +311,11 @@
 	&.sky-bg{
 		font-size: 15px;
 		background-color: var(--it-theme-3);
-		color: var(--it-common-white);
+		color: white;
 	}
 	&.purple-2 {
 		background-color: var(--it-theme-4);
-		color: var(--it-common-white);
+		color: white;
 	}
 }
 .ed-btn-square{
@@ -328,7 +328,7 @@
 	font-weight: 500;
 	font-size: 15px;
 	text-transform: uppercase;
-	color: var(--it-common-white);
+	color: white;
 	background-color: var(--it-theme-3);
 	text-align: center;
 	@media #{$md,$xs}{
@@ -350,22 +350,22 @@
 	}
 	&.purple-2 {
 		background-color: var(--it-theme-4);
-		color: var(--it-common-white);
+		color: white;
 	}
 	&.purple-3 {
 		background-color: var(--it-theme-4);
-		color: var(--it-common-white);
+		color: white;
 	}
 	&.purple-4 {
 		background-color: var(--it-common-purple-3);
-		color: var(--it-common-white);
+		color: white;
 	}
 	&.radius {
 		border-radius: 5px;
 	}
 	&.orange {
 		background-color: var(--it-common-orange);
-		color: var(--it-common-white);
+		color: white;
 		border-radius: 5px;
 		& i,svg {
 			display: inline-block;
@@ -380,7 +380,7 @@
 	}
 	&.dark {
 		background-color: var(--it-common-black);
-		color: var(--it-common-white);
+		color: white;
 		border-radius: 5px;
 		& i,svg {
 			display: inline-block;
@@ -390,26 +390,26 @@
 	}
 	&:hover {
 		background-color: var(--it-theme-4);
-		color: var(--it-common-white);
+		color: white;
 		&.purple-2 {
-			color: var(--it-common-white);
+			color: white;
 			background-color: var(--it-theme-3);
 		}
 		&.purple-3 {
-			color: var(--it-common-white);
+			color: white;
 			background-color: var(--it-theme-3);
 		}
 		&.purple-4 {
 			background-color: var(--it-common-orange);
-			color: var(--it-common-white);
+			color: white;
 		}
 		&.sm-2 {
 			background-color: var(--it-common-purple-3);
-			color: var(--it-common-white);
+			color: white;
 		}
 		&.hover-2 {
 			background-color: var(--it-common-orange);
-			color: var(--it-common-white);
+			color: white;
 		}
 	}
 }
@@ -428,17 +428,17 @@
 	font-weight: 500;
 	font-size: 15px;
 	text-transform: capitalize;
-	color: var(--it-common-white);
+	color: white;
 	background-color: var(--it-theme-7);
 	border-radius: 60px;
 	&.sky-bg {
 		background-color: var(--it-theme-5);
 	}
 	&:hover {
-		color: var(--it-common-white);
+		color: white;
 		background-color: var(--it-theme-5);
 		&.sky-bg {
-			color: var(--it-common-white);
+			color: white;
 			background-color: var(--it-theme-7);
 		}
 	}
@@ -454,7 +454,7 @@
 	transition: .4s;
 	border-radius: 5px;
 	z-index: 1;
-	color: var(--it-common-white);
+	color: white;
 	background-color: var(--it-common-purple-3);
 	@media #{$lg,$md,$xs}{                 
 		font-size: 14px;
@@ -470,7 +470,7 @@
 		}
 	}
 	&:hover{
-		color: var(--it-common-white);
+		color: white;
 		& span{
 			& svg{
 				animation: tfLeftToRight 0.4s forwards;
@@ -503,12 +503,12 @@
 	position: relative;
 	transition: .3s;
 	text-transform: uppercase;
-	color: var(--it-common-white);
+	color: white;
 	background-color: var(--it-theme-1);
 	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 	margin: 5px 0;
 	&:hover{
 		color: var(--it-common-black);
-		background-color: var(--it-common-white);
+		background-color: white;
 	}
 }
