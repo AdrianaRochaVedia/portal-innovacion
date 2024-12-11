@@ -19,5 +19,5 @@ export const ucentroSlice = createSlice({
     },
   });
   
-  export const { startLoadingUcentro, setUcentro } = ucentroSlice.actions;
+export const { startLoadingUcentro, setUcentro } = ucentroSlice.actions;
 export default ucentroSlice.reducer

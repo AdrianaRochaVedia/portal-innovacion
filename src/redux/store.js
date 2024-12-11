@@ -6,6 +6,7 @@ import empresasReducer from './empresas/empresasSlice'
 import noticiasReducer from './noticias/noticiasSlice'
 import centroReducer from './centro/centroSlice'
 import sociedadReducer from './sociedad/sociedadSlice'
+import ucentroReducer from './ucentro/ucentroSlice'
 
 export const store = configureStore({
   reducer: {
@@ -15,7 +16,8 @@ export const store = configureStore({
     empresas: empresasReducer,
     noticias: noticiasReducer,
     centro: centroReducer,
-    sociedad: sociedadReducer
+    sociedad: sociedadReducer,
+    ucentro: ucentroReducer
   }
 })
 
