@@ -13,8 +13,10 @@ import ButtonWithArrow from '../../components/Forms/ButtonWithArrow';
 import Modal from '../../components/Forms/Modal';
 import SociedadForm from '../../components/Forms/Formularios/SociedadForm';
 import SociedadUsuarios from '../../components/Forms/Formularios/SociedadUsuariosForm';
+import { getUsociedad } from '../../redux/usociedad/thunk';
 
 const SceMain = () => {
+  const usociedadState = useSelector((state) => state.usociedad);
   const [isSociedadModalOpen, setIsSociedadModalOpen] = useState(false);
   const [isSociedadUsuariosModalOpen, setIsSociedadUsuariosModalOpen] = useState(false);
   const sociedadState = useSelector((state) => state.sociedad);
@@ -24,6 +26,7 @@ const SceMain = () => {
 
   useEffect(() => {
     dispatch(getSociedad())
+    dispatch(getUsociedad())
   }, [dispatch])
 
   const toggleSociedadModal = () => {
@@ -87,16 +90,25 @@ const SceMain = () => {
               <div style={{ marginBottom: '30px' }}></div>
               
               <div className="row">
-                {sociedadState.sociedad.members.map((member, index) => (
-                  <div key={index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
-                    <SingleTeamThree
-                      teamImage={member.photo}
-                      authorName={member.user.name}
-                      designation={member.role}
-                      socialLinks={member.socialLinks}
-                    />
-                  </div>
-                ))}
+              {/* <KnowUs
+                title="Conoce a los minebros de nuestro Centro de Estudiantes"
+              /> */}
+                {
+                  (usociedadState)
+                  ?
+                  (usociedadState.usociedad.map((member, index) => (
+                    <div key={index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
+                      <SingleTeamThree
+                        teamImage={""}
+                        authorName={member.usuario.name ?? ""}
+                        designation={member.role ?? ""}
+                        socialLinks={member.socialLinks}
+                      />
+                    </div>
+                  )))
+                  :
+                  (<>No hay sociedad</>)
+                }
               </div>
             </div>
           )

@@ -7,6 +7,7 @@ import noticiasReducer from './noticias/noticiasSlice'
 import centroReducer from './centro/centroSlice'
 import sociedadReducer from './sociedad/sociedadSlice'
 import ucentroReducer from './ucentro/ucentroSlice'
+import usociedadReducer from './usociedad/usociedadSlice'
 
 export const store = configureStore({
   reducer: {
@@ -17,7 +18,8 @@ export const store = configureStore({
     noticias: noticiasReducer,
     centro: centroReducer,
     sociedad: sociedadReducer,
-    ucentro: ucentroReducer
+    ucentro: ucentroReducer,
+    usociedad: usociedadReducer
   }
 })
 

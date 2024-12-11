@@ -97,6 +97,9 @@ const CentroMain = () => {
               }
               <div style={{ marginBottom: '30px' }}></div> 
               <div className="row">
+              {/* <KnowUs
+                title="Conoce a los minebros de nuestro Centro de Estudiantes"
+              /> */}
                 {
                   (ucentroState)
                   ?
