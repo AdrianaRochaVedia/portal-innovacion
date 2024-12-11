@@ -110,6 +110,10 @@ const CentroMain = () => {
                         authorName={member.usuario.name ?? ""}
                         designation={member.role ?? ""}
                         socialLinks={member.socialLinks}
+                        companyData={member}
+                        id={member.id}
+                        onEditSuccess={() => console.log('Edited')}
+                        exampleEditForm={CentroUsuarios}
                       />
                     </div>
                   )))

@@ -77,6 +77,10 @@ const TeacherMain = () => {
                       authorName={teacher.usuario.name}
                       designation={teacher.designation}
                       socialLinks={teacher.socialLinks}
+                      companyData={teacher}
+                      id={teacher.id}
+                      onEditSuccess={() => console.log('Edited')}
+                      exampleEditForm={DocentesForm}
                     />
                   </div>
                 )))

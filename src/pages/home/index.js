@@ -1,14 +1,16 @@
 import HeaderThree from '../../components/Header/HeaderThree';
 import FooterTwo from '../../components/Footer/FooterTwo';
 import HomeMain from './HomeThreeMain';
+import Muñequito from '../../components/Muñequito/Muñequito';
 
 import Logo from '../../assets/img/logo/logo-innovacion-3.png';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../redux/user/userSlice';
 
 const MainPage = () => {
   const dispatch = useDispatch()
+  const [showMuñequito, setShowMuñequito] = useState(true);
   useEffect(() => {
     const user = localStorage.getItem("user-ptin")
     const token = localStorage.getItem("token-ptin")
@@ -28,6 +30,7 @@ const MainPage = () => {
   
   return (
     <>
+      {showMuñequito && <Muñequito isVisible={true} />}
       <HeaderThree />
       <HomeMain />
       <FooterTwo

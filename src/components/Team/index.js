@@ -3,12 +3,23 @@ import { Link } from 'react-router-dom';
 
 import Image from '../../assets/img/team/team-1-1.png';
 import RightArrowThin from '../SVG/RightArrowThin';
+import DeleteButton from "../Forms/DeleteButton"
+import EditButton from '../Forms/EditButton';
 
 const SingleTeam = (props) => {
-  const { itemClass, teamImage, authorName, designation } = props;
+  const { itemClass, teamImage, authorName, designation, id, ExampleEditForm, companyData, onEditSuccess} = props;
 
   return (
     <div className={itemClass ? itemClass : 'it-team-item'}>
+      <EditButton
+        itemData={companyData}
+        EditFormComponent={ExampleEditForm}
+        onSuccess={onEditSuccess}
+      />
+      <DeleteButton
+        itemData={companyData}
+        id={id}
+      />
       <div className="it-team-thumb-box p-relative">
         <div className="it-team-thumb">
           <img src={teamImage ? teamImage : Image} alt="" />
