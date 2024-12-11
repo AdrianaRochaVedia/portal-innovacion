@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   noticias: [],
+  noticiaId: {},
   total: 0,
   isLoading: false
 }
@@ -18,8 +19,11 @@ export const noticiasSlice = createSlice({
       state.total = action.payload.total
       state.isLoading = false
     },
+    setNoticiaId: (state, action) => {
+      state.noticiaId = action.payload.noticia
+    }
   }
 })
 
-export const { startLoadingNoticia, setNoticia } = noticiasSlice.actions
+export const { startLoadingNoticia, setNoticia, setNoticiaId } = noticiasSlice.actions
 export default noticiasSlice.reducer
