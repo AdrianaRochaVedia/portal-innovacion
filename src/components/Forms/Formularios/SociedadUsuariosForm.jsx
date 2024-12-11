@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import { createUsociedad } from '../../../redux/usociedad/thunk';
+import { useNavigate } from 'react-router';
 
 const SociedadUsuariosForm = ({ onSuccess, initialFormData }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState(initialFormData ||{
     name: '',
     email: '',
@@ -78,6 +81,7 @@ const SociedadUsuariosForm = ({ onSuccess, initialFormData }) => {
   };
 
   const handleSubmit = async (e) => {
+    console.log("Envio de formulario")
     e.preventDefault();
 
     const { name, email, password, rol, socialLinks } = formData;
@@ -106,6 +110,20 @@ const SociedadUsuariosForm = ({ onSuccess, initialFormData }) => {
 
     Swal.fire('Éxito', 'Docente registrado correctamente.', 'success');
     // enviar los datos al servidor. devolver todo a los datos normales
+    const empresa = {
+      name,
+      email,
+      password,
+      rol,
+      role: formData.role,
+      socialLinks,
+      designation: formData.designation,
+      state: formData.state,
+    }
+    
+    createUsociedad(empresa)
+    navigate("/sce")
+    onSuccess();
     onSuccess();
   };
 

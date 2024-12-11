@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import { createSociedad } from '../../../redux/sociedad/thunk';
+import { useNavigate } from 'react-router';
 
 const SociedadForm = ({ onSuccess, initialFormData }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState(initialFormData ||{
     name: '',
     objetive: '',
@@ -50,6 +53,7 @@ const SociedadForm = ({ onSuccess, initialFormData }) => {
   };
 
   const handleSubmit = async (e) => {
+    console.log("Envio de formulario")
     e.preventDefault();
 
     const { name, objetive, start, end, socialLinks } = formData;
@@ -66,6 +70,18 @@ const SociedadForm = ({ onSuccess, initialFormData }) => {
     }
 
     Swal.fire('Éxito', 'Centro registrado correctamente.', 'success');
+
+    const empresa = {
+      name,
+      objetive,
+      isDeleted: formData.isDeleted,
+      start,
+      end,
+      socialLinks
+    }
+
+    createSociedad(empresa)
+    navigate("/sce")
     onSuccess();
   };
 
