@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 
 const UsuariosForm = ({ onSuccess }) => {
   const [formData, setFormData] = useState({
-    nombre: '',
+    name: '',
     email: '',
     password: '',
     rol: '',
@@ -41,9 +41,9 @@ const UsuariosForm = ({ onSuccess }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { nombre, email, password, rol} = formData;
+    const { name, email, password, rol} = formData;
 
-    if (!nombre || !email || !password || !rol) {
+    if (!name || !email || !password || !rol) {
       Swal.fire('Error', 'Todos los campos son obligatorios.', 'error');
       return;
     }
@@ -67,11 +67,11 @@ const UsuariosForm = ({ onSuccess }) => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <label>
-        Nombre
+        name
         <input
           type="text"
-          name="nombre"
-          value={formData.nombre}
+          name="name"
+          value={formData.name}
           onChange={handleInputChange}
           required
         />

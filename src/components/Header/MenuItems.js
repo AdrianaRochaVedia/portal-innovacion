@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
-const MenuItems = (props) => {
-  const { mobileMenu } = props;
-  const [home] = useState(false);
-  const [course] = useState(false);
-  const [page] = useState(false);
-  const [blog] = useState(false);
+const MenuItems = ({ mobileMenu }) => {
+  const [expandedMenu, setExpandedMenu] = useState(null);
+
+  const toggleMenu = (menu) => {
+    setExpandedMenu(expandedMenu === menu ? null : menu);
+  };
 
   const handleClick = (e) => {
     if (mobileMenu) {
@@ -17,63 +18,87 @@ const MenuItems = (props) => {
   return (
     <ul>
       <li>
-        <Link
-          to="/"
-          className={`${home ? 'expanded' : ''}`}
-          onClick={handleClick}
-        >
+        <Link to="/" onClick={handleClick}>
           <span>Home</span>
         </Link>
       </li>
-      <li>
-        <Link to="/teacher">
-          <span>Docentes</span>
-        </Link>
-      </li>
-      <li>
+
+      <li className="has-dropdown">
         <Link
-          to="/malla"
-          className={course ? 'expanded' : ''}
-          onClick={handleClick}
+          to="#"
+          className={expandedMenu === 'nosotros' ? 'expanded' : ''}
+          onClick={(e) => {
+            e.preventDefault();
+            toggleMenu('nosotros');
+          }}
         >
-          <span>Malla</span>
+          <span>Nosotros</span>
         </Link>
+        <ul className={expandedMenu === 'nosotros' ? 'submenu d-block' : 'submenu'}>
+          <li>
+            <Link to="/alumni">Alumni</Link>
+          </li>
+          <li>
+            <Link to="/sce">Sociedad Científica</Link>
+          </li>
+          <li>
+            <Link to="/centro">Centro de Estudiantes</Link>
+          </li>
+        </ul>
       </li>
-      <li>
-        <Link to="/alumni" className={page ? 'expanded' : ''} onClick={handleClick}>
-          <span>Alumni</span>
-        </Link>
-      </li>
-      <li>
+
+      <li className="has-dropdown">
         <Link
-          to="/oportunidades"
-          className={blog ? 'expanded' : ''}
-          onClick={handleClick}
+          to="#"
+          className={expandedMenu === 'comunidad' ? 'expanded' : ''}
+          onClick={(e) => {
+            e.preventDefault();
+            toggleMenu('comunidad');
+          }}
         >
-          <span>Empresas</span>
+          <span>Comunidad</span>
+        </Link>
+        <ul className={expandedMenu === 'comunidad' ? 'submenu d-block' : 'submenu'}>
+          <li>
+            <Link to="/blog-1">Blog</Link>
+          </li>
+          <li>
+            <Link to="/news">Noticias</Link>
+          </li>
+          <li>
+            <Link to="/event">Eventos</Link>
+          </li>
+        </ul>
+      </li>
+      <li className="has-dropdown">
+        <Link
+          to="#"
+          className={expandedMenu === 'academicos' ? 'expanded' : ''}
+          onClick={(e) => {
+            e.preventDefault();
+            toggleMenu('academicos');
+          }}
+        >
+          <span>Académico</span>
+        </Link>
+        <ul className={expandedMenu === 'academicos' ? 'submenu d-block' : 'submenu'}>
+          <li>
+            <Link to="/oportunidades">Empresas</Link>
+          </li>
+          <li>
+            <Link to="/malla">Malla</Link>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <Link to="/faq" onClick={handleClick}>
+          <span>FAQ's</span>
         </Link>
       </li>
       <li>
-        <Link to="/sce">
-          <span>Sociedad Científica</span>
-        </Link>
-      </li>
-      <li>
-        <Link to="/centro">
-          <span>Centro</span>
-        </Link>
-      </li>
-      <li>
-        <Link to="/news">
-          <span>Noticias</span>
-        </Link>
-      </li>
-      <li>
-        <Link to="/blog-1">
-          <span>Blog</span>
-        </Link>
+        <ThemeToggle />
       </li>
     </ul>
+    
   );
-};
-export default MenuItems;
+}; export default MenuItems;

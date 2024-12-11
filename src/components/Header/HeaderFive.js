@@ -5,7 +5,6 @@ import MenuItemsOnePage from './MenuItemsOnePage';
 
 import LogoWhite from '../../assets/img/logo/logo-innovacion-3.png';
 import Logo from '../../assets/img/logo/logo-innovacion-3.png';
-import ThemeToggle from './ThemeToggle';
 
 const HeaderFive = (props) => {
   const { headerClass, headerLogo, onePage, parentMenu } = props;
@@ -117,11 +116,6 @@ const HeaderFive = (props) => {
       </div>
 
       <header className={headerClass ? headerClass : 'it-header-height'}>
-        <div className="ed-header-top-5-area ed-header-top-5-bg fix">
-          <div className="container container-2">
-            
-          </div>
-        </div>
 
         <div
           id="header-sticky"
@@ -179,7 +173,6 @@ const HeaderFive = (props) => {
                       </button>
                     </div>
                   </div>
-                  <ThemeToggle />
                 </div>
               </div>
             </div>

@@ -3,10 +3,10 @@ import Swal from 'sweetalert2';
 import { createUsociedad } from '../../../redux/usociedad/thunk';
 import { useNavigate } from 'react-router';
 
-const SociedadUsuariosForm = ({ onSuccess }) => {
+const SociedadUsuariosForm = ({ onSuccess, initialFormData }) => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    nombre: '',
+  const [formData, setFormData] = useState(initialFormData ||{
+    name: '',
     email: '',
     password: '',
     rol: '',
@@ -84,9 +84,9 @@ const SociedadUsuariosForm = ({ onSuccess }) => {
     console.log("Envio de formulario")
     e.preventDefault();
 
-    const { nombre, email, password, rol, socialLinks } = formData;
+    const { name, email, password, rol, socialLinks } = formData;
 
-    if (!nombre || !email || !password || !rol || !socialLinks.length || !socialLinks[0]) {
+    if (!name || !email || !password || !rol || !socialLinks.length || !socialLinks[0]) {
       Swal.fire('Error', 'Todos los campos son obligatorios.', 'error');
       return;
     }
@@ -111,7 +111,7 @@ const SociedadUsuariosForm = ({ onSuccess }) => {
     Swal.fire('Éxito', 'Docente registrado correctamente.', 'success');
     // enviar los datos al servidor. devolver todo a los datos normales
     const empresa = {
-      name: nombre,
+      name,
       email,
       password,
       rol,
@@ -130,11 +130,11 @@ const SociedadUsuariosForm = ({ onSuccess }) => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <label>
-        Nombre
+        name
         <input
           type="text"
-          name="nombre"
-          value={formData.nombre}
+          name="name"
+          value={formData.name}
           onChange={handleInputChange}
           required
         />

@@ -3,9 +3,9 @@ import Swal from 'sweetalert2';
 import { createSociedad } from '../../../redux/sociedad/thunk';
 import { useNavigate } from 'react-router';
 
-const SociedadForm = ({ onSuccess }) => {
+const SociedadForm = ({ onSuccess, initialFormData }) => {
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState(initialFormData ||{
     name: '',
     objetive: '',
     image: null,

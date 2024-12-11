@@ -6,7 +6,7 @@ import { createDocente } from '../../../redux/docentes/thunk';
 const DocentesForm = ({ onSuccess }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    nombre: '',
+    name: '',
     email: '',
     password: '',
     rol: '',
@@ -85,9 +85,9 @@ const DocentesForm = ({ onSuccess }) => {
     console.log("Envio de formulario")
     e.preventDefault();
 
-    const { nombre, email, password, rol, socialLinks } = formData;
+    const { name, email, password, rol, socialLinks } = formData;
 
-    if (!nombre || !email || !password || !rol || !socialLinks.length || !socialLinks[0]) {
+    if (!name || !email || !password || !rol || !socialLinks.length || !socialLinks[0]) {
       Swal.fire('Error', 'Todos los campos son obligatorios.', 'error');
       return;
     }
@@ -113,7 +113,7 @@ const DocentesForm = ({ onSuccess }) => {
     // enviar los datos al servidor. devolver todo a los datos normales
 
     const docentes = {
-      name: nombre,
+      name: name,
       email,
       password,
       rol,
@@ -131,11 +131,11 @@ const DocentesForm = ({ onSuccess }) => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <label>
-        Nombre
+        name
         <input
           type="text"
-          name="nombre"
-          value={formData.nombre}
+          name="name"
+          value={formData.name}
           onChange={handleInputChange}
           required
         />

@@ -1,9 +1,5 @@
-$primary-color: #007bff;
-$primary-hover: #0056b3;
-$danger-color: #dc3545;
-$danger-hover: #c82333;
-$modal-bg: rgba(0, 0, 0, 0.7);
-$white: #fff;
+@use '../utils' as *;
+
 $border-radius: 6px;
 $transition-time: 0.3s;
 
@@ -12,8 +8,8 @@ $transition-time: 0.3s;
   align-items: center;
   gap: 0.5rem;
   padding: 0.7rem 1.2rem;
-  background: $primary-color;
-  color: $white;
+  background: var(--it-random-primary);
+  color: var(--it-common-white);  
   font-size: 1rem;
   border: none;
   border-radius: $border-radius;
@@ -22,7 +18,7 @@ $transition-time: 0.3s;
   transition: background $transition-time ease, transform 0.2s ease;
 
   &:hover {
-    background: $primary-hover;
+    background: var(--it-random-primary-hover);
     transform: translateY(-2px);
 
     .arrow {
@@ -31,7 +27,7 @@ $transition-time: 0.3s;
   }
 
   &:focus {
-    outline: 2px solid $primary-hover;
+    outline: 2px solid var(--it-random-primary-hover);
     outline-offset: 3px;
   }
 
@@ -48,7 +44,7 @@ $transition-time: 0.3s;
     left: 0;
     width: 100%;
     height: 100%;
-    background: $modal-bg;
+    background: var(--it-random-modal-bg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,7 +59,7 @@ $transition-time: 0.3s;
   }
 
   &-content {
-    background-color: $white;
+    background-color: var(--it-common-white); 
     padding: 1.5rem;
     border-radius: $border-radius;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -90,7 +86,7 @@ $transition-time: 0.3s;
       background: none;
       border: none;
       font-size: 1.8rem;
-      color: #555;
+      color: var(--it-random-text-secondary);
       cursor: pointer;
       transition: color $transition-time ease;
 
@@ -108,7 +104,7 @@ $transition-time: 0.3s;
   
     label {
       font-size: 1rem;
-        color: #333;
+        color: var(--it-text-body);
         display: flex;
         flex-direction: column;
     }
@@ -132,7 +128,7 @@ $transition-time: 0.3s;
           .checkbox-label {
               display: table-cell;
               font-size: 1rem;
-              color: #333;
+              color: var(--it-text-body);
               vertical-align: middle;
               cursor: pointer;
           }
@@ -144,7 +140,7 @@ $transition-time: 0.3s;
       flex-direction: column;
       gap: 0.5rem;
       font-size: 1rem;
-      color: #333;
+      color: var(--it-text-body);
   
       label {
           font-weight: bold;
@@ -156,20 +152,20 @@ $transition-time: 0.3s;
           font-size: 1rem;
           border: 1px solid #ccc;
           border-radius: 0.3rem;
-          background-color: #f9f9f9;
-          color: #333;
+          background-color: var(--it-common-white);
+          color: var(--it-common-black);
           outline: none;
           cursor: pointer;
           transition: border-color 0.3s ease, box-shadow 0.3s ease;
   
           &:focus {
-              border-color: #007BFF;
-              background-color: #fff;
+              border-color: var(--it-random-primary);
+              background-color: var(--it-random-background);
               box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
           }
   
           &:hover {
-              border-color: #007BFF;
+              border-color: var(--it-random-primary);
           }
       }
   }
@@ -186,34 +182,36 @@ $transition-time: 0.3s;
   
         input {
           flex: 1;
+          background-color: var(--it-common-white);
+          color: var(--it-common-black);
         }
   
         .btn-remove-link {
           padding: 0.4rem 0.8rem;
-          background: $danger-color;
-          color: $white;
+          background: var(--it-random-danger); 
+          color: var(--it-common-white);  
           border: none;
           border-radius: $border-radius;
           cursor: pointer;
           transition: background $transition-time ease;
   
           &:hover {
-            background: $danger-hover;
+            background: var(--it-random-danger-hover); 
           }
         }
     }
   
       .btn-add-link {
         padding: 0.6rem 1rem;
-        background: $primary-color;
-        color: $white;
+        background: var(--it-random-primary);
+        color: var(--it-common-white); 
         border: none;
         border-radius: $border-radius;
         cursor: pointer;
         transition: background $transition-time ease;
   
         &:hover {
-          background: $primary-hover;
+          background: var(--it-random-primary-hover);
         }
         }
     }
@@ -225,9 +223,11 @@ $transition-time: 0.3s;
         border-radius: $border-radius;
         font-size: 1rem;
         transition: border-color $transition-time ease;
+        background-color: var(--it-common-white);
+        color: var(--it-common-black);
 
         &:focus {
-        border-color: $primary-color;
+        border-color: var(--it-random-primary);
         outline: none;
         }
     }
@@ -235,21 +235,21 @@ $transition-time: 0.3s;
     button[type="submit"] {
       align-self: flex-start;
       padding: 0.8rem 1.2rem;
-      background: $primary-color;
-      color: $white;
+      background: var(--it-random-primary);
+      color: var(--it-common-white); 
       border: none;
       border-radius: $border-radius;
       cursor: pointer;
       transition: background $transition-time ease;
   
       &:hover {
-        background: $primary-hover;
+        background: var(--it-random-primary-hover);
       }
     }
     button {
       padding: 0.8rem 1.2rem;
-      background: $primary-color;
-      color: $white;
+      background: var(--it-random-primary);
+      color: var(--it-common-white); 
       border: none;
       border-radius: $border-radius;
       font-size: 1rem;
@@ -257,18 +257,23 @@ $transition-time: 0.3s;
       transition: background $transition-time ease, transform 0.2s ease;
     
       &:hover {
-        background: $primary-hover;
+        background: var(--it-random-primary-hover);
         transform: translateY(-2px);
       }
     
       &:focus {
-        outline: 2px solid $primary-hover;
+        outline: 2px solid var(--it-random-primary-hover);
         outline-offset: 4px;
       }
       .link-input-group {
         display: flex;
         align-items: center;
         gap: 0.5rem;
+      }
+    }
+    .quill {
+      .ql-toolbar {
+        background-color: var(--it-grey-2);
       }
     }
 }
@@ -296,8 +301,8 @@ $transition-time: 0.3s;
 
     button {
       padding: 0.4rem 0.6rem;
-      background: $danger-color;
-      color: $white;
+      background: var(--it-random-danger);
+      color: var(--it-common-white); 
       border: none;
       border-radius: $border-radius;
       font-size: 0.85rem;
@@ -305,7 +310,7 @@ $transition-time: 0.3s;
       transition: background $transition-time ease;
 
       &:hover {
-        background: $danger-hover;
+        background: var(--it-random-danger-hover);
       }
     }
   }
@@ -322,8 +327,8 @@ $transition-time: 0.3s;
   
     .custom-button {
       padding: 0.8rem 1.2rem;
-      background: $primary-color;
-      color: $white;
+      background: var(--it-random-primary);
+      color: var(--it-common-white); 
       border: none;
       border-radius: $border-radius;
       font-size: 1rem;
@@ -331,19 +336,19 @@ $transition-time: 0.3s;
       transition: background $transition-time ease, transform 0.2s ease;
   
       &:hover {
-        background: $primary-hover;
+        background: var(--it-random-primary-hover);
         transform: translateY(-2px);
       }
   
       &:focus {
-        outline: 2px solid $primary-hover;
+        outline: 2px solid var(--it-random-primary-hover);
         outline-offset: 3px;
       }
     }
   
     .text {
       font-size: 1rem;
-      color: #333;
+      color: var(--it-text-body);
     }
 
   }

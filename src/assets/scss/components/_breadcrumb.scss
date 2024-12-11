@@ -10,6 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--it-grey-1);
 
     @media #{$xl} {
         height: 320px;

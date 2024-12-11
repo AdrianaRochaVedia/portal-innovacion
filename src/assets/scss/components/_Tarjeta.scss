@@ -1,3 +1,5 @@
+@use '../utils' as *;
+
 .modal {
     position: fixed;
     top: 0;
@@ -36,7 +38,7 @@
             padding: 1rem;
             box-sizing: border-box;
             overflow-y: auto;
-            background-color: white;
+            background-color: var(--it-common-white);
             border-radius: 1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
@@ -87,15 +89,15 @@
             align-self: flex-end;
             padding: 0.5rem;
             margin-top: 0.4rem;
-            background-color: #18579b;
-            color: white;
+            background-color: var(--it-random-primary);
+            color: var(--it-random-button-text);
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
 
             &:hover {
-                background-color: #0056b3;
+                background-color: var(--it-random-primary-hover);
             }
         }
     }

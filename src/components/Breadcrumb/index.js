@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import breadcrumbBG from '../../assets/img/breadcrumb/breadcrumb.jpg';
+// import breadcrumbBG from '../../assets/img/breadcrumb/breadcrumb.jpg';
 
 const Breadcrumb = (props) => {
   const { itemClass, title, subTitle } = props;
@@ -12,7 +12,6 @@ const Breadcrumb = (props) => {
           ? itemClass
           : 'it-breadcrumb-area fix it-breadcrumb-bg p-relative'
       }
-      style={{ backgroundImage: `url(${breadcrumbBG})` }}
     >
       <div className="container">
         <div className="row ">

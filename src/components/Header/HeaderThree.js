@@ -7,7 +7,6 @@ import OffCanvasInsta from '../OffCanvas';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../redux/user/userSlice';
-import ThemeToggle from './ThemeToggle';
 
 const HeaderThree = (props) => {
   const usersState = useSelector((state) => state.users);
@@ -55,14 +54,14 @@ const HeaderThree = (props) => {
             <div className="container">
               <div className="ed-header-3-wrapper">
                 <div className="row align-items-center">
-                  <div className="col-xl-3 col-lg-6 col-md-6 col-6">
+                  <div className="col-xl-2 col-lg-2 col-md-2 col-2">
                     <div className="ed-header-3-logo">
                       <Link to="/">
                         <img src={headerLogo ? headerLogo : Logo} alt="" />
                       </Link>
                     </div>
                   </div>
-                  <div className="col-xl-6 d-none d-xl-block">
+                  <div className="col-xl-8 d-none d-xl-block">
                     <div className="ed-header-2-main-menu it-main-menu">
                       <nav className="it-menu-content">
                         {!onePage ? (
@@ -76,7 +75,7 @@ const HeaderThree = (props) => {
                       </nav>
                     </div>
                   </div>
-                  <div className="col-xl-3 col-lg-6 col-md-6 col-6">
+                  <div className="col-xl-2 col-lg-2 col-md-2 col-2">
                     <div className="ed-header-3-right d-flex justify-content-end align-items-center">
                       <div className="ed-header-3-bar d-xl-none">
                         <button
@@ -99,7 +98,7 @@ const HeaderThree = (props) => {
                           </svg>
                         </button>
                       </div>
-                      <ThemeToggle />
+                      
                       {
                         (usersState.uid) 
                         ? (
