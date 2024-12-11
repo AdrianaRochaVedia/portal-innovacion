@@ -95,16 +95,22 @@ const CentroMain = () => {
               }
               <div style={{ marginBottom: '30px' }}></div> 
               <div className="row">
-                {ucentroState.map((member, index) => (
-                  <div key={index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
-                    <SingleTeamThree
-                      teamImage={member.photo ?? ""}
-                      authorName={member.user.name ?? ""}
-                      designation={member.role ?? ""}
-                      socialLinks={member.socialLinks}
-                    />
-                  </div>
-                ))}
+                {
+                  (ucentroState)
+                  ?
+                  (ucentroState.map((member, index) => (
+                    <div key={index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
+                      <SingleTeamThree
+                        teamImage={member.photo ?? ""}
+                        authorName={member.user.name ?? ""}
+                        designation={member.role ?? ""}
+                        socialLinks={member.socialLinks}
+                      />
+                    </div>
+                  )))
+                  :
+                  (<></>)
+                }
               </div>
             </div>
           )
