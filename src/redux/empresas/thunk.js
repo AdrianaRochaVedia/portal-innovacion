@@ -73,7 +73,7 @@ export const actualizarEmpresa = async (empresa, modal) => {
 export const borrarEmpresa = (id) => {
   return async(dispatch) => {
     console.log("ID:" + id)
-    await mainApi.patch(`/api/empresas/${id}`, {
+    await mainApi.patch(`/api/empresas/${id}`, {}, {
       headers: {
         'x-token': localStorage.getItem("token-ptin")
       }
