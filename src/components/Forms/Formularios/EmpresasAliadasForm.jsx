@@ -68,7 +68,7 @@ const EmpresasAliadasForm = ({ onSuccess, initialFormData }) => {
     }
 
     const empresa = {
-      id: formData.id,
+      _id: formData._id,
       name: name,
       email,
       description: description,

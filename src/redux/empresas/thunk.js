@@ -43,7 +43,7 @@ export const createEmpresa = async(empresa, modal) => {
 export const actualizarEmpresa = async (empresa, modal) => {
   try {
     // Realiza la petición PUT a la API
-    const response = await mainApi.put(`/api/empresas/${empresa.id}`, empresa, {
+    const response = await mainApi.put(`/api/empresas/${empresa._id}`, empresa, {
       headers: {
         'Content-type': 'application/json',
         'x-token': localStorage.getItem("token-ptin")
