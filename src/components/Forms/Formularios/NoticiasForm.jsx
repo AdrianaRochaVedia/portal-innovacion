@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import Swal from 'sweetalert2';
+import { createNews } from '../../../redux/noticias/thunk';
+import { useNavigate } from 'react-router';
 
 const NoticiasFormComponent = ({ onSuccess }) => {
+  const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [description, setdescription] = useState('');
   const [imageFiles, setImageFiles] = useState([]);
@@ -23,6 +26,7 @@ const NoticiasFormComponent = ({ onSuccess }) => {
   };
 
   const handleSubmit = (event) => {
+    console.log("Envio de formulario")
     event.preventDefault();
 
     if (!title.trim()) {
@@ -37,19 +41,34 @@ const NoticiasFormComponent = ({ onSuccess }) => {
       Swal.fire('Error', 'Debes ingresar al menos una etiqueta.', 'error');
       return;
     }
-    if (imageFiles.length === 0) {
-      Swal.fire('Error', 'Debes subir al menos una imagen.', 'error');
-      return;
-    }
+    const currentDate = new Date().toISOString();
 
     // enviar datos
-    Swal.fire('Éxito', 'La noticia ha sido publicada.', 'success');
-    // Limpiar los estados después de la publicación
-    setTitle('');
-    setdescription('');
-    setTags('');
-    setImageFiles([]);
-    onSuccess();
+    
+
+    const noticia = {
+      title,
+      description,
+      start: currentDate,
+      // start: FormData.start,
+      tags: tags.split(','),
+
+    }
+    
+    createNews(noticia);
+
+  // Mostrar mensaje de éxito
+  Swal.fire('Éxito', 'La noticia ha sido publicada.', 'success');
+
+  // Limpiar los estados después de la publicación
+  setTitle('');
+  setdescription('');
+  setTags('');
+  setImageFiles([]);
+  onSuccess();
+
+  // Navegar a otra página (si es necesario)
+  navigate("/News");
   };
 
   return (
