@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SingleTeamThree = (props) => {
-  const {teamImage, authorName, designation, socialLinks} = props;
+  const { teamImage, authorName, designation, socialLinks = [] } = props;
 
   return (
     <div className={'ed-team-item'}>
@@ -14,10 +14,10 @@ const SingleTeamThree = (props) => {
             <i className="fa-light fa-share-nodes"></i>
           </button>
           <div className="ed-team-social-wrap">
-            <a href={socialLinks[1]} target='_blank' rel="noreferrer">
+            <a href={socialLinks[1]} target='_blank'>
               <i className="fa-brands fa-twitter"></i>
             </a>
-            <a href={socialLinks[0]} target='_blank' rel="noreferrer">
+            <a href={socialLinks[0]} target='_blank'>
               <i className="fa-brands fa-facebook-f"></i>
             </a>
           </div>
