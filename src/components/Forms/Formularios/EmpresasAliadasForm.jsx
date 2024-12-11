@@ -83,7 +83,7 @@ const EmpresasAliadasForm = ({ onSuccess, initialFormData }) => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <label>
-        name
+        Nombre
         <input
           type="text"
           name="name"

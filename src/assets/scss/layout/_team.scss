@@ -638,6 +638,38 @@
         
     }
     &-content{
+        .action-buttons {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            gap: 0.5rem;
+        
+            .btn {
+              align-items: center;
+              justify-content: center;
+              padding: 0.1rem;
+              font-size: 0.9rem;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.3s ease, transform 0.2s ease;
+              width: 2rem;
+              height: 2rem;
+        
+              &:hover {
+                background-color: #90e0ef;
+                transform: scale(1.05);
+              }
+              .icon-placeholder {
+                color: var(--it-common-black);
+                svg {
+                  width: 2rem;
+                  height: 2rem;
+                }
+              }
+            }
+          }
         padding-left: 20px;
         padding-top: 25px;
         padding-bottom: 20px;
