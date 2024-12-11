@@ -19,3 +19,24 @@ export const getDocentes = () => {
       })
   }
 }
+
+export const createDocente = async(docente, modal) => {
+  console.log("Arrives");
+  console.log("Datos enviados:", docente);
+    await mainApi.post('/api/docente',docente, {
+      headers: {
+        'Content-type': 'application/json',
+        'x-token': localStorage.getItem("token-ptin")
+      }
+    })
+    .then(resp => {
+      Swal.fire('Éxito', 'Docente registrado exitosamente.', 'success');
+    })
+    .catch(err => {
+      Swal.fire({
+        icon: "error",
+        title: "Ooops...",
+        text: "Error al registrar al docente"
+      })
+    })
+}

@@ -19,3 +19,23 @@ export const getCentro = () => {
       })
   }
 }
+
+export const createCentro = async(centro, modal) => {
+  console.log("Arrives")
+    await mainApi.post('/api/centro',centro, {
+      headers: {
+        'Content-type': 'application/json',
+        'x-token': localStorage.getItem("token-ptin")
+      }
+    })
+    .then(resp => {
+      Swal.fire('Éxito', 'Centro registrado exitosamente.', 'success');
+    })
+    .catch(err => {
+      Swal.fire({
+        icon: "error",
+        title: "Ooops...",
+        text: "Error al crear el centro"
+      })
+    })
+}

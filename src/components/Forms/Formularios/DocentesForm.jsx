@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router';
+import { createDocente } from '../../../redux/docentes/thunk';
 
-const DocentesForm = ({ onSuccess, initialFormData }) => {
-  const [formData, setFormData] = useState(initialFormData ||{
+const DocentesForm = ({ onSuccess }) => {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
@@ -79,6 +82,7 @@ const DocentesForm = ({ onSuccess, initialFormData }) => {
   };
 
   const handleSubmit = async (e) => {
+    console.log("Envio de formulario")
     e.preventDefault();
 
     const { name, email, password, rol, socialLinks } = formData;
@@ -107,7 +111,21 @@ const DocentesForm = ({ onSuccess, initialFormData }) => {
 
     Swal.fire('Éxito', 'Docente registrado correctamente.', 'success');
     // enviar los datos al servidor. devolver todo a los datos normales
+
+    const docentes = {
+      name: name,
+      email,
+      password,
+      rol,
+      socialLinks,
+      designation: formData.designation,
+      state: formData.state,
+    }
+    
+    createDocente(docentes)
+    navigate("/teacher")
     onSuccess();
+
   };
 
   return (

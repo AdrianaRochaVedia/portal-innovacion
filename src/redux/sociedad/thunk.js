@@ -20,3 +20,23 @@ export const getSociedad = () => {
       })
   }
 }
+
+export const createSociedad = async(sociedad, modal) => {
+  console.log("Arrives")
+    await mainApi.post('/api/sociedad',sociedad, {
+      headers: {
+        'Content-type': 'application/json',
+        'x-token': localStorage.getItem("token-ptin")
+      }
+    })
+    .then(resp => {
+      Swal.fire('Éxito', 'Sociedad registrada exitosamente.', 'success');
+    })
+    .catch(err => {
+      Swal.fire({
+        icon: "error",
+        title: "Ooops...",
+        text: "Error al registrar la sociedad"
+      })
+    })
+}

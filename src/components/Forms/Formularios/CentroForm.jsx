@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import { createCentro } from '../../../redux/centro/thunk';
+import { useNavigate } from 'react-router';
 
-const CentroForm = ({ onSuccess, initialFormData }) => {
-  const [formData, setFormData] = useState(initialFormData ||{
+const CentroForm = ({ onSuccess }) => {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
     name: '',
     objetive: '',
     image: null,
@@ -50,6 +53,7 @@ const CentroForm = ({ onSuccess, initialFormData }) => {
   };
 
   const handleSubmit = async (e) => {
+    console.log("Envio de formulario")
     e.preventDefault();
 
     const { name, objetive, start, end, socialLinks } = formData;
@@ -66,6 +70,18 @@ const CentroForm = ({ onSuccess, initialFormData }) => {
     }
 
     Swal.fire('Éxito', 'Centro registrado correctamente.', 'success');
+
+    const empresa = {
+      name,
+      objetive,
+      isDeleted: formData.isDeleted,
+      start,
+      end,
+      socialLinks
+    }
+    
+    createCentro(empresa)
+    navigate("/centro")
     onSuccess();
   };
 

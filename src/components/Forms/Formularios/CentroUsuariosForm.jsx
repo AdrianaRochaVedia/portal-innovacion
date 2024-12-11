@@ -244,7 +244,7 @@ const CentroUsuariosForm = ({ onSuccess, initialFormData }) => {
           <option value="Secretario de Deportes"> Secretario de Deportes</option>
         </select>
       </label>
-      <button type="submit">Registrar Docente</button>
+      <button type="submit">Registrar Miembro del Centro</button>
     </form>
   );
 }; export default CentroUsuariosForm;

@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import { createGraduado } from '../../../redux/alumni/thunk';
+import { useNavigate } from 'react-router';
 
 const AlumniForm = ({ onSuccess, initialFormData }) => {
-  const [formData, setFormData] = useState(initialFormData ||{
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState(initialFormData ||{ 
     name: '',
     email: '',
     password: '',
@@ -82,6 +85,7 @@ const AlumniForm = ({ onSuccess, initialFormData }) => {
 
 
   const handleSubmit = async (e) => {
+    console.log("Envio de formulario")
     e.preventDefault();
 
     const { name, email, password, rol, socialLinks, gestion, description } = formData;
@@ -109,6 +113,21 @@ const AlumniForm = ({ onSuccess, initialFormData }) => {
     }
 
     Swal.fire('Éxito', 'Centro registrado correctamente.', 'success');
+
+    const graduado = {
+      name,
+      email,
+      password,
+      rol,
+      gestion,
+      description,
+      excelencia: formData.excelencia,
+      socialLinks,
+      state: formData.state,
+    }
+    
+    createGraduado(graduado)
+    navigate("/Alumni")
     onSuccess();
   };
 
@@ -272,7 +291,7 @@ const AlumniForm = ({ onSuccess, initialFormData }) => {
         </div>
       )}
 
-      <button type="submit">Registrar Centro</button>
+      <button type="submit">Registrar Graduado</button>
     </form>
   );
 }; export default AlumniForm;

@@ -2,7 +2,7 @@ import Swal from 'sweetalert2'
 import { mainApi } from '../../axios'
 import { setNoticia, startLoadingNoticia } from './noticiasSlice'
 
-export const getEmpresas = () => {
+export const getNews = () => {
   return async(dispatch) => {
     dispatch(startLoadingNoticia)
     await mainApi.get('/api/news')
