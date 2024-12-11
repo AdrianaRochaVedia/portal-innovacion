@@ -7,8 +7,8 @@ export const getUcentro = () => {
     dispatch(startLoadingUcentro())
     await mainApi.get('/api/ucentro')
       .then(resp => {
-        console.log(resp.data)
-        dispatch(setUcentro(resp.data))
+        console.log("Ucentro: " + resp.data.ucentro)
+        dispatch(setUcentro(resp.data.ucentro))
       })
       .catch(err => {
         Swal.fire({

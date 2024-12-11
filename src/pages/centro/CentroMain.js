@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
 import SingleTeamThree from '../../components/Team/SingleTeamThree';
 import KnowUs from '../../components/Sce/KnowUs';
+import Logo from '../../assets/img/logo/logo-white-2.png';
 
 import { useState } from 'react';
 import logoCentro from '../../assets/img/centro/logo-centro.jpeg';
@@ -15,6 +16,7 @@ import ButtonWithArrow from '../../components/Forms/ButtonWithArrow';
 import Modal from '../../components/Forms/Modal';
 import CentroForm from '../../components/Forms/Formularios/CentroForm.jsx';
 import CentroUsuarios from '../../components/Forms/Formularios/CentroUsuariosForm.jsx';
+import FooterTwo from '../../components/Footer/FooterTwo.js';
 
 const CentroMain = () => {
   const userState = useSelector((state) => state.users);
@@ -98,24 +100,30 @@ const CentroMain = () => {
                 {
                   (ucentroState)
                   ?
-                  (ucentroState.map((member, index) => (
+                  (ucentroState.ucentro.map((member, index) => (
                     <div key={index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
                       <SingleTeamThree
-                        teamImage={member.photo ?? ""}
-                        authorName={member.user.name ?? ""}
+                        teamImage={""}
+                        authorName={member.usuario.name ?? ""}
                         designation={member.role ?? ""}
                         socialLinks={member.socialLinks}
                       />
                     </div>
                   )))
                   :
-                  (<></>)
+                  (<>No hay centro</>)
                 }
               </div>
             </div>
           )
         }
       </div>
+      <FooterTwo
+          footerClass="it-footer-area it-footer-bg it-footer-style-5 ed-footer-style-5 inner-style black-bg pb-70"
+          footerLogo={Logo}
+          btnClass="it-btn-white sky-bg"
+          copyrightTextClass="it-copyright-text inner-style text-center"
+      />
     </main>
   );
 }; export default CentroMain;
