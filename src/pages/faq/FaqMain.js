@@ -1,47 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Breadcrumb from '../../components/Breadcrumb';
-import FaqOne from '../../components/Faq';
-
+import FaqOne from '../../components/Faq/index';
+import {loginAndFetchFaqs} from '../../queries/faqs';
 import faqImg from '../../assets/img/faq/thumb-1.jpg';
 
 const FaqMain = () => {
-  const items = [
-    {
-      id: 'a',
-      btnText: 'Why do students prefer online learning?',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      faqImage: faqImg,
-    },
-    {
-      id: 'b',
-      btnText: 'Where should I study abroad?',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      faqImage: faqImg,
-    },
-    {
-      id: 'c',
-      btnText: 'How can I contact a school directly?',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      faqImage: faqImg,
-    },
-    {
-      id: 'd',
-      btnText: 'How do I find a school where I want to study?',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      faqImage: faqImg,
-    },
-    {
-      id: 'e',
-      btnText: 'How do I find a school where I want to study?',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscingelit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      faqImage: faqImg,
-    },
-  ];
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true); // Estado para manejar la carga
+  const [error, setError] = useState(null); // Estado para manejar errores
+
+
+  useEffect(() => {
+    const loadFaqs = async () => {
+
+      try {
+        const data = await loginAndFetchFaqs(); // Llama a la función para obtener FAQs
+        const formattedData = data.map((faq) => ({
+          id: faq._id,
+          btnText: faq.title,
+          description: faq.description,
+          faqImage: faq.image || "", // Usa un valor predeterminado si no hay imagen
+        }));
+        setItems(formattedData); // Actualiza el estado con los datos
+      } catch (err) {
+        setError("Error al cargar las FAQs"); // Establece un mensaje de error
+        console.error(err);
+      } finally {
+        setLoading(false); // Oculta el spinner
+      }
+  
+    };
+    loadFaqs();
+  }, []); 
+
+
+
+  if (loading) {
+    return <p>Cargando FAQs...</p>; // Muestra un spinner o mensaje de carga
+  }
+
+  if (error) {
+    return <p>{error}</p>; // Muestra el mensaje de error
+  }
+
   return (
     <main>
       <Breadcrumb title="Faqs" />
